@@ -1,0 +1,953 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andini Karina Putri — Web Developer Portfolio</title>
+    <meta name="description"
+        content="Portofolio Web Developer Andini Karina Putri. Membangun aplikasi web operasional untuk manajemen stok, keuangan, dan sistem absensi digital." />
+
+    <!-- Google Fonts: Oswald (Display) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lavender: {
+                            50: '#F8F6FD',
+                            100: '#F3EFFB',
+                            200: '#E5DDF7',
+                            300: '#CBBBE9',
+                            500: '#7F69B6',
+                            600: '#6953A1',
+                            900: '#1E1B26',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Marquee Animation Styles for Sliding Skills -->
+    <style>
+        @keyframes marquee-left {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes marquee-right {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .marquee-track-left {
+            display: flex;
+            width: max-content;
+            animation: marquee-left 28s linear infinite;
+        }
+
+        .marquee-track-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 28s linear infinite;
+        }
+
+        .marquee-container:hover .marquee-track-left,
+        .marquee-container:hover .marquee-track-right {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body class="bg-lavender-100 text-lavender-900 font-sans antialiased selection:bg-lavender-500 selection:text-white">
+
+    <!-- Sticky Navbar -->
+    <header class="sticky top-0 z-40 bg-lavender-100/85 backdrop-blur-md border-b border-lavender-200/70">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="font-display text-2xl font-bold tracking-tight text-lavender-900">
+                AK<span class="text-lavender-500">.</span>
+            </a>
+
+            <nav
+                class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase text-gray-600">
+                <a href="#home" class="hover:text-lavender-500 transition">Home</a>
+                <a href="#projects" class="hover:text-lavender-500 transition">Projects</a>
+                <a href="#skills" class="hover:text-lavender-500 transition">Skills & Process</a>
+                <a href="#about" class="hover:text-lavender-500 transition">About</a>
+                <a href="#contact" class="hover:text-lavender-500 transition">Contact</a>
+            </nav>
+
+            <a href="#contact"
+                class="bg-lavender-900 hover:bg-lavender-500 text-white text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full transition duration-300 shadow-sm">
+                Let's Talk
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-5 sm:px-8">
+
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="pt-10 pb-8 md:pt-14 md:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <!-- Left Typography -->
+            <div class="lg:col-span-7 space-y-6">
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-lavender-200 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-semibold tracking-wider uppercase text-gray-600">Hello, I'm Andini Karina
+                        Putri</span>
+                </div>
+
+                <h1
+                    class="font-display text-6xl sm:text-7xl md:text-8xl font-bold uppercase leading-[0.95] tracking-tight">
+                    <span class="block text-lavender-500">Web</span>
+                    <span class="block text-lavender-900">Developer</span>
+                </h1>
+
+                <p class="text-gray-600 text-base sm:text-lg max-w-xl leading-relaxed">
+                    Merancang dan membangun aplikasi web operasional yang terstruktur, responsif, dan akurat untuk
+                    mengotomatisasi pencatatan stok, keuangan, serta absensi digital.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#projects"
+                        class="inline-flex items-center gap-2.5 bg-lavender-500 hover:bg-lavender-600 text-white text-xs font-semibold tracking-wider uppercase px-7 py-4 rounded-full shadow-md shadow-lavender-500/25 transition duration-300">
+                        View Portfolio
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+
+                    <a href="./cv/CV-Andini-Karina-Putri.pdf" download
+                        class="inline-flex items-center gap-2 bg-white hover:bg-lavender-50 text-lavender-900 border border-lavender-200 text-xs font-semibold tracking-wider uppercase px-6 py-4 rounded-full transition duration-300">
+                        Download CV
+                        <svg class="w-4 h-4 text-lavender-500" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Profile Visual (2-Photo Interactive Switcher) -->
+            <div class="lg:col-span-5 flex flex-col items-center relative">
+                <div id="profile-switcher" onclick="toggleProfilePhoto()"
+                    title="Klik atau arahkan kursor untuk ganti pose"
+                    class="relative w-72 h-80 sm:w-80 sm:h-96 cursor-pointer group select-none">
+                    <!-- Decorative Circle Backdrop -->
+                    <div
+                        class="absolute inset-4 rounded-full bg-gradient-to-tr from-lavender-300/70 via-lavender-200/80 to-white shadow-inner">
+                    </div>
+
+                    <!-- Foto 1 (Default) -->
+                    <img id="photo-primary" src="./images/profil-1.png" alt="Andini Karina Putri"
+                        class="relative z-10 w-full h-full object-contain object-bottom rounded-b-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95" />
+
+                    <!-- Foto 2 (Muncul saat hover/klik; otomatis fallback ke profil-1 jika profil-2 belum ada) -->
+                    <img id="photo-secondary" src="./images/profil-2.png"
+                        onerror="this.onerror=null; this.src='./images/profil-1.png';" alt="Andini Karina Putri Pose 2"
+                        class="absolute inset-0 z-10 w-full h-full object-contain object-bottom rounded-b-full opacity-0 translate-y-2 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0" />
+                </div>
+
+                <!-- Location Badge -->
+                <div
+                    class="mt-3 sm:mt-0 sm:absolute sm:bottom-6 sm:right-2 z-20 bg-white/95 backdrop-blur px-4 py-2.5 rounded-2xl border border-lavender-200 shadow-sm text-center">
+                    <p class="text-[11px] italic text-gray-500 leading-none">Based in</p>
+                    <p
+                        class="font-display text-base font-bold tracking-wide text-lavender-900 mt-0.5 flex items-center justify-center gap-1">
+                        PASURUAN
+                        <svg class="w-3.5 h-3.5 text-lavender-500" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FLOATING 4-COLUMN HIGHLIGHTS BAR -->
+        <section
+            class="bg-white rounded-3xl border border-lavender-200/80 shadow-sm p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-lavender-100">
+            <div class="flex flex-col items-center text-center pt-2 lg:pt-0">
+                <span
+                    class="w-9 h-9 rounded-full bg-lavender-100 text-lavender-500 flex items-center justify-center mb-2.5 font-bold text-sm">02</span>
+                <p class="font-display text-3xl font-bold text-lavender-900">LIVE APPS</p>
+                <p class="text-[11px] font-semibold tracking-wider uppercase text-gray-400 mt-1">Deployed on Vercel</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center pt-4 lg:pt-0">
+                <span
+                    class="w-9 h-9 rounded-full bg-lavender-100 text-lavender-500 flex items-center justify-center mb-2.5 font-bold text-sm">DB</span>
+                <p class="font-display text-3xl font-bold text-lavender-900">RELATIONAL</p>
+                <p class="text-[11px] font-semibold tracking-wider uppercase text-gray-400 mt-1">Structured Data & ERD
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center pt-4 lg:pt-0">
+                <span
+                    class="w-9 h-9 rounded-full bg-lavender-100 text-lavender-500 flex items-center justify-center mb-2.5 font-bold text-sm">QR</span>
+                <p class="font-display text-3xl font-bold text-lavender-900">AUTOMATION</p>
+                <p class="text-[11px] font-semibold tracking-wider uppercase text-gray-400 mt-1">Stock, Cashflow & Scan
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center pt-4 lg:pt-0">
+                <span
+                    class="w-9 h-9 rounded-full bg-lavender-100 text-lavender-500 flex items-center justify-center mb-2.5 font-bold text-sm">UI</span>
+                <p class="font-display text-3xl font-bold text-lavender-900">RESPONSIVE</p>
+                <p class="text-[11px] font-semibold tracking-wider uppercase text-gray-400 mt-1">Clean & User-Friendly
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. SELECTED PROJECTS (2 MAIN WEB DEV PROJECTS) -->
+        <section id="projects" class="py-14">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-2">
+                <div>
+                    <p class="text-xs font-bold tracking-widest uppercase text-lavender-500">Selected Work</p>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold uppercase text-lavender-900 mt-1">Featured
+                        Web Projects</h2>
+                </div>
+                <p class="text-sm text-gray-500">Klik tombol demo untuk mencoba aplikasi secara langsung.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project Card 1: Rajut.in -->
+                <article
+                    class="bg-white rounded-3xl border border-lavender-200/80 overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="bg-lavender-50 p-4 sm:p-5 border-b border-lavender-100">
+                        <div
+                            class="rounded-2xl overflow-hidden border border-lavender-200/80 shadow-sm aspect-[16/9] bg-white">
+                            <img src="./images/rajutin.png" alt="Dashboard Rajut.in Stok Bahan dan Keuangan"
+                                class="w-full h-full object-cover object-top hover:scale-105 transition duration-500" />
+                        </div>
+                    </div>
+
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="text-[11px] font-semibold px-3 py-1 rounded-full bg-lavender-100 text-lavender-600">Inventory
+                                    & Finance</span>
+                                <span
+                                    class="text-[11px] font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-600">Fullstack
+                                    Web</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold uppercase text-lavender-900">Rajut.in — Sistem
+                                Stok Bahan & Keuangan</h3>
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Aplikasi manajemen operasional bisnis kerajinan yang mengintegrasikan pencatatan stok
+                                bahan baku, pesanan reguler & custom, peringatan stok menipis, hingga perhitungan laba
+                                bersih otomatis.
+                            </p>
+                        </div>
+
+                        <div class="pt-4 border-t border-lavender-100 flex items-center justify-between gap-3">
+                            <button onclick="openCaseStudy('rajutin')"
+                                class="text-xs font-bold uppercase tracking-wider text-lavender-500 hover:text-lavender-900 transition">
+                                Lihat Studi Kasus
+                            </button>
+                            <a href="https://rajutin-seven.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 bg-lavender-900 hover:bg-lavender-500 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full transition">
+                                Live Demo
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2: Sistem Absensi QR -->
+                <article
+                    class="bg-white rounded-3xl border border-lavender-200/80 overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="bg-lavender-50 p-4 sm:p-5 border-b border-lavender-100">
+                        <div
+                            class="rounded-2xl overflow-hidden border border-lavender-200/80 shadow-sm aspect-[16/9] bg-white">
+                            <img src="./images/absen.png" alt="Dashboard Sistem Absensi QR Code Mahasiswa"
+                                class="w-full h-full object-cover object-top hover:scale-105 transition duration-500" />
+                        </div>
+                    </div>
+
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="text-[11px] font-semibold px-3 py-1 rounded-full bg-lavender-100 text-lavender-600">QR
+                                    Code System</span>
+                                <span
+                                    class="text-[11px] font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-600">Admin
+                                    Dashboard</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold uppercase text-lavender-900">Sistem Absensi QR
+                                Code Mahasiswa</h3>
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Aplikasi pencatatan kehadiran berbasis pemindaian QR Code yang dilengkapi manajemen data
+                                master mahasiswa, program studi, angkatan, pemantauan status harian, serta rekapitulasi
+                                laporan otomatis.
+                            </p>
+                        </div>
+
+                        <div class="pt-4 border-t border-lavender-100 flex items-center justify-between gap-3">
+                            <button onclick="openCaseStudy('absensi')"
+                                class="text-xs font-bold uppercase tracking-wider text-lavender-500 hover:text-lavender-900 transition">
+                                Lihat Studi Kasus
+                            </button>
+                            <a href="https://sistem-absensi-qr.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 bg-lavender-900 hover:bg-lavender-500 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full transition">
+                                Live Demo
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. SKILLS & PROCESS (SLIDING MARQUEE + PROCESS WORKFLOW) -->
+        <section id="skills" class="pb-14 space-y-8">
+            <!-- Top: Skills & Keahlian (Sliding Text / Marquee with Icons) -->
+            <div class="bg-white rounded-3xl border border-lavender-200/80 p-6 sm:p-8 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lavender-100 text-lavender-600 text-[11px] font-bold uppercase tracking-wider mb-2">
+                            <span class="w-2 h-2 rounded-full bg-lavender-500 animate-pulse"></span>
+                            Tech Stack & Tools
+                        </div>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wide text-lavender-900">
+                            Skills & Keahlian
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-1">
+                            Bahasa pemrograman, perangkat analisis data, tools kolaborasi, dan utilitas pendukung
+                            produktivitas.
+                        </p>
+                    </div>
+                    <span
+                        class="text-[11px] font-medium text-gray-400 bg-lavender-50 px-3 py-1.5 rounded-full border border-lavender-100 shrink-0 self-start sm:self-auto">
+                        Arahkan kursor untuk menjeda
+                    </span>
+                </div>
+
+                <!-- Marquee Container -->
+                <div class="relative overflow-hidden marquee-container py-2">
+                    <!-- Left & Right Soft Blur/Fade Overlays -->
+                    <div
+                        class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10">
+                    </div>
+                    <div
+                        class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10">
+                    </div>
+
+                    <!-- Row 1: Sliding Left -->
+                    <div class="mb-4">
+                        <div class="marquee-track-left">
+                            <!-- Group 1 -->
+                            <div class="flex items-center gap-4 shrink-0 pr-4">
+                                <!-- PHP -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/php.svg" alt="PHP" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">PHP</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Backend & Logic</p>
+                                    </div>
+                                </div>
+
+                                <!-- HTML -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/html.svg" alt="HTML" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">HTML</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Semantic Structure</p>
+                                    </div>
+                                </div>
+
+                                <!-- GitHub -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/github.svg" alt="GitHub" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">GitHub</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Version Control</p>
+                                    </div>
+                                </div>
+
+                                <!-- Cisco -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/cisco.svg" alt="Cisco" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Cisco</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Packet Tracer & Net</p>
+                                    </div>
+                                </div>
+
+                                <!-- Figma -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/figma.svg" alt="Figma" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Figma</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">UI/UX Wireframing</p>
+                                    </div>
+                                </div>
+
+                                <!-- Canva -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/canva.svg" alt="Canva" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Canva</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Visual Design</p>
+                                    </div>
+                                </div>
+
+                                <!-- CapCut -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/capcut.svg" alt="CapCut" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">CapCut</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Video Editing</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Group 1 Duplicate (for seamless loop) -->
+                            <div class="flex items-center gap-4 shrink-0 pr-4" aria-hidden="true">
+                                <!-- PHP -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/php.svg" alt="PHP" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">PHP</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Backend & Logic</p>
+                                    </div>
+                                </div>
+
+                                <!-- HTML -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/html.svg" alt="HTML" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">HTML</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Semantic Structure</p>
+                                    </div>
+                                </div>
+
+                                <!-- GitHub -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/github.svg" alt="GitHub" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">GitHub</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Version Control</p>
+                                    </div>
+                                </div>
+
+                                <!-- Cisco -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/cisco.svg" alt="Cisco" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Cisco</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Packet Tracer & Net</p>
+                                    </div>
+                                </div>
+
+                                <!-- Figma -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/figma.svg" alt="Figma" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Figma</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">UI/UX Wireframing</p>
+                                    </div>
+                                </div>
+
+                                <!-- Canva -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/canva.svg" alt="Canva" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Canva</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Visual Design</p>
+                                    </div>
+                                </div>
+
+                                <!-- CapCut -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/capcut.svg" alt="CapCut" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">CapCut</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Video Editing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Sliding Right -->
+                    <div>
+                        <div class="marquee-track-right">
+                            <!-- Group 2 -->
+                            <div class="flex items-center gap-4 shrink-0 pr-4">
+                                <!-- Google Colab -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/colab.png" alt="Google Colab" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Google Colab</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Python & Notebook</p>
+                                    </div>
+                                </div>
+
+                                <!-- Antigravity -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/antigravity.svg" alt="Antigravity" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Antigravity</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">AI Agentic IDE</p>
+                                    </div>
+                                </div>
+
+                                <!-- Microsoft Excel -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/excel.svg" alt="Excel" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Excel</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Data & Spreadsheet</p>
+                                    </div>
+                                </div>
+
+                                <!-- Microsoft Word -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/word.svg" alt="Word" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Word</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Dokumen & Laporan</p>
+                                    </div>
+                                </div>
+
+                                <!-- Orange -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/orange.png" alt="Orange" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Orange</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Data Mining & ML</p>
+                                    </div>
+                                </div>
+
+                                <!-- MATLAB -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/matlab.png" alt="MATLAB" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">MATLAB</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Numerical Computing</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Group 2 Duplicate (for seamless loop) -->
+                            <div class="flex items-center gap-4 shrink-0 pr-4" aria-hidden="true">
+                                <!-- Google Colab -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/colab.png" alt="Google Colab" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Google Colab</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Python & Notebook</p>
+                                    </div>
+                                </div>
+
+                                <!-- Antigravity -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/antigravity.svg" alt="Antigravity" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Antigravity</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">AI Agentic IDE</p>
+                                    </div>
+                                </div>
+
+                                <!-- Microsoft Excel -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/excel.svg" alt="Excel" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Excel</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Data & Spreadsheet</p>
+                                    </div>
+                                </div>
+
+                                <!-- Microsoft Word -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/word.svg" alt="Word" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Word</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Dokumen & Laporan</p>
+                                    </div>
+                                </div>
+
+                                <!-- Orange -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/orange.png" alt="Orange" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">Orange</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Data Mining & ML</p>
+                                    </div>
+                                </div>
+
+                                <!-- MATLAB -->
+                                <div class="inline-flex items-center gap-3 bg-lavender-50/80 hover:bg-white border border-lavender-200/90 hover:border-lavender-400 rounded-2xl px-4 py-3 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0 min-w-[190px]">
+                                    <div class="w-11 h-11 rounded-xl bg-white border border-lavender-100 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform shrink-0 p-2">
+                                        <img src="./icons/matlab.png" alt="MATLAB" onerror="handleIconError(this)" class="w-full h-full object-contain" />
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="font-display text-sm font-bold tracking-wide text-lavender-900 group-hover:text-lavender-600 transition-colors">MATLAB</p>
+                                        <p class="text-[11px] text-gray-500 font-medium">Numerical Computing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom: My Process (01 - 04 Workflow) -->
+            <div class="bg-white rounded-3xl border border-lavender-200/80 p-6 sm:p-8 shadow-sm">
+                <div class="mb-6">
+                    <p class="text-xs font-bold tracking-widest uppercase text-lavender-500">Workflow & Standard</p>
+                    <h2 class="font-display text-xl sm:text-2xl font-bold uppercase tracking-wide text-lavender-900 mt-1">
+                        My Process — Alur Kerja Pengembangan
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div
+                        class="p-4 rounded-2xl bg-lavender-50/70 border border-lavender-100 flex flex-col justify-between hover:border-lavender-300 transition duration-300">
+                        <div>
+                            <span
+                                class="w-8 h-8 rounded-full bg-lavender-200/80 text-lavender-600 font-display font-bold text-sm flex items-center justify-center shrink-0 mb-3">01</span>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-lavender-900">Analyze & Database
+                                ERD</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Memetakan kebutuhan alur bisnis, hak
+                                akses pengguna, dan relasi tabel basis data.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-4 rounded-2xl bg-lavender-50/70 border border-lavender-100 flex flex-col justify-between hover:border-lavender-300 transition duration-300">
+                        <div>
+                            <span
+                                class="w-8 h-8 rounded-full bg-lavender-200/80 text-lavender-600 font-display font-bold text-sm flex items-center justify-center shrink-0 mb-3">02</span>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-lavender-900">UI Wireframe &
+                                Layout</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Merancang tata letak dashboard yang
+                                bersih di Figma agar mudah dipahami pengguna.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-4 rounded-2xl bg-lavender-50/70 border border-lavender-100 flex flex-col justify-between hover:border-lavender-300 transition duration-300">
+                        <div>
+                            <span
+                                class="w-8 h-8 rounded-full bg-lavender-200/80 text-lavender-600 font-display font-bold text-sm flex items-center justify-center shrink-0 mb-3">03</span>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-lavender-900">Fullstack
+                                Development</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Mengimplementasikan logika transaksi
+                                otomatis, validasi form, dan antarmuka responsif.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-4 rounded-2xl bg-lavender-50/70 border border-lavender-100 flex flex-col justify-between hover:border-lavender-300 transition duration-300">
+                        <div>
+                            <span
+                                class="w-8 h-8 rounded-full bg-lavender-200/80 text-lavender-600 font-display font-bold text-sm flex items-center justify-center shrink-0 mb-3">04</span>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-lavender-900">Validation &
+                                Deploy</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Menguji akurasi perhitungan data,
+                                responsivitas mobile, dan deployment ke cloud.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ABOUT & EXPERIENCE SUMMARY -->
+        <section id="about" class="pb-14">
+            <div
+                class="bg-white rounded-3xl border border-lavender-200/80 p-6 sm:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <p class="text-xs font-bold tracking-widest uppercase text-lavender-500">About Me</p>
+                    <h2 class="font-display text-3xl font-bold uppercase text-lavender-900">Ketelitian Data Bertemu
+                        Pengembangan Web</h2>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                        Saya adalah mahasiswa <strong>S1 Ilmu Komputer di Universitas PGRI Wiranegara</strong> yang
+                        berfokus pada pengembangan aplikasi web operasional. Pengalaman sebagai <em>Quality Control</em>
+                        serta PKL pengolahan data dan pengembangan aplikasi internal di <strong>Badan Pusat Statistik
+                            (BPS)</strong> membentuk kebiasaan kerja yang teliti terhadap validasi data dan keandalan
+                        sistem.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-5 space-y-3">
+                    <div class="p-4 rounded-2xl bg-lavender-50 border border-lavender-100">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-lavender-500">Sep – Nov 2026</p>
+                        <p class="text-sm font-bold text-lavender-900 mt-0.5">Mahasiswa PKL — Badan Pusat Statistik
+                            (BPS)</p>
+                        <p class="text-xs text-gray-600 mt-1">Pengembangan web internal, validasi data survei, dan
+                            layout publikasi statistik.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-lavender-50 border border-lavender-100">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-lavender-500">Jul 2022 – Okt 2024
+                        </p>
+                        <p class="text-sm font-bold text-lavender-900 mt-0.5">Quality Control — PT Semi Intan Sejahtera
+                        </p>
+                        <p class="text-xs text-gray-600 mt-1">Inspeksi mutu standar produksi pangan dan pencatatan
+                            laporan kontrol harian.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FOOTER CTA BANNER -->
+        <footer id="contact" class="pb-12">
+            <div
+                class="bg-gradient-to-r from-lavender-300/80 via-lavender-200 to-lavender-300/70 rounded-3xl border border-lavender-300/60 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold uppercase leading-none text-lavender-900">
+                        Let's Create<br />Something <span class="text-lavender-600">Great</span>
+                    </h2>
+                    <p class="text-sm text-gray-700 mt-3 max-w-md">
+                        Terbuka untuk peluang kerja Web Developer maupun kolaborasi pembuatan sistem informasi berbasis
+                        web.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:items-end gap-3 w-full md:w-auto">
+                    <button onclick="copyEmail()"
+                        class="inline-flex items-center justify-center gap-2 bg-lavender-900 hover:bg-lavender-500 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3.5 rounded-full transition shadow-sm">
+                        <span id="copy-text">andinikp2004@gmail.com</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </button>
+
+                    <div
+                        class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-lavender-900 pt-1">
+                        <a href="https://github.com/andinikp" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-lavender-600 underline underline-offset-4">GitHub</a>
+                        <span>•</span>
+                        <a href="https://instagram.com/andinikarn" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-lavender-600 underline underline-offset-4">Instagram</a>
+                        <span>•</span>
+                        <a href="./cv/CV-Andini-Karina-Putri.pdf" download
+                            class="hover:text-lavender-600 underline underline-offset-4">Resume PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-gray-500 mt-6">
+                © 2026 Andini Karina Putri.
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- CASE STUDY MODAL -->
+    <div id="case-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-lavender-900/50 backdrop-blur-sm p-4">
+        <div
+            class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-xl border border-lavender-200 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-start justify-between gap-4 pb-4 border-b border-lavender-100">
+                <div>
+                    <span id="modal-tag" class="text-[11px] font-bold uppercase tracking-wider text-lavender-500">Case
+                        Study</span>
+                    <h3 id="modal-title"
+                        class="font-display text-2xl sm:text-3xl font-bold uppercase text-lavender-900 mt-1">Judul
+                        Proyek</h3>
+                </div>
+                <button onclick="closeCaseStudy()"
+                    class="w-9 h-9 rounded-full bg-lavender-100 hover:bg-lavender-200 text-lavender-900 flex items-center justify-center font-bold">✕</button>
+            </div>
+
+            <div id="modal-body" class="py-5 space-y-4 text-sm text-gray-600 leading-relaxed"></div>
+
+            <div class="pt-4 border-t border-lavender-100 flex justify-end gap-3">
+                <button onclick="closeCaseStudy()"
+                    class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-lavender-200 hover:bg-lavender-50">Tutup</button>
+                <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-lavender-500 hover:bg-lavender-600 text-white">Buka
+                    Live App →</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Foto Profil saat diklik (mendukung mobile tap & desktop)
+        let showingSecond = false;
+        function toggleProfilePhoto() {
+            const p1 = document.getElementById('photo-primary');
+            const p2 = document.getElementById('photo-secondary');
+            showingSecond = !showingSecond;
+            if (showingSecond) {
+                p1.classList.add('opacity-0', 'scale-95');
+                p2.classList.remove('opacity-0', 'translate-y-2');
+            } else {
+                p1.classList.remove('opacity-0', 'scale-95');
+                p2.classList.add('opacity-0', 'translate-y-2');
+            }
+        }
+
+        // One-Click Copy Email
+        function copyEmail() {
+            navigator.clipboard.writeText('andinikp2004@gmail.com');
+            const label = document.getElementById('copy-text');
+            label.textContent = 'Email Tersalin!';
+            setTimeout(() => { label.textContent = 'andinikp2004@gmail.com'; }, 2000);
+        }
+
+        // Data Studi Kasus Proyek
+        const caseStudies = {
+            rajutin: {
+                tag: 'Inventory & Financial Management',
+                title: 'Rajut.in — Sistem Stok Bahan & Keuangan',
+                link: 'https://rajutin-seven.vercel.app/',
+                content: `
+          <div>
+            <h4 class="font-bold text-lavender-900 uppercase text-xs tracking-wider mb-1">1. Latar Belakang Masalah</h4>
+            <p>Usaha kerajinan rajut memiliki alur produksi yang melibatkan pesanan reguler maupun pesanan custom dengan kebutuhan bahan baku beragam. Pencatatan terpisah berisiko menyebabkan selisih stok bahan dan kesulitan menghitung laba bersih setelah biaya produksi.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-lavender-900 uppercase text-xs tracking-wider mb-1">2. Modul & Fitur Utama</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Dashboard Ringkasan Bisnis:</strong> Menampilkan Total Pendapatan, Laba Bersih setelah biaya produksi, Total Pesanan, Total Pelanggan, serta indikator <em>Stok Hampir Habis</em> secara real-time.</li>
+              <li><strong>Manajemen Pesanan & Pesanan Custom:</strong> Memisahkan pelacakan pesanan siap stok dengan pesanan khusus yang memerlukan pemantauan progres produksi.</li>
+              <li><strong>Kontrol Stok Bahan, Laporan & Insight Bisnis:</strong> Peringatan otomatis saat bahan baku menipis, pencatatan arus keuangan, serta grafik produk terlaris dan tren penjualan bulanan.</li>
+            </ul>
+          </div>
+        `
+            },
+            absensi: {
+                tag: 'Attendance Automation System',
+                title: 'Sistem Absensi QR Code Mahasiswa',
+                link: 'https://sistem-absensi-qr.vercel.app/',
+                content: `
+          <div>
+            <h4 class="font-bold text-lavender-900 uppercase text-xs tracking-wider mb-1">1. Latar Belakang Masalah</h4>
+            <p>Pencatatan kehadiran mahasiswa secara manual memakan waktu saat perkuliahan/kegiatan berlangsung serta menyulitkan rekapitulasi status kehadiran berdasarkan program studi dan angkatan.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-lavender-900 uppercase text-xs tracking-wider mb-1">2. Modul & Fitur Utama</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Pemindaian QR Code Cepat:</strong> Modul <em>Scan Absensi</em> untuk mencatat status kehadiran secara otomatis dan meminimalkan antrean.</li>
+              <li><strong>Manajemen Data Master Terstruktur:</strong> Pengelolaan terpusat untuk Data Mahasiswa, Master Program Studi, dan Master Angkatan.</li>
+              <li><strong>Monitoring & Rekapitulasi Harian:</strong> Ringkasan status Hadir, Tidak Hadir, Izin, dan Sakit secara real-time lengkap dengan pengelompokan laporan per Prodi dan Angkatan.</li>
+            </ul>
+          </div>
+        `
+            }
+        };
+
+        function openCaseStudy(key) {
+            const data = caseStudies[key];
+            document.getElementById('modal-tag').textContent = data.tag;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-body').innerHTML = data.content;
+            document.getElementById('modal-link').href = data.link;
+            const modal = document.getElementById('case-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCaseStudy() {
+            const modal = document.getElementById('case-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Auto-detect icon fallback (.png, .svg, .webp, .jpg)
+        function handleIconError(img) {
+            if (!img.dataset.step) img.dataset.step = '0';
+            const currentExt = img.src.split('.').pop().toLowerCase();
+            const exts = ['png', 'svg', 'webp', 'jpg'].filter(e => e !== currentExt);
+            let step = parseInt(img.dataset.step);
+            if (step < exts.length) {
+                const nextExt = exts[step];
+                img.dataset.step = (step + 1).toString();
+                img.src = img.src.replace(/\.[^/.]+$/, '.' + nextExt);
+            } else {
+                img.onerror = null;
+            }
+        }
+    </script>
+</body>
+
+</html>
