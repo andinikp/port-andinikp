@@ -138,10 +138,12 @@
                 🌸
             </a>
 
-            <!-- Desktop Nav Items: HOME, ABOUT, SKILL, PROJECT, CONTACT -->
-            <nav class="hidden md:flex items-center gap-5 sm:gap-7 text-xs font-bold tracking-widest uppercase text-dark-950/80">
+            <!-- Desktop Nav Items -->
+            <nav class="hidden md:flex items-center gap-5 sm:gap-6 text-xs font-bold tracking-widest uppercase text-dark-950/80">
                 <a href="#home" class="hover:text-sakura-600 transition py-1">Home</a>
                 <a href="#about" class="hover:text-sakura-600 transition py-1">About</a>
+                <a href="#experience" class="hover:text-sakura-600 transition py-1">Experience</a>
+                <a href="#education" class="hover:text-sakura-600 transition py-1">Education</a>
                 <a href="#skill" class="hover:text-sakura-600 transition py-1">Skill</a>
                 <a href="#project" class="hover:text-sakura-600 transition py-1">Project</a>
                 <a href="#contact" class="hover:text-sakura-600 transition py-1">Contact</a>
@@ -172,6 +174,8 @@
         <nav class="flex flex-col space-y-3 text-sm font-bold tracking-widest uppercase text-slate-200">
             <a href="#home" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2 border-b border-dark-800">Home</a>
             <a href="#about" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2 border-b border-dark-800">About</a>
+            <a href="#experience" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2 border-b border-dark-800">Experience</a>
+            <a href="#education" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2 border-b border-dark-800">Education</a>
             <a href="#skill" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2 border-b border-dark-800">Skill</a>
             <a href="#project" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2 border-b border-dark-800">Project</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2">Contact</a>
@@ -466,169 +470,155 @@
             </div>
         </section>
 
-        <!-- EXPERIENCE & EDUCATION (Matching Certificates & Education layout) -->
-        <section class="space-y-8">
-            <div class="text-center space-y-1">
-                <h2 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white tracking-tight">
-                    🌸 Experience & Education 🌸
-                </h2>
+        <!-- EXPERIENCE & EDUCATION — 2-column compact timeline -->
+        <section class="space-y-10 scroll-mt-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-            </div>
+                <!-- KOLOM KIRI: EXPERIENCE -->
+                <div id="experience" class="scroll-mt-24 space-y-4">
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight">
+                        🌸 Experience
+                    </h2>
+                    <div class="space-y-3">
 
-            <!-- Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1: BPS Magang -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">2026</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Magang / PKL</span>
+                        <!-- BPS Magang -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat Statistik</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2026</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">Mahasiswa PKL — Pengolahan Data & Web</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Web Internal</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Data Validation</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">Badan Pusat Statistik</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">Mahasiswa PKL Pengolahan Data & Web</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Membantu pengembangan sistem internal, validasi akurasi data survei statistik, dan penataan layout publikasi.
-                        </p>
-                    </div>
 
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Web Internal</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Data Validation</span>
+                        <!-- PT Semi Intan Sejahtera -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan Sejahtera</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2022 – 2024</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">Quality Control (QC)</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">SOP Compliance</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Daily Inspection</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Catar AKMIL -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">Catar AKMIL</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2022</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">Akademi Militer — Seleksi Calon Taruna</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Disiplin</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Kepemimpinan</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Caba AD -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">Caba AD</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2022</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">TNI Angkatan Darat — Seleksi Calon Bintara</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Bela Negara</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Ketahanan</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Card 2: PT Semi Intan Sejahtera -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">2022 – 2024</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Kerja Profesional</span>
+                <!-- KOLOM KANAN: EDUCATION -->
+                <div id="education" class="scroll-mt-24 space-y-4">
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight">
+                        🌸 Education
+                    </h2>
+                    <div class="space-y-3">
+
+                        <!-- S1 Universitas PGRI Wiranegara -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">S1 Ilmu Komputer</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2022 – Skrg</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">Universitas PGRI Wiranegara</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Software Eng.</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Relational DB</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">PT Semi Intan Sejahtera</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">Quality Control (QC)</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Mengawasi kepatuhan standar mutu lini produksi pangan dan mencatat laporan inspeksi harian dengan ketelitian tinggi.
-                        </p>
-                    </div>
 
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">SOP Compliance</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Daily Inspection</span>
-                    </div>
-                </div>
-
-                <!-- Card: Catar AKMIL 2022 -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">2022</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Pengalaman</span>
+                        <!-- SMA Negeri 1 Grati -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMA Negeri 1 Grati</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2019 – 2022</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">Pasuruan, Jawa Timur — Jurusan IPA</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">IPA</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Analisis</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">Catar AKMIL</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">Akademi Militer — Seleksi Calon Taruna</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Mengikuti seleksi penerimaan Calon Taruna Akademi Militer TNI AD. Melatih kedisiplinan, ketahanan fisik, dan mental kepemimpinan.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Disiplin</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Kepemimpinan</span>
-                    </div>
-                </div>
 
-                <!-- Card: Caba AD 2022 -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">2022</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Pengalaman</span>
+                        <!-- SMP Negeri 1 Rejoso -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2016 – 2019</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">Pasuruan, Jawa Timur</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Akademik</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Karakter</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">Caba AD</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">TNI Angkatan Darat — Seleksi Calon Bintara</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Mengikuti seleksi penerimaan Calon Bintara TNI Angkatan Darat. Menempa mental, fisik, dan nilai-nilai bela negara.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Bela Negara</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Ketahanan</span>
-                    </div>
-                </div>
 
-                <!-- Card 3: Universitas PGRI Wiranegara -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">Mahasiswa Aktif</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Pendidikan</span>
+                        <!-- SDN Rejosolor I -->
+                        <div class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center justify-between gap-2 flex-wrap">
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">SDN Rejosolor I</h3>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2010 – 2016</span>
+                                </div>
+                                <p class="text-xs text-sakura-300 mt-0.5">Pasuruan, Jawa Timur</p>
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Dasar</span>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Fondasi</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">S1 Ilmu Komputer</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">Universitas PGRI Wiranegara</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Mempelajari rekayasa perangkat lunak, perancangan basis data relasional, pemrograman web, dan analisis sistem.
-                        </p>
-                    </div>
 
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Software Eng.</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Relational DB</span>
-                    </div>
-                </div>
-
-                <!-- Card 4: SMA Negeri 1 Grati -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">2019 – 2022</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Pendidikan</span>
-                        </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">SMA Negeri 1 Grati</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">Pasuruan, Jawa Timur</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Jurusan IPA. Mengembangkan kemampuan analisis, logika, dan dasar-dasar ilmu pengetahuan alam.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">IPA</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Analisis</span>
-                    </div>
-                </div>
-
-                <!-- Card 5: SMP Negeri 1 Rejoso -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">2016 – 2019</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Pendidikan</span>
-                        </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">SMP Negeri 1 Rejoso</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">Pasuruan, Jawa Timur</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Pendidikan menengah pertama dengan pengembangan karakter dan kemampuan akademik dasar.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Akademik</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Karakter</span>
-                    </div>
-                </div>
-
-                <!-- Card 6: SDN Rejosolor I -->
-                <div class="p-6 rounded-3xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/60 shadow-neon-card transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-mono font-bold text-sakura-400">2010 – 2016</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">Pendidikan</span>
-                        </div>
-                        <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide">SDN Rejosolor I</h3>
-                        <p class="text-xs text-sakura-300 mt-0.5 font-medium">Pasuruan, Jawa Timur</p>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                            Pendidikan dasar yang menjadi fondasi awal dalam membentuk pola pikir dan semangat belajar.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-dark-800 mt-4">
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Dasar</span>
-                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300">Fondasi</span>
                     </div>
                 </div>
 
