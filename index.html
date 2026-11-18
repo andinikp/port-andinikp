@@ -173,30 +173,30 @@
     <!-- 0. FLOATING TOP PILL NAVBAR -->
     <div class="fixed top-5 inset-x-0 z-50 flex justify-center px-4">
         <header
-            class="bg-sakura-100/95 backdrop-blur-md text-dark-950 rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(255,45,133,0.3)] border border-white/60 max-w-4xl lg:max-w-5xl w-full transition-all duration-300">
+            class="bg-sakura-100/95 backdrop-blur-md text-dark-950 rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(255,45,133,0.3)] border border-white/60 max-w-4xl lg:max-w-5xl w-full">
             <!-- Brand Logo -->
             <a href="#home"
                 class="font-display text-lg sm:text-xl font-black tracking-wider text-dark-950 hover:text-sakura-600 transition flex items-center gap-1.5 shrink-0">
                 🌸
             </a>
 
-            <!-- Desktop Nav Items -->
+            <!-- Desktop Nav Items with Stable Widths to Prevent Layout Shift -->
             <nav
-                class="hidden md:flex items-center gap-2.5 lg:gap-5 text-[10.5px] lg:text-xs font-bold tracking-wider uppercase text-dark-950/80">
-                <a href="#home" class="hover:text-sakura-600 transition py-1" data-id="Home" data-en="Home">Home</a>
-                <a href="#about" class="hover:text-sakura-600 transition py-1" data-id="Tentang" data-en="About">Tentang</a>
-                <a href="#experience" class="hover:text-sakura-600 transition py-1" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
-                <a href="#education" class="hover:text-sakura-600 transition py-1" data-id="Pendidikan" data-en="Education">Pendidikan</a>
-                <a href="#skill" class="hover:text-sakura-600 transition py-1" data-id="Skill" data-en="Skill">Skill</a>
-                <a href="#project" class="hover:text-sakura-600 transition py-1" data-id="Proyek" data-en="Project">Proyek</a>
-                <a href="#contact" class="hover:text-sakura-600 transition py-1" data-id="Kontak" data-en="Contact">Kontak</a>
+                class="hidden md:flex items-center gap-2 lg:gap-4 text-[10.5px] lg:text-xs font-bold tracking-wider uppercase text-dark-950/80">
+                <a href="#home" class="hover:text-sakura-600 transition py-1 min-w-[42px] text-center inline-block" data-id="Home" data-en="Home">Home</a>
+                <a href="#about" class="hover:text-sakura-600 transition py-1 min-w-[56px] text-center inline-block" data-id="Tentang" data-en="About">Tentang</a>
+                <a href="#experience" class="hover:text-sakura-600 transition py-1 min-w-[86px] text-center inline-block" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
+                <a href="#education" class="hover:text-sakura-600 transition py-1 min-w-[76px] text-center inline-block" data-id="Pendidikan" data-en="Education">Pendidikan</a>
+                <a href="#skill" class="hover:text-sakura-600 transition py-1 min-w-[42px] text-center inline-block" data-id="Skill" data-en="Skill">Skill</a>
+                <a href="#project" class="hover:text-sakura-600 transition py-1 min-w-[56px] text-center inline-block" data-id="Proyek" data-en="Project">Proyek</a>
+                <a href="#contact" class="hover:text-sakura-600 transition py-1 min-w-[56px] text-center inline-block" data-id="Kontak" data-en="Contact">Kontak</a>
             </nav>
 
-            <!-- Right Actions: Language Selector + Hire Me Button -->
+            <!-- Right Actions: Language Selector + Hire Me Button (Locked Widths) -->
             <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
                 <!-- Language Toggle (Segmented Pill ID | EN) -->
                 <button type="button" onclick="toggleLang()" id="lang-btn"
-                    class="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-white/70 hover:bg-white text-dark-950 transition border border-dark-950/10 shadow-xs shrink-0 cursor-pointer"
+                    class="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-white/70 hover:bg-white text-dark-950 transition border border-dark-950/10 shadow-xs shrink-0 cursor-pointer w-[64px] justify-center"
                     title="Ganti Bahasa / Switch Language">
                     <span id="lang-badge-id"
                         class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 bg-sakura-500 text-white shadow-xs">ID</span>
@@ -205,7 +205,7 @@
                 </button>
 
                 <a href="#contact"
-                    class="bg-gradient-to-r from-sakura-500 to-sakura-600 hover:from-sakura-600 hover:to-sakura-700 text-white text-[10.5px] sm:text-xs font-bold tracking-wider uppercase px-3.5 sm:px-5 py-2 rounded-full shadow-[0_2px_12px_rgba(255,45,133,0.5)] transition duration-300 shrink-0 whitespace-nowrap"
+                    class="bg-gradient-to-r from-sakura-500 to-sakura-600 hover:from-sakura-600 hover:to-sakura-700 text-white text-[10.5px] sm:text-xs font-bold tracking-wider uppercase py-2 rounded-full shadow-[0_2px_12px_rgba(255,45,133,0.5)] transition duration-300 shrink-0 w-[108px] sm:w-[118px] text-center flex items-center justify-center whitespace-nowrap"
                     data-id="Rekrut Saya" data-en="Hire Me">
                     Rekrut Saya
                 </a>
@@ -352,21 +352,6 @@
                         <div
                             class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-dark-950/80 to-transparent pointer-events-none">
                         </div>
-                    </div>
-
-                    <!-- Floating Sakura Accent Top-Right -->
-                    <div
-                        class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-dark-900/90 border border-sakura-400/80 shadow-[0_0_15px_rgba(255,45,133,0.6)] flex items-center justify-center text-sm animate-bounce"
-                        style="animation-duration: 3s;">
-                        🌸
-                    </div>
-
-                    <!-- Floating Status Pill Bottom-Left -->
-                    <div
-                        class="absolute -bottom-3 -left-3 bg-dark-900/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-sakura-500/60 shadow-[0_0_15px_rgba(255,45,133,0.4)] flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
-                        <span class="text-[10px] font-mono font-bold tracking-wider uppercase text-slate-200"
-                            data-id="Tersedia" data-en="Available">Tersedia</span>
                     </div>
                 </div>
 
@@ -1558,15 +1543,36 @@
         }
 
         // ── LANGUAGE TOGGLE ──────────────────────────────────────
-        function applyLang(lang) {
+        function applyLang(lang, isInitial = false) {
             currentLang = lang;
             localStorage.setItem('lang', lang);
 
-            // Update all data-id/data-en elements
-            document.querySelectorAll('[data-id][data-en]').forEach(el => {
-                el.textContent = lang === 'id' ? el.dataset.id : el.dataset.en;
+            const translatable = document.querySelectorAll('[data-id][data-en]');
+
+            if (isInitial) {
+                translatable.forEach(el => {
+                    el.textContent = lang === 'id' ? el.dataset.id : el.dataset.en;
+                });
+                updateBadgesAndMeta(lang);
+                return;
+            }
+
+            // Smooth cross-fade transition without layout shift
+            translatable.forEach(el => {
+                el.style.transition = 'opacity 150ms ease';
+                el.style.opacity = '0';
             });
 
+            setTimeout(() => {
+                translatable.forEach(el => {
+                    el.textContent = lang === 'id' ? el.dataset.id : el.dataset.en;
+                    el.style.opacity = '1';
+                });
+                updateBadgesAndMeta(lang);
+            }, 150);
+        }
+
+        function updateBadgesAndMeta(lang) {
             // Update desktop segmented language pill (ID | EN)
             const badgeId = document.getElementById('lang-badge-id');
             const badgeEn = document.getElementById('lang-badge-en');
@@ -1605,12 +1611,12 @@
         }
 
         function toggleLang() {
-            applyLang(currentLang === 'id' ? 'en' : 'id');
+            applyLang(currentLang === 'id' ? 'en' : 'id', false);
         }
 
         // Apply on load
         document.addEventListener('DOMContentLoaded', () => {
-            applyLang(currentLang);
+            applyLang(currentLang, true);
         });
     </script>
 </body>
