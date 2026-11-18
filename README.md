@@ -74,8 +74,7 @@ Aplikasi presensi modern untuk menggantikan absensi manual yang rawan antrean da
 
 ### 🔧 Alat Pendukung & Infrastruktur
 - **GitHub** — Version control system (Git) dan kolaborasi repositori.
-- **Cisco Packet Tracer** — Simulasi topologi jaringan komputer dan routing dasar.
-- **Antigravity IDE** — Lingkungan pengembangan modern berbasis AI.
+- **Cisco Packet Tracer** — Simulasi topologi jaringan komputer dan konfigurasi routing dasar.
 - **Microsoft Word** — Penyusunan dokumen teknis, SOP, dan laporan akademik.
 
 ---
