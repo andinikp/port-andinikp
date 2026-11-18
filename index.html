@@ -183,13 +183,13 @@
             <!-- Desktop Nav Items -->
             <nav
                 class="hidden md:flex items-center gap-3 lg:gap-5 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-dark-950/80">
-                <a href="#home" class="hover:text-sakura-600 transition py-1" data-id="Home" data-en="Home">Home</a>
-                <a href="#about" class="hover:text-sakura-600 transition py-1" data-id="Tentang" data-en="About">About</a>
-                <a href="#experience" class="hover:text-sakura-600 transition py-1" data-id="Pengalaman" data-en="Experience">Experience</a>
-                <a href="#education" class="hover:text-sakura-600 transition py-1" data-id="Pendidikan" data-en="Education">Education</a>
-                <a href="#skill" class="hover:text-sakura-600 transition py-1" data-id="Skill" data-en="Skill">Skill</a>
-                <a href="#project" class="hover:text-sakura-600 transition py-1" data-id="Proyek" data-en="Project">Project</a>
-                <a href="#contact" class="hover:text-sakura-600 transition py-1" data-id="Kontak" data-en="Contact">Contact</a>
+                <a href="#home" class="hover:text-sakura-600 transition py-1">Home</a>
+                <a href="#about" class="hover:text-sakura-600 transition py-1">About</a>
+                <a href="#experience" class="hover:text-sakura-600 transition py-1">Experience</a>
+                <a href="#education" class="hover:text-sakura-600 transition py-1">Education</a>
+                <a href="#skill" class="hover:text-sakura-600 transition py-1">Skill</a>
+                <a href="#project" class="hover:text-sakura-600 transition py-1">Project</a>
+                <a href="#contact" class="hover:text-sakura-600 transition py-1">Contact</a>
             </nav>
 
             <!-- Right Actions: Language Selector + Hire Me Button -->
@@ -229,18 +229,18 @@
         class="hidden fixed top-20 inset-x-4 z-40 md:hidden bg-dark-900/95 backdrop-blur-xl border border-sakura-500/30 rounded-3xl p-6 shadow-2xl text-center space-y-4">
         <nav class="flex flex-col space-y-3 text-sm font-bold tracking-widest uppercase text-slate-200">
             <a href="#home" onclick="toggleMobileMenu()"
-                class="hover:text-sakura-400 py-2 border-b border-dark-800" data-id="Home" data-en="Home">Home</a>
+                class="hover:text-sakura-400 py-2 border-b border-dark-800">Home</a>
             <a href="#about" onclick="toggleMobileMenu()"
-                class="hover:text-sakura-400 py-2 border-b border-dark-800" data-id="Tentang" data-en="About">About</a>
+                class="hover:text-sakura-400 py-2 border-b border-dark-800">About</a>
             <a href="#experience" onclick="toggleMobileMenu()"
-                class="hover:text-sakura-400 py-2 border-b border-dark-800" data-id="Pengalaman" data-en="Experience">Experience</a>
+                class="hover:text-sakura-400 py-2 border-b border-dark-800">Experience</a>
             <a href="#education" onclick="toggleMobileMenu()"
-                class="hover:text-sakura-400 py-2 border-b border-dark-800" data-id="Pendidikan" data-en="Education">Education</a>
+                class="hover:text-sakura-400 py-2 border-b border-dark-800">Education</a>
             <a href="#skill" onclick="toggleMobileMenu()"
-                class="hover:text-sakura-400 py-2 border-b border-dark-800" data-id="Skill" data-en="Skill">Skill</a>
+                class="hover:text-sakura-400 py-2 border-b border-dark-800">Skill</a>
             <a href="#project" onclick="toggleMobileMenu()"
-                class="hover:text-sakura-400 py-2 border-b border-dark-800" data-id="Proyek" data-en="Project">Project</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2" data-id="Kontak" data-en="Contact">Contact</a>
+                class="hover:text-sakura-400 py-2 border-b border-dark-800">Project</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-sakura-400 py-2">Contact</a>
         </nav>
         <div class="pt-3 border-t border-dark-800 flex items-center justify-center gap-3">
             <span class="text-xs text-slate-400 font-mono">Bahasa:</span>
@@ -262,7 +262,7 @@
             <div class="lg:col-span-7 space-y-6 text-left">
                 <h1
                     class="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase leading-none">
-                    🌸 Hi, I'm <span
+                    <span data-id="🌸 Halo, Saya " data-en="🌸 Hi, I'm ">🌸 Halo, Saya </span><span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-sakura-300 via-sakura-400 to-sakura-500">ANDINI</span>
                     🌸
                 </h1>
@@ -270,16 +270,18 @@
                 <!-- Typewriter Subtitle -->
                 <div
                     class="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-sakura-400 flex items-center">
-                    <span id="typewriter-text">I'm a Web Developer</span>
+                    <span id="typewriter-text">Web Developer</span>
                     <span class="cursor-blink text-sakura-300 font-normal">|</span>
                 </div>
 
-                <p class="text-slate-400 text-sm sm:text-base max-w-xl leading-relaxed font-normal" data-id="Mahasiswa S1 Ilmu Komputer yang berfokus merancang aplikasi web operasional terstruktur, responsif, dan mudah digunakan untuk manajemen inventaris, pencatatan keuangan, dan presensi digital." data-en="Computer Science undergraduate focused on building structured, responsive, and user-friendly web applications for inventory management, financial recording, and digital attendance.">
+                <p class="text-slate-400 text-sm sm:text-base max-w-xl leading-relaxed font-normal"
+                    data-id="Mahasiswa S1 Ilmu Komputer yang berfokus merancang aplikasi web operasional terstruktur, responsif, dan mudah digunakan untuk manajemen inventaris, pencatatan keuangan, dan presensi digital."
+                    data-en="Computer Science undergraduate focused on designing structured, responsive, and user-friendly operational web applications for inventory management, financial recording, and digital attendance.">
                     Mahasiswa S1 Ilmu Komputer yang berfokus merancang aplikasi web operasional terstruktur, responsif,
                     dan mudah digunakan untuk manajemen inventaris, pencatatan keuangan, dan presensi digital.
                 </p>
 
-                <!-- Actions: Download CV + Social Icons (Matching reference layout) -->
+                <!-- Actions: Download CV + Social Icons -->
                 <div class="flex flex-wrap items-center gap-4 pt-2">
                     <a href="./cv/CV-Andini-Karina-Putri.pdf" download
                         class="inline-flex items-center gap-2.5 bg-gradient-to-r from-sakura-500 via-sakura-500 to-sakura-600 hover:from-sakura-600 hover:to-sakura-700 text-white text-xs font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(255,45,133,0.5)] transition duration-300 transform hover:scale-[1.02]">
@@ -287,7 +289,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
-                        <span data-id="Unduh CV" data-en="Download CV">Download CV</span>
+                        <span data-id="Unduh CV" data-en="Download CV">Unduh CV</span>
                     </a>
 
                     <!-- Social Circle Buttons (GitHub, Instagram, Email) -->
@@ -310,7 +312,7 @@
                         </a>
 
                         <button onclick="copyEmail()" title="Salin Email"
-                            class="w-10 h-10 rounded-full bg-dark-850 border border-sakura-500/30 hover:border-sakura-500 hover:bg-sakura-500/20 text-slate-300 hover:text-white flex items-center justify-center transition duration-300 shadow-sm">
+                            class="w-10 h-10 rounded-full bg-dark-850 border border-sakura-500/30 hover:border-sakura-500 hover:bg-sakura-500/20 text-slate-300 hover:text-white flex items-center justify-center transition duration-300 shadow-sm cursor-pointer">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -324,19 +326,24 @@
             <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
 
                 <!-- Outer glow aura -->
-                <div class="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-sakura-500/35 via-purple-700/20 to-transparent blur-[80px] -z-10 animate-glow-bg"></div>
+                <div
+                    class="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-sakura-500/35 via-purple-700/20 to-transparent blur-[80px] -z-10 animate-glow-bg">
+                </div>
 
                 <!-- Portrait wrapper -->
                 <div class="relative flex items-center justify-center">
 
                     <!-- Rotating dashed neon ring (outermost) -->
-                    <div class="absolute w-[300px] h-[300px] sm:w-[340px] sm:h-[340px] rounded-full border-2 border-dashed border-sakura-500/40 animate-spin" style="animation-duration:12s;"></div>
+                    <div class="absolute w-[300px] h-[300px] sm:w-[340px] sm:h-[340px] rounded-full border-2 border-dashed border-sakura-500/40 animate-spin"
+                        style="animation-duration:12s;"></div>
 
                     <!-- Rotating solid ring (middle, reverse) -->
-                    <div class="absolute w-[260px] h-[260px] sm:w-[295px] sm:h-[295px] rounded-full border border-sakura-400/60 shadow-[0_0_30px_rgba(255,45,133,0.4)] animate-spin" style="animation-duration:8s;animation-direction:reverse;"></div>
+                    <div class="absolute w-[260px] h-[260px] sm:w-[295px] sm:h-[295px] rounded-full border border-sakura-400/60 shadow-[0_0_30px_rgba(255,45,133,0.4)] animate-spin"
+                        style="animation-duration:8s;animation-direction:reverse;"></div>
 
                     <!-- Sakura dot markers on outer ring -->
-                    <div class="absolute w-[300px] h-[300px] sm:w-[340px] sm:h-[340px] animate-spin" style="animation-duration:12s;">
+                    <div class="absolute w-[300px] h-[300px] sm:w-[340px] sm:h-[340px] animate-spin"
+                        style="animation-duration:12s;">
                         <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-base">🌸</span>
                         <span class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 text-base">🌸</span>
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 text-base">🌸</span>
@@ -347,25 +354,35 @@
                     <div class="relative w-[220px] h-[220px] sm:w-[250px] sm:h-[250px] overflow-hidden shadow-[0_0_60px_rgba(255,45,133,0.5)]"
                         style="clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);">
                         <!-- Neon pink border layer -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-sakura-400 via-sakura-600 to-purple-700 z-0"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-sakura-400 via-sakura-600 to-purple-700 z-0">
+                        </div>
                         <!-- Photo -->
-                        <img src="./images/profil-1.png" alt="Andini Karina Putri"
-                            class="absolute inset-[3px] z-10 w-[calc(100%-6px)] h-[calc(100%-6px)] object-cover object-top"
+                        <img id="photo-primary" src="./images/profil-1.png" alt="Andini Karina Putri"
+                            class="absolute inset-[3px] z-10 w-[calc(100%-6px)] h-[calc(100%-6px)] object-cover object-top transition-all duration-500"
                             style="clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);" />
                     </div>
 
                     <!-- Corner accent dots -->
-                    <div class="absolute w-3 h-3 rounded-full bg-sakura-400 shadow-[0_0_12px_#FF2D85] top-[18%] right-[14%]"></div>
-                    <div class="absolute w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_10px_#a855f7] bottom-[18%] left-[14%]"></div>
-                    <div class="absolute w-2 h-2 rounded-full bg-sakura-300 shadow-[0_0_8px_#FF2D85] top-[50%] left-[8%]"></div>
+                    <div
+                        class="absolute w-3 h-3 rounded-full bg-sakura-400 shadow-[0_0_12px_#FF2D85] top-[18%] right-[14%]">
+                    </div>
+                    <div
+                        class="absolute w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_10px_#a855f7] bottom-[18%] left-[14%]">
+                    </div>
+                    <div
+                        class="absolute w-2 h-2 rounded-full bg-sakura-300 shadow-[0_0_8px_#FF2D85] top-[50%] left-[8%]">
+                    </div>
 
                 </div>
 
                 <!-- Name badge below -->
-                <div class="mt-6 bg-dark-900/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-sakura-500/40 text-center shadow-[0_0_20px_rgba(255,45,133,0.25)]">
-                    <p class="text-xs font-bold tracking-widest uppercase text-sakura-300 flex items-center justify-center gap-2">
+                <div
+                    class="mt-6 bg-dark-900/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-sakura-500/40 text-center shadow-[0_0_20px_rgba(255,45,133,0.25)]">
+                    <p
+                        class="text-xs font-bold tracking-widest uppercase text-sakura-300 flex items-center justify-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-sakura-500 shadow-[0_0_8px_#FF2D85] animate-pulse"></span>
-                        Pasuruan, Jawa Timur
+                        <span data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</span>
                         <span class="w-2 h-2 rounded-full bg-sakura-500 shadow-[0_0_8px_#FF2D85] animate-pulse"></span>
                     </p>
                 </div>
@@ -504,9 +521,9 @@
         <!-- 2. ABOUT ME SECTION (3-Column Layout with Fan/Centerpiece matching image) -->
         <section id="about" class="space-y-8 scroll-mt-24">
             <div class="text-left space-y-1">
-
-                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
-                    🌸 About <span class="text-sakura-400">Me</span> 🌸
+                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight"
+                    data-id="🌸 Tentang Saya 🌸" data-en="🌸 About Me 🌸">
+                    🌸 Tentang Saya 🌸
                 </h2>
             </div>
 
@@ -515,11 +532,15 @@
 
                 <!-- Left: Bio & Stats Grid -->
                 <div class="lg:col-span-4 space-y-6">
-                    <p class="text-slate-300 text-sm leading-relaxed" data-id="Saya adalah mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang berfokus pada pengembangan aplikasi web operasional." data-en="I am a Computer Science undergraduate at Universitas PGRI Wiranegara focused on developing operational web applications.">
+                    <p class="text-slate-300 text-sm leading-relaxed"
+                        data-id="Saya adalah mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang berfokus pada pengembangan aplikasi web operasional."
+                        data-en="I am an undergraduate Computer Science student at Universitas PGRI Wiranegara focused on developing operational web applications.">
                         Saya adalah mahasiswa <strong>S1 Ilmu Komputer di Universitas PGRI Wiranegara</strong> yang
                         berfokus pada pengembangan aplikasi web operasional.
                     </p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-slate-400 text-sm leading-relaxed"
+                        data-id="Pengalaman kerja sebagai Quality Control dan PKL di Badan Pusat Statistik (BPS) menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta keandalan fungsional aplikasi."
+                        data-en="Work experience as Quality Control and internship at the Central Bureau of Statistics (BPS) fostered high attention to detail in data validation, database relations, and application functional reliability.">
                         Pengalaman kerja sebagai <em>Quality Control</em> dan PKL di <strong>Badan Pusat Statistik
                             (BPS)</strong> menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta
                         keandalan fungsional aplikasi.
@@ -529,19 +550,19 @@
                     <div class="grid grid-cols-2 gap-4 pt-2">
                         <div class="p-4 rounded-2xl bg-dark-900/90 border border-sakura-500/20 shadow-neon-card">
                             <p class="font-display text-3xl font-extrabold text-sakura-400">02+</p>
-                            <p class="text-xs text-slate-400 mt-0.5">Live Web Apps</p>
+                            <p class="text-xs text-slate-400 mt-0.5" data-id="Aplikasi Web Rilis" data-en="Live Web Apps">Aplikasi Web Rilis</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-dark-900/90 border border-sakura-500/20 shadow-neon-card">
                             <p class="font-display text-3xl font-extrabold text-sakura-400">12+</p>
-                            <p class="text-xs text-slate-400 mt-0.5">Tech & Tools</p>
+                            <p class="text-xs text-slate-400 mt-0.5" data-id="Teknologi & Tools" data-en="Tech & Tools">Teknologi & Tools</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-dark-900/90 border border-sakura-500/20 shadow-neon-card">
                             <p class="font-display text-3xl font-extrabold text-sakura-400">100%</p>
-                            <p class="text-xs text-slate-400 mt-0.5">Responsive</p>
+                            <p class="text-xs text-slate-400 mt-0.5" data-id="Desain Responsif" data-en="Responsive Design">Desain Responsif</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-dark-900/90 border border-sakura-500/20 shadow-neon-card">
                             <p class="font-display text-3xl font-extrabold text-sakura-400">BPS</p>
-                            <p class="text-xs text-slate-400 mt-0.5">Field Experience</p>
+                            <p class="text-xs text-slate-400 mt-0.5" data-id="Pengalaman Kerja" data-en="Field Experience">Pengalaman Kerja</p>
                         </div>
                     </div>
                 </div>
@@ -604,9 +625,11 @@
                         class="p-5 rounded-2xl bg-dark-900/90 border border-sakura-500/25 hover:border-sakura-500/60 shadow-neon-card transition duration-300">
                         <h3
                             class="font-display text-base font-bold text-sakura-400 uppercase tracking-wider mb-2 flex items-center gap-2">
-                            <span data-id="Filosofi Saya" data-en="My Philosophy">My Philosophy</span>
+                            <span data-id="Filosofi Saya" data-en="My Philosophy">Filosofi Saya</span>
                         </h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal" data-id="Memadukan inspirasi tradisional dengan teknologi modern untuk menciptakan pengalaman web yang unik dan berkinerja tinggi." data-en="Blending traditional inspiration with modern technology to create unique, high-performance web experiences.">
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal"
+                            data-id="Memadukan ketelitian pengolahan data dengan arsitektur web modern untuk menciptakan sistem informasi operasional yang andal, cepat, dan bernilai guna."
+                            data-en="Combining data processing precision with modern web architecture to build reliable, fast, and high-value operational information systems.">
                             Memadukan ketelitian pengolahan data dengan arsitektur web modern untuk menciptakan sistem
                             informasi operasional yang andal, cepat, dan bernilai guna.
                         </p>
@@ -617,9 +640,11 @@
                         class="p-5 rounded-2xl bg-dark-900/90 border border-sakura-500/25 hover:border-sakura-500/60 shadow-neon-card transition duration-300">
                         <h3
                             class="font-display text-base font-bold text-sakura-400 uppercase tracking-wider mb-2 flex items-center gap-2">
-                            <span data-id="Misi Saya" data-en="The Mission">The Mission</span>
+                            <span data-id="Misi Saya" data-en="The Mission">Misi Saya</span>
                         </h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal" data-id="Mengubah ide-ide kompleks menjadi antarmuka yang bersih, piksel-sempurna, dan responsif yang memikat pengguna." data-en="Transforming complex ideas into clean, pixel-perfect, and responsive interfaces that captivate users.">
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal"
+                            data-id="Mengotomatisasi pencatatan manual dan alur transaksi bisnis menjadi aplikasi web yang bersih, terstruktur rapi, serta mudah dioperasikan pengguna."
+                            data-en="Automating manual records and business transaction workflows into clean, neatly structured, and user-friendly web applications.">
                             Mengotomatisasi pencatatan manual dan alur transaksi bisnis menjadi aplikasi web yang
                             bersih, terstruktur rapi, serta mudah dioperasikan pengguna.
                         </p>
@@ -635,8 +660,9 @@
 
                 <!-- KOLOM KIRI: EXPERIENCE -->
                 <div id="experience" class="scroll-mt-24 space-y-4">
-                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight" data-id="🌸 Pengalaman" data-en="🌸 Experience">
-                        🌸 Experience
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight"
+                        data-id="🌸 Pengalaman" data-en="🌸 Experience">
+                        🌸 Pengalaman
                     </h2>
                     <div class="space-y-3">
 
@@ -650,14 +676,18 @@
                                         Statistik</h3>
                                     <span class="text-[10px] font-mono text-sakura-400 shrink-0">2026</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5">Mahasiswa PKL — Pengolahan Data & Web</p>
+                                <p class="text-xs text-sakura-300 mt-0.5"
+                                    data-id="Mahasiswa PKL — Pengolahan Data & Web"
+                                    data-en="Internship Student — Data Processing & Web">
+                                    Mahasiswa PKL — Pengolahan Data & Web
+                                </p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Web
-                                        Internal</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Web Internal" data-en="Internal Web">Web Internal</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Data
-                                        Validation</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Validasi Data" data-en="Data Validation">Validasi Data</span>
                                 </div>
                             </div>
                         </div>
@@ -675,11 +705,11 @@
                                 <p class="text-xs text-sakura-300 mt-0.5">Quality Control (QC)</p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">SOP
-                                        Compliance</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Kepatuhan SOP" data-en="SOP Compliance">Kepatuhan SOP</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Daily
-                                        Inspection</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Inspeksi Harian" data-en="Daily Inspection">Inspeksi Harian</span>
                                 </div>
                             </div>
                         </div>
@@ -688,8 +718,9 @@
 
                 <!-- KOLOM KANAN: EDUCATION -->
                 <div id="education" class="scroll-mt-24 space-y-4">
-                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight" data-id="🌸 Pendidikan" data-en="🌸 Education">
-                        🌸 Education
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight"
+                        data-id="🌸 Pendidikan" data-en="🌸 Education">
+                        🌸 Pendidikan
                     </h2>
                     <div class="space-y-3">
 
@@ -699,18 +730,21 @@
                             <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">S1 Ilmu Komputer
+                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide"
+                                        data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
+                                        S1 Ilmu Komputer
                                     </h3>
-                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2022 – Skrg</span>
+                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0"
+                                        data-id="2022 – Skrg" data-en="2022 – Present">2022 – Skrg</span>
                                 </div>
                                 <p class="text-xs text-sakura-300 mt-0.5">Universitas PGRI Wiranegara</p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Software
-                                        Eng.</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa Perangkat Lunak</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Relational
-                                        DB</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Basis Data Relasional" data-en="Relational Database">Basis Data Relasional</span>
                                 </div>
                             </div>
                         </div>
@@ -725,12 +759,18 @@
                                     </h3>
                                     <span class="text-[10px] font-mono text-sakura-400 shrink-0">2019 – 2022</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5">Pasuruan, Jawa Timur — Jurusan IPA</p>
+                                <p class="text-xs text-sakura-300 mt-0.5"
+                                    data-id="Pasuruan, Jawa Timur — Jurusan IPA"
+                                    data-en="Pasuruan, East Java — Science Major">
+                                    Pasuruan, Jawa Timur — Jurusan IPA
+                                </p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">IPA</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="IPA" data-en="Science">IPA</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Analisis</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Analisis" data-en="Analysis">Analisis</span>
                                 </div>
                             </div>
                         </div>
@@ -745,12 +785,17 @@
                                     </h3>
                                     <span class="text-[10px] font-mono text-sakura-400 shrink-0">2016 – 2019</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5">Pasuruan, Jawa Timur</p>
+                                <p class="text-xs text-sakura-300 mt-0.5"
+                                    data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">
+                                    Pasuruan, Jawa Timur
+                                </p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Akademik</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Akademik" data-en="Academics">Akademik</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Karakter</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Karakter" data-en="Character">Karakter</span>
                                 </div>
                             </div>
                         </div>
@@ -765,12 +810,17 @@
                                     </h3>
                                     <span class="text-[10px] font-mono text-sakura-400 shrink-0">2010 – 2016</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5">Pasuruan, Jawa Timur</p>
+                                <p class="text-xs text-sakura-300 mt-0.5"
+                                    data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">
+                                    Pasuruan, Jawa Timur
+                                </p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Dasar</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Pendidikan Dasar" data-en="Elementary">Pendidikan Dasar</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400">Fondasi</span>
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        data-id="Fondasi" data-en="Foundation">Fondasi</span>
                                 </div>
                             </div>
                         </div>
@@ -784,9 +834,11 @@
         <!-- 3. SKILL SECTION (Sliding Marquee Grid) -->
         <section id="skill" class="space-y-8 scroll-mt-24">
             <div class="text-left space-y-1">
-                <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400">TECH STACK & PERANGKAT
+                <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400"
+                    data-id="TECH STACK & PERANGKAT" data-en="TECH STACK & TOOLS">TECH STACK & PERANGKAT
                 </p>
-                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight" data-id="🌸 Skill & Tools 🌸" data-en="🌸 Skill & Tools 🌸">
+                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight"
+                    data-id="🌸 Skill & Tools 🌸" data-en="🌸 Skills & Tools 🌸">
                     🌸 Skills & <span class="text-sakura-400">Tools</span> 🌸
                 </h2>
 
@@ -1109,12 +1161,13 @@
         <section id="project" class="space-y-8 scroll-mt-24">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div class="space-y-1">
-                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400">PORTFOLIO KARYA</p>
-                    <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight" data-id="🌸 Project 🌸" data-en="🌸 Project 🌸">
-                        🌸 Featured <span class="text-sakura-400">Projects</span> 🌸
+                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400"
+                        data-id="PORTFOLIO KARYA" data-en="PORTFOLIO WORKS">PORTFOLIO KARYA</p>
+                    <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight"
+                        data-id="🌸 Proyek Pilihan 🌸" data-en="🌸 Featured Projects 🌸">
+                        🌸 Proyek Pilihan 🌸
                     </h2>
                 </div>
-
             </div>
 
             <!-- 2 Projects Grid -->
@@ -1133,8 +1186,9 @@
                         <div>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">
-                                    Inventory & Keuangan
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30"
+                                    data-id="Inventaris & Keuangan" data-en="Inventory & Finance">
+                                    Inventaris & Keuangan
                                 </span>
                                 <span
                                     class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-slate-300 border border-dark-700">
@@ -1142,10 +1196,13 @@
                                 </span>
                             </div>
                             <h3
-                                class="font-display text-2xl font-bold uppercase text-white group-hover:text-sakura-300 transition">
+                                class="font-display text-2xl font-bold uppercase text-white group-hover:text-sakura-300 transition"
+                                data-id="Rajut.in — Sistem Stok Bahan & Keuangan" data-en="Rajut.in — Stock & Financial System">
                                 Rajut.in — Sistem Stok Bahan & Keuangan
                             </h3>
-                            <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed"
+                                data-id="Sistem manajemen operasional bisnis kerajinan rajut untuk mencatat stok bahan baku benang, pesanan siap & kustom, peringatan bahan menipis, dan kalkulasi laba bersih otomatis."
+                                data-en="Operational management system for a knitting craft business to manage yarn stock, ready & custom orders, low stock alerts, and automated net profit calculation.">
                                 Sistem manajemen operasional bisnis kerajinan rajut untuk mencatat stok bahan baku
                                 benang, pesanan siap & kustom, peringatan bahan menipis, dan kalkulasi laba bersih
                                 otomatis.
@@ -1154,7 +1211,8 @@
 
                         <div class="pt-4 border-t border-dark-800 flex items-center justify-between gap-3">
                             <button onclick="openCaseStudy('rajutin')"
-                                class="text-xs font-bold uppercase tracking-wider text-sakura-400 hover:text-white transition">
+                                class="text-xs font-bold uppercase tracking-wider text-sakura-400 hover:text-white transition cursor-pointer"
+                                data-id="Detail Kasus →" data-en="Case Study →">
                                 Detail Kasus →
                             </button>
                             <a href="https://rajutin-seven.vercel.app/" target="_blank" rel="noopener noreferrer"
@@ -1183,19 +1241,24 @@
                         <div>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30">
-                                    QR Code Automation
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30"
+                                    data-id="Otomasi QR Code" data-en="QR Code Automation">
+                                    Otomasi QR Code
                                 </span>
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-slate-300 border border-dark-700">
-                                    Admin Dashboard
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-slate-300 border border-dark-700"
+                                    data-id="Dashboard Admin" data-en="Admin Dashboard">
+                                    Dashboard Admin
                                 </span>
                             </div>
                             <h3
-                                class="font-display text-2xl font-bold uppercase text-white group-hover:text-sakura-300 transition">
+                                class="font-display text-2xl font-bold uppercase text-white group-hover:text-sakura-300 transition"
+                                data-id="Sistem Absensi QR Code Mahasiswa" data-en="Student QR Code Attendance System">
                                 Sistem Absensi QR Code Mahasiswa
                             </h3>
-                            <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed"
+                                data-id="Aplikasi pencatatan presensi mahasiswa melalui pemindaian QR Code cepat via kamera web. Dilengkapi manajemen data master (Mahasiswa, Prodi, Angkatan) dan rekapitulasi status kehadiran harian."
+                                data-en="Student attendance recording web app via fast camera QR Code scanning. Equipped with master data management (Students, Study Programs, Batches) and daily attendance recap.">
                                 Aplikasi pencatatan presensi mahasiswa melalui pemindaian QR Code cepat via kamera web.
                                 Dilengkapi manajemen data master (Mahasiswa, Prodi, Angkatan) dan rekapitulasi status
                                 kehadiran harian.
@@ -1204,7 +1267,8 @@
 
                         <div class="pt-4 border-t border-dark-800 flex items-center justify-between gap-3">
                             <button onclick="openCaseStudy('absensi')"
-                                class="text-xs font-bold uppercase tracking-wider text-sakura-400 hover:text-white transition">
+                                class="text-xs font-bold uppercase tracking-wider text-sakura-400 hover:text-white transition cursor-pointer"
+                                data-id="Detail Kasus →" data-en="Case Study →">
                                 Detail Kasus →
                             </button>
                             <a href="https://sistem-absensi-qr.vercel.app/" target="_blank" rel="noopener noreferrer"
@@ -1226,11 +1290,15 @@
             <div
                 class="rounded-3xl bg-gradient-to-br from-dark-900 via-dark-850 to-dark-900 border border-sakura-500/35 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_0_40px_rgba(255,45,133,0.15)]">
                 <div class="space-y-3">
-                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400">HUBUNGI SAYA</p>
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white leading-tight" data-id="🌸 Hubungi Saya 🌸" data-en="🌸 Contact Me 🌸">
-                        🌸 Let's Create <span class="text-sakura-400">Together</span> 🌸
+                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400"
+                        data-id="HUBUNGI SAYA" data-en="GET IN TOUCH">HUBUNGI SAYA</p>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white leading-tight"
+                        data-id="🌸 Mari Berkolaborasi 🌸" data-en="🌸 Let's Create Together 🌸">
+                        🌸 Mari Berkolaborasi 🌸
                     </h2>
-                    <p class="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
+                    <p class="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed"
+                        data-id="Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun diskusi teknis."
+                        data-en="Open for Web Developer opportunities, collaborative web app development, and technical discussions.">
                         Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun
                         diskusi teknis.
                     </p>
@@ -1239,8 +1307,8 @@
                 <div class="flex flex-col sm:items-end gap-4 w-full md:w-auto">
                     <!-- Copy Email Button -->
                     <button onclick="copyEmail()"
-                        class="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-sakura-500 to-sakura-600 hover:from-sakura-600 hover:to-sakura-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,45,133,0.45)] transition w-full sm:w-auto">
-                        <span id="copy-text" data-id="andinikp2004@gmail.com" data-en="andinikp2004@gmail.com">andinikp2004@gmail.com</span>
+                        class="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-sakura-500 to-sakura-600 hover:from-sakura-600 hover:to-sakura-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,45,133,0.45)] transition w-full sm:w-auto cursor-pointer">
+                        <span id="copy-text">andinikp2004@gmail.com</span>
                         <svg class="w-4 h-4 text-sakura-200" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -1257,13 +1325,16 @@
                             class="hover:text-sakura-400 transition">Instagram</a>
                         <span>•</span>
                         <a href="./cv/CV-Andini-Karina-Putri.pdf" download
-                            class="hover:text-sakura-400 transition">Download CV</a>
+                            class="hover:text-sakura-400 transition"
+                            data-id="Unduh CV" data-en="Download CV">Unduh CV</a>
                     </div>
                 </div>
             </div>
 
-            <p class="text-center text-xs text-slate-500 mt-8 font-mono">
-                © 2026 Andini Karina Putri. Pasuruan, Jawa Timur. Built with Cyberpunk Sakura Aesthetic.
+            <p class="text-center text-xs text-slate-500 mt-8 font-mono"
+                data-id="© 2026 Andini Karina Putri. Pasuruan, Jawa Timur."
+                data-en="© 2026 Andini Karina Putri. Pasuruan, East Java.">
+                © 2026 Andini Karina Putri. Pasuruan, Jawa Timur.
             </p>
         </footer>
 
@@ -1291,25 +1362,33 @@
 
             <div class="pt-4 border-t border-dark-800 flex justify-end gap-3">
                 <button onclick="closeCaseStudy()"
-                    class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-dark-700 text-slate-300 hover:bg-dark-800 transition">Tutup</button>
+                    class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-dark-700 text-slate-300 hover:bg-dark-800 transition cursor-pointer"
+                    data-id="Tutup" data-en="Close">Tutup</button>
                 <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer"
-                    class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-sakura-500 to-sakura-600 hover:from-sakura-600 hover:to-sakura-700 text-white shadow-[0_0_15px_rgba(255,45,133,0.5)] transition">Buka
-                    Live Demo →</a>
+                    class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-sakura-500 to-sakura-600 hover:from-sakura-600 hover:to-sakura-700 text-white shadow-[0_0_15px_rgba(255,45,133,0.5)] transition"
+                    data-id="Buka Live Demo →" data-en="Open Live Demo →">Buka Live Demo →</a>
             </div>
         </div>
     </div>
 
     <!-- SCRIPT LOGIC -->
     <script>
-        // Typewriter Animation Effect
-        const typewriterWords = ["I'm a Web Developer", "I'm a Creator", "I'm a Problem Solver"];
+        // Language Toggle State
+        let currentLang = localStorage.getItem('lang') || 'id';
+
+        // Typewriter Animation with Language Support
+        const typewriterPhrases = {
+            id: ["Web Developer", "Pengembang Aplikasi Web", "Problem Solver", "UI/UX Enthusiast"],
+            en: ["Web Developer", "Web App Developer", "Problem Solver", "UI/UX Enthusiast"]
+        };
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
         const typeEl = document.getElementById("typewriter-text");
 
         function typeLoop() {
-            const currentWord = typewriterWords[wordIndex];
+            const words = typewriterPhrases[currentLang] || typewriterPhrases.id;
+            const currentWord = words[wordIndex % words.length];
             if (isDeleting) {
                 typeEl.textContent = currentWord.substring(0, charIndex - 1);
                 charIndex--;
@@ -1325,7 +1404,7 @@
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
-                wordIndex = (wordIndex + 1) % typewriterWords.length;
+                wordIndex = (wordIndex + 1) % words.length;
                 typeSpeed = 400;
             }
 
@@ -1355,54 +1434,101 @@
         function copyEmail() {
             navigator.clipboard.writeText('andinikp2004@gmail.com');
             const label = document.getElementById('copy-text');
-            label.textContent = 'Email Berhasil Disalin!';
+            label.textContent = currentLang === 'id' ? 'Email Berhasil Disalin!' : 'Email Copied to Clipboard!';
             setTimeout(() => { label.textContent = 'andinikp2004@gmail.com'; }, 2000);
         }
 
-        // Data Studi Kasus
+        // Data Studi Kasus (Bilingual ID / EN)
         const caseStudies = {
             rajutin: {
-                tag: 'Manajemen Inventaris & Finansial',
-                title: 'Rajut.in — Sistem Stok Bahan & Keuangan',
-                link: 'https://rajutin-seven.vercel.app/',
-                content: `
-          <div>
-            <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
-            <p>Usaha kerajinan rajut memiliki variasi produk siap kirim dan pesanan khusus dengan pemakaian jenis benang beragam. Tanpa sistem terintegrasi, risiko selisih bahan baku tinggi dan penghitungan laba bersih riil setelah dipotong biaya modal menjadi sulit.</p>
-          </div>
-          <div>
-            <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
-            <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
-              <li><strong>Dashboard Finansial Real-time:</strong> Menghitung total omset, estimasi laba bersih setelah biaya benang, dan pesanan aktif secara akurat.</li>
-              <li><strong>Manajemen Pesanan Kustom:</strong> Memisahkan pesanan reguler dengan pesanan kustom yang memerlukan jadwal pengerjaan khusus.</li>
-              <li><strong>Peringatan Bahan Menipis:</strong> Notifikasi dini jika kuantitas benang mendekati batas minimum agar proses produksi tidak terhambat.</li>
-            </ul>
-          </div>
-        `
+                id: {
+                    tag: 'Manajemen Inventaris & Finansial',
+                    title: 'Rajut.in — Sistem Stok Bahan & Keuangan',
+                    link: 'https://rajutin-seven.vercel.app/',
+                    content: `
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
+                <p>Usaha kerajinan rajut memiliki variasi produk siap kirim dan pesanan khusus dengan pemakaian jenis benang beragam. Tanpa sistem terintegrasi, risiko selisih bahan baku tinggi dan penghitungan laba bersih riil setelah dipotong biaya modal menjadi sulit.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
+                <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                  <li><strong>Dashboard Finansial Real-time:</strong> Menghitung total omset, estimasi laba bersih setelah biaya benang, dan pesanan aktif secara akurat.</li>
+                  <li><strong>Manajemen Pesanan Kustom:</strong> Memisahkan pesanan reguler dengan pesanan kustom yang memerlukan jadwal pengerjaan khusus.</li>
+                  <li><strong>Peringatan Bahan Menipis:</strong> Notifikasi dini jika kuantitas benang mendekati batas minimum agar proses produksi tidak terhambat.</li>
+                </ul>
+              </div>
+            `
+                },
+                en: {
+                    tag: 'Inventory & Financial Management',
+                    title: 'Rajut.in — Stock & Financial System',
+                    link: 'https://rajutin-seven.vercel.app/',
+                    content: `
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Challenges:</h4>
+                <p>Knitting craft businesses manage diverse ready-stock items and bespoke orders using multiple yarn types. Without an integrated system, raw material discrepancies are common and calculating true net profits after material costs is difficult.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solutions:</h4>
+                <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                  <li><strong>Real-time Financial Dashboard:</strong> Accurately tracks revenue, estimated net profit after yarn costs, and active orders.</li>
+                  <li><strong>Custom Order Management:</strong> Isolates regular stock items from custom orders requiring specialized production timelines.</li>
+                  <li><strong>Low Stock Alerts:</strong> Early notifications when yarn inventory approaches minimum thresholds to avoid production delays.</li>
+                </ul>
+              </div>
+            `
+                }
             },
             absensi: {
-                tag: 'Sistem Presensi Digital',
-                title: 'Sistem Absensi QR Code Mahasiswa',
-                link: 'https://sistem-absensi-qr.vercel.app/',
-                content: `
-          <div>
-            <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
-            <p>Pencatatan absensi fisik manual memicu antrean di ruang kelas dan menyulitkan rekapitulasi data kehadiran harian berdasarkan program studi serta angkatan.</p>
-          </div>
-          <div>
-            <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
-            <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
-              <li><strong>Pemindaian Cepat Kamera:</strong> Pemindaian QR Code instan yang memvalidasi identitas mahasiswa dan mencatat waktu presensi secara otomatis.</li>
-              <li><strong>Manajemen Data Master:</strong> Tata kelola data mahasiswa, angkatan, dan program studi yang terpusat dan mudah diakses admin.</li>
-              <li><strong>Rekapitulasi Otomatis:</strong> Kalkulasi status Hadir, Izin, Sakit, dan Alpa secara real-time yang siap dicetak untuk kebutuhan laporan.</li>
-            </ul>
-          </div>
-        `
+                id: {
+                    tag: 'Sistem Presensi Digital',
+                    title: 'Sistem Absensi QR Code Mahasiswa',
+                    link: 'https://sistem-absensi-qr.vercel.app/',
+                    content: `
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
+                <p>Pencatatan absensi fisik manual memicu antrean di ruang kelas dan menyulitkan rekapitulasi data kehadiran harian berdasarkan program studi serta angkatan.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
+                <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                  <li><strong>Pemindaian Cepat Kamera:</strong> Pemindaian QR Code instan yang memvalidasi identitas mahasiswa dan mencatat waktu presensi secara otomatis.</li>
+                  <li><strong>Manajemen Data Master:</strong> Tata kelola data mahasiswa, angkatan, dan program studi yang terpusat dan mudah diakses admin.</li>
+                  <li><strong>Rekapitulasi Otomatis:</strong> Kalkulasi status Hadir, Izin, Sakit, dan Alpa secara real-time yang siap dicetak untuk kebutuhan laporan.</li>
+                </ul>
+              </div>
+            `
+                },
+                en: {
+                    tag: 'Digital Attendance System',
+                    title: 'Student QR Code Attendance System',
+                    link: 'https://sistem-absensi-qr.vercel.app/',
+                    content: `
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Challenges:</h4>
+                <p>Manual physical attendance registers create classroom congestion and make compiling daily attendance statistics across study programs and batches tedious.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solutions:</h4>
+                <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                  <li><strong>Instant Camera Scanning:</strong> Real-time QR Code scanning that validates student credentials and logs timestamped presence instantly.</li>
+                  <li><strong>Master Data Administration:</strong> Centralized governance over student rosters, academic cohorts, and study programs.</li>
+                  <li><strong>Automated Attendance Recaps:</strong> Dynamic calculation of Present, Excused, Sick, and Absent totals ready for administrative reports.</li>
+                </ul>
+              </div>
+            `
+                }
             }
         };
 
+        let currentModalKey = null;
+
         function openCaseStudy(key) {
-            const data = caseStudies[key];
+            currentModalKey = key;
+            const item = caseStudies[key];
+            const data = (item && item[currentLang]) ? item[currentLang] : (item ? item.id : null);
+            if (!data) return;
             document.getElementById('modal-tag').textContent = data.tag;
             document.getElementById('modal-title').textContent = data.title;
             document.getElementById('modal-body').innerHTML = data.content;
@@ -1413,6 +1539,7 @@
         }
 
         function closeCaseStudy() {
+            currentModalKey = null;
             const modal = document.getElementById('case-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
@@ -1434,13 +1561,6 @@
         }
 
         // ── LANGUAGE TOGGLE ──────────────────────────────────────
-        let currentLang = localStorage.getItem('lang') || 'id';
-
-        const typewriterPhrases = {
-            id: ['Web Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Data Analyst'],
-            en: ['Web Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Data Analyst']
-        };
-
         function applyLang(lang) {
             currentLang = lang;
             localStorage.setItem('lang', lang);
@@ -1475,8 +1595,16 @@
                     : 'mobile-lang-badge-en px-3 py-1 rounded-full text-xs font-bold font-mono text-slate-400';
             });
 
-            // Update html lang attribute
+            // Update modal in real-time if currently open
+            if (currentModalKey) {
+                openCaseStudy(currentModalKey);
+            }
+
+            // Update html lang attribute & title
             document.documentElement.lang = lang === 'id' ? 'id' : 'en';
+            document.title = lang === 'id'
+                ? 'Andini Karina Putri — Web Developer'
+                : 'Andini Karina Putri — Web Developer Portfolio';
         }
 
         function toggleLang() {
