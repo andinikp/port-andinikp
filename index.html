@@ -22,46 +22,40 @@
             theme: {
                 extend: {
                     colors: {
+                        palette: {
+                            yellow: '#FFE169', // Yellow Jasmine
+                            lilac: '#FAF5FA',  // White Lilac
+                            plum: '#D2AAF0',   // Plum Violet
+                            grape: '#3C1955',  // Grape Violet
+                        },
                         dark: {
-                            950: '#07050F', // Obsidian Violet Black
-                            900: '#0E091C', // Midnight Violet
-                            850: '#150E2A', // Dark Violet Navy
-                            800: '#1D143A', // Elevated Card BG
-                            700: '#2C1F54', // Card Border
+                            950: '#150820', // Deepest Grape Black
+                            900: '#1F0C2F', // Midnight Grape
+                            850: '#29103D', // Elevated Grape Card
+                            800: '#3C1955', // Grape Violet Primary
+                            700: '#522374', // Grape Violet Border
                         },
                         purple: {
-                            50: '#FAF5FF',
-                            100: '#F3E8FF',
-                            200: '#E9D5FF',
-                            300: '#D8B4FE',
-                            400: '#C084FC',
-                            500: '#A855F7', // Signature Electric Purple
-                            600: '#9333EA',
-                            700: '#7E22CE',
-                            800: '#6B21A8',
-                            900: '#3B0764',
+                            50: '#FAF5FA',
+                            100: '#F3E8F7',
+                            200: '#E6CDF5',
+                            300: '#D2AAF0', // Plum Violet
+                            400: '#BD87E7',
+                            500: '#A360DC',
+                            600: '#8A3FC9',
+                            700: '#6E2C9F',
+                            800: '#522077',
+                            900: '#3C1955', // Grape Violet
                         },
                         yellow: {
-                            50: '#FEFCE8',
-                            100: '#FEF9C3',
-                            200: '#FEF08A',
-                            300: '#FDE047',
-                            400: '#FACC15', // Signature Cyber Yellow / Gold
-                            500: '#EAB308',
-                            600: '#CA8A04',
-                            700: '#A16207',
-                        },
-                        sakura: { // Aliased to Electric Purple for flawless backward compatibility
-                            50: '#FAF5FF',
-                            100: '#F3E8FF',
-                            200: '#E9D5FF',
-                            300: '#D8B4FE',
-                            400: '#C084FC',
-                            500: '#A855F7',
-                            600: '#9333EA',
-                            700: '#7E22CE',
-                            800: '#6B21A8',
-                            900: '#3B0764',
+                            50: '#FFFDEB',
+                            100: '#FFFAC2',
+                            200: '#FFF494',
+                            300: '#FFED70',
+                            400: '#FFE169', // Yellow Jasmine
+                            500: '#F7CE45',
+                            600: '#DBAD23',
+                            700: '#B08412',
                         }
                     },
                     fontFamily: {
@@ -70,10 +64,9 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     boxShadow: {
-                        'neon-purple': '0 0 25px rgba(168, 85, 247, 0.45), 0 0 50px rgba(168, 85, 247, 0.2)',
-                        'neon-yellow': '0 0 25px rgba(250, 204, 21, 0.5), 0 0 50px rgba(250, 204, 21, 0.25)',
-                        'neon-glow': '0 0 35px rgba(250, 204, 21, 0.65)',
-                        'neon-card': '0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 1px 1px rgba(168, 85, 247, 0.2)',
+                        'neon-yellow': '0 0 25px rgba(255, 225, 105, 0.45), 0 0 50px rgba(255, 225, 105, 0.2)',
+                        'neon-plum': '0 0 25px rgba(210, 170, 240, 0.4), 0 0 50px rgba(60, 25, 85, 0.3)',
+                        'neon-card': '0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 1px 1px rgba(210, 170, 240, 0.15)',
                     }
                 }
             }
@@ -155,7 +148,7 @@
 
         /* Neon Image Rim Light */
         .neon-portrait-glow {
-            filter: drop-shadow(0 0 25px rgba(250, 204, 21, 0.6)) drop-shadow(0 0 60px rgba(168, 85, 247, 0.4));
+            filter: drop-shadow(0 0 25px rgba(255, 225, 105, 0.5)) drop-shadow(0 0 60px rgba(210, 170, 240, 0.35));
         }
 
         /* Typewriter Cursor */
@@ -176,66 +169,88 @@
                 opacity: 0;
             }
         }
+
+        /* Smooth Language Fade */
+        .lang-fade {
+            transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
     </style>
 </head>
 
 <body
-    class="bg-dark-950 text-slate-200 font-sans antialiased selection:bg-yellow-400 selection:text-dark-950 relative overflow-x-hidden min-h-screen">
+    class="bg-dark-950 text-palette-lilac font-sans antialiased selection:bg-palette-yellow selection:text-palette-grape relative overflow-x-hidden min-h-screen">
 
-    <!-- Ambient Glowing Gradient Orbs (Cyberpunk Purple & Gold Atmosphere) -->
+    <!-- Ambient Glowing Gradient Orbs (Grape Violet & Yellow Jasmine Atmosphere) -->
     <div
-        class="fixed top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-purple-600/25 via-purple-700/10 to-transparent blur-[120px] pointer-events-none z-0 animate-glow-bg">
+        class="fixed top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-palette-plum/20 via-palette-grape/30 to-transparent blur-[120px] pointer-events-none z-0 animate-glow-bg">
     </div>
     <div
-        class="fixed top-[45%] left-[-10%] w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-yellow-500/15 via-amber-600/10 to-transparent blur-[140px] pointer-events-none z-0">
+        class="fixed top-[45%] left-[-10%] w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-palette-yellow/15 via-palette-grape/25 to-transparent blur-[140px] pointer-events-none z-0">
     </div>
     <div
-        class="fixed bottom-[-10%] right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-t from-purple-600/20 via-yellow-500/10 to-transparent blur-[150px] pointer-events-none z-0">
+        class="fixed bottom-[-10%] right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-t from-palette-plum/15 via-palette-yellow/10 to-transparent blur-[150px] pointer-events-none z-0">
     </div>
 
-    <!-- 0. FLOATING TOP PILL NAVBAR -->
+    <!-- 0. FLOATING TOP PILL NAVBAR (Symmetrical Rata Kanan-Kiri) -->
     <div class="fixed top-5 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
         <header
-            class="pointer-events-auto bg-white/95 backdrop-blur-md text-dark-950 rounded-full px-5 sm:px-6 py-2.5 flex items-center justify-between md:justify-center gap-3 sm:gap-4 lg:gap-6 shadow-[0_8px_30px_rgba(168,85,247,0.25)] border border-purple-200/60 w-full max-w-md md:w-auto md:max-w-none">
-            <!-- Brand Logo -->
+            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-5 sm:px-7 py-2.5 flex items-center justify-between gap-2 sm:gap-4 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 max-w-4xl lg:max-w-5xl w-full">
+            <!-- Brand Logo (Left Flank) -->
             <a href="#home"
-                class="font-display text-lg sm:text-xl font-black tracking-wider text-dark-950 hover:text-purple-600 transition flex items-center gap-1.5 shrink-0">
-                🌸
+                class="font-display text-lg sm:text-xl font-black tracking-wider text-palette-grape hover:text-palette-grape/80 transition flex items-center gap-2 shrink-0">
+                <span class="w-2.5 h-2.5 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169]"></span>
+                <span class="font-extrabold tracking-widest text-sm uppercase">ANDINI</span>
             </a>
 
-            <!-- Desktop Nav Items with Stable Widths to Prevent Layout Shift -->
+            <!-- Desktop Nav Items: Evenly Distributed (Rata Kanan Kiri) -->
             <nav
-                class="hidden md:flex items-center gap-1.5 lg:gap-3.5 text-[10.5px] lg:text-xs font-bold tracking-wider uppercase text-dark-950/80">
-                <a href="#home" class="hover:text-purple-600 transition py-1 min-w-[42px] text-center inline-block" data-id="Home" data-en="Home">Home</a>
-                <a href="#about" class="hover:text-purple-600 transition py-1 min-w-[56px] text-center inline-block" data-id="Tentang" data-en="About">Tentang</a>
-                <a href="#experience" class="hover:text-purple-600 transition py-1 min-w-[86px] text-center inline-block" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
-                <a href="#education" class="hover:text-purple-600 transition py-1 min-w-[76px] text-center inline-block" data-id="Pendidikan" data-en="Education">Pendidikan</a>
-                <a href="#skill" class="hover:text-purple-600 transition py-1 min-w-[42px] text-center inline-block" data-id="Skill" data-en="Skill">Skill</a>
-                <a href="#project" class="hover:text-purple-600 transition py-1 min-w-[56px] text-center inline-block" data-id="Proyek" data-en="Project">Proyek</a>
-                <a href="#contact" class="hover:text-purple-600 transition py-1 min-w-[56px] text-center inline-block" data-id="Kontak" data-en="Contact">Kontak</a>
+                class="hidden md:flex flex-1 items-center justify-evenly px-3 lg:px-6 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
+                <a href="#home" class="hover:text-palette-grape transition py-1 text-center" data-id="Home" data-en="Home">Home</a>
+                <a href="#about" class="hover:text-palette-grape transition py-1 text-center" data-id="Tentang" data-en="About">Tentang</a>
+                <a href="#experience" class="hover:text-palette-grape transition py-1 text-center" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
+                <a href="#education" class="hover:text-palette-grape transition py-1 text-center" data-id="Pendidikan" data-en="Education">Pendidikan</a>
+                <a href="#skill" class="hover:text-palette-grape transition py-1 text-center" data-id="Skill" data-en="Skill">Skill</a>
+                <a href="#project" class="hover:text-palette-grape transition py-1 text-center" data-id="Proyek" data-en="Project">Proyek</a>
+                <a href="#contact" class="hover:text-palette-grape transition py-1 text-center" data-id="Kontak" data-en="Contact">Kontak</a>
             </nav>
 
-            <!-- Right Actions: Language Selector + Hire Me Button (Locked Widths) -->
+            <!-- Right Actions: Language Selector + Hire Me Button -->
             <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
                 <!-- Language Toggle (Segmented Pill ID | EN) -->
                 <button type="button" onclick="toggleLang()" id="lang-btn"
-                    class="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-purple-50 hover:bg-purple-100 text-dark-950 transition border border-purple-200/60 shadow-xs shrink-0 cursor-pointer w-[64px] justify-center"
+                    class="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-palette-lilac hover:bg-white text-palette-grape transition border border-palette-plum/50 shadow-xs shrink-0 cursor-pointer w-[64px] justify-center"
                     title="Ganti Bahasa / Switch Language">
                     <span id="lang-badge-id"
-                        class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 bg-purple-600 text-white shadow-xs">ID</span>
+                        class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 bg-palette-grape text-palette-lilac shadow-xs">ID</span>
                     <span id="lang-badge-en"
-                        class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-dark-950/70 hover:text-dark-950">EN</span>
+                        class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-palette-grape/70 hover:text-palette-grape">EN</span>
                 </button>
 
                 <a href="#contact"
-                    class="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-500 text-dark-950 font-black tracking-wider uppercase py-2 rounded-full shadow-[0_2px_15px_rgba(250,204,21,0.5)] transition duration-300 shrink-0 w-[108px] sm:w-[118px] text-center flex items-center justify-center whitespace-nowrap"
+                    class="bg-palette-yellow hover:bg-yellow-500 text-palette-grape font-black tracking-wider uppercase py-2 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 shrink-0 w-[114px] text-center flex items-center justify-center whitespace-nowrap"
                     data-id="Rekrut Saya" data-en="Hire Me">
                     Rekrut Saya
                 </a>
 
                 <!-- Mobile Hamburger Toggle -->
                 <button type="button" onclick="toggleMobileMenu()"
-                    class="md:hidden p-1.5 text-dark-950 focus:outline-none" aria-label="Toggle Navigation">
+                    class="md:hidden p-1.5 text-palette-grape focus:outline-none" aria-label="Toggle Navigation">
+                    <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+    </div>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button type="button" onclick="toggleMobileMenu()"
+                    class="md:hidden p-1.5 text-palette-grape focus:outline-none" aria-label="Toggle Navigation">
                     <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                             d="M4 6h16M4 12h16M4 18h16" />
@@ -251,27 +266,27 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu"
-        class="hidden fixed top-20 inset-x-4 z-40 md:hidden bg-dark-900/95 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(168,85,247,0.3)] text-center space-y-4">
-        <nav class="flex flex-col space-y-3 text-sm font-bold tracking-widest uppercase text-slate-200">
+        class="hidden fixed top-20 inset-x-4 z-40 md:hidden bg-dark-900/95 backdrop-blur-xl border border-palette-plum/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(60,25,85,0.4)] text-center space-y-4">
+        <nav class="flex flex-col space-y-3 text-sm font-bold tracking-widest uppercase text-palette-lilac">
             <a href="#home" onclick="toggleMobileMenu()"
-                class="hover:text-yellow-400 py-2 border-b border-dark-800" data-id="Home" data-en="Home">Home</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Home" data-en="Home">Home</a>
             <a href="#about" onclick="toggleMobileMenu()"
-                class="hover:text-yellow-400 py-2 border-b border-dark-800" data-id="Tentang" data-en="About">Tentang</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Tentang" data-en="About">Tentang</a>
             <a href="#experience" onclick="toggleMobileMenu()"
-                class="hover:text-yellow-400 py-2 border-b border-dark-800" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
             <a href="#education" onclick="toggleMobileMenu()"
-                class="hover:text-yellow-400 py-2 border-b border-dark-800" data-id="Pendidikan" data-en="Education">Pendidikan</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pendidikan" data-en="Education">Pendidikan</a>
             <a href="#skill" onclick="toggleMobileMenu()"
-                class="hover:text-yellow-400 py-2 border-b border-dark-800" data-id="Skill" data-en="Skill">Skill</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Skill" data-en="Skill">Skill</a>
             <a href="#project" onclick="toggleMobileMenu()"
-                class="hover:text-yellow-400 py-2 border-b border-dark-800" data-id="Proyek" data-en="Project">Proyek</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-yellow-400 py-2" data-id="Kontak"
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Proyek" data-en="Project">Proyek</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-palette-yellow py-2" data-id="Kontak"
                 data-en="Contact">Kontak</a>
         </nav>
         <div class="pt-3 border-t border-dark-800 flex items-center justify-center gap-3">
             <span class="text-xs text-slate-400 font-mono">Bahasa:</span>
             <button type="button" onclick="toggleLang()"
-                class="inline-flex items-center p-1 rounded-full bg-dark-800 border border-purple-500/30">
+                class="inline-flex items-center p-1 rounded-full bg-dark-800 border border-palette-plum/30">
                 <span
                     class="mobile-lang-badge-id px-3 py-1 rounded-full text-xs font-bold font-mono transition-all duration-200">ID</span>
                 <span
@@ -283,26 +298,25 @@
     <!-- MAIN CONTAINER -->
     <main class="max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-32 relative z-10 space-y-20 sm:space-y-28">
 
-        <!-- 1. HERO SECTION (Cyberpunk Sakura with Glowing Portrait) -->
+        <!-- 1. HERO SECTION (Cyberpunk Aesthetic with Glowing Portrait) -->
         <section id="home"
             class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[calc(100vh-140px)] py-8">
             <!-- Left Bio Column -->
             <div class="lg:col-span-7 space-y-6 text-left">
                 <h1
-                    class="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase leading-none">
-                    <span data-id="🌸 Halo, Saya " data-en="🌸 Hi, I'm ">🌸 Halo, Saya </span><span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-purple-400">ANDINI</span>
-                    🌸
+                    class="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-palette-lilac uppercase leading-none">
+                    <span data-id="Halo, Saya " data-en="Hi, I'm ">Halo, Saya </span><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-palette-yellow via-palette-plum to-palette-lilac">ANDINI</span>
                 </h1>
 
                 <!-- Typewriter Subtitle -->
                 <div
-                    class="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-yellow-400 flex items-center">
+                    class="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-palette-yellow flex items-center">
                     <span id="typewriter-text">Web Developer</span>
-                    <span class="cursor-blink text-yellow-300 font-normal">|</span>
+                    <span class="cursor-blink text-palette-yellow font-normal">|</span>
                 </div>
 
-                <p class="text-slate-400 text-sm sm:text-base max-w-xl leading-relaxed font-normal"
+                <p class="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed font-normal"
                     data-id="Mahasiswa S1 Ilmu Komputer yang berfokus merancang aplikasi web operasional terstruktur, responsif, dan mudah digunakan untuk manajemen inventaris, pencatatan keuangan, dan presensi digital."
                     data-en="Computer Science undergraduate focused on designing structured, responsive, and user-friendly operational web applications for inventory management, financial recording, and digital attendance.">
                     Mahasiswa S1 Ilmu Komputer yang berfokus merancang aplikasi web operasional terstruktur, responsif,
@@ -312,8 +326,8 @@
                 <!-- Actions: Download CV + Social Icons -->
                 <div class="flex flex-wrap items-center gap-4 pt-2">
                     <a href="./cv/CV-Andini-Karina-Putri.pdf" download
-                        class="inline-flex items-center gap-2.5 bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 text-white text-xs font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(168,85,247,0.5)] border border-yellow-400/40 transition duration-300 transform hover:scale-[1.02]">
-                        <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        class="inline-flex items-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac text-xs font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.3)] border-2 border-palette-yellow transition duration-300 transform hover:scale-[1.02]">
+                        <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
@@ -323,7 +337,7 @@
                     <!-- Social Circle Buttons (GitHub, Instagram, Email) -->
                     <div class="flex items-center gap-2.5">
                         <a href="https://github.com/andinikp" target="_blank" rel="noopener noreferrer" title="GitHub"
-                            class="w-10 h-10 rounded-full bg-dark-850 border border-purple-500/30 hover:border-yellow-400 hover:bg-yellow-400/10 text-slate-300 hover:text-yellow-300 flex items-center justify-center transition duration-300 shadow-sm">
+                            class="w-10 h-10 rounded-full bg-dark-850 border border-palette-plum/30 hover:border-palette-yellow hover:bg-palette-yellow/10 text-palette-lilac hover:text-palette-yellow flex items-center justify-center transition duration-300 shadow-sm">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -332,7 +346,7 @@
 
                         <a href="https://instagram.com/andinikarn" target="_blank" rel="noopener noreferrer"
                             title="Instagram"
-                            class="w-10 h-10 rounded-full bg-dark-850 border border-purple-500/30 hover:border-yellow-400 hover:bg-yellow-400/10 text-slate-300 hover:text-yellow-300 flex items-center justify-center transition duration-300 shadow-sm">
+                            class="w-10 h-10 rounded-full bg-dark-850 border border-palette-plum/30 hover:border-palette-yellow hover:bg-palette-yellow/10 text-palette-lilac hover:text-palette-yellow flex items-center justify-center transition duration-300 shadow-sm">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
@@ -340,7 +354,7 @@
                         </a>
 
                         <button onclick="copyEmail()" title="Salin Email"
-                            class="w-10 h-10 rounded-full bg-dark-850 border border-purple-500/30 hover:border-yellow-400 hover:bg-yellow-400/10 text-slate-300 hover:text-yellow-300 flex items-center justify-center transition duration-300 shadow-sm cursor-pointer">
+                            class="w-10 h-10 rounded-full bg-dark-850 border border-palette-plum/30 hover:border-palette-yellow hover:bg-palette-yellow/10 text-palette-lilac hover:text-palette-yellow flex items-center justify-center transition duration-300 shadow-sm cursor-pointer">
                             <svg class="w-4 h-4 fill-none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -355,19 +369,19 @@
 
                 <!-- Ambient Purple & Gold Halo Backdrop -->
                 <div
-                    class="absolute w-72 sm:w-80 h-80 sm:h-96 rounded-full bg-gradient-to-tr from-purple-600/35 via-yellow-500/15 to-transparent blur-[80px] -z-10 animate-glow-bg">
+                    class="absolute w-72 sm:w-80 h-80 sm:h-96 rounded-full bg-gradient-to-tr from-palette-plum/30 via-palette-yellow/15 to-transparent blur-[80px] -z-10 animate-glow-bg">
                 </div>
 
                 <!-- Arch Frame Container -->
                 <div class="relative group">
                     <!-- Outer Glowing Neon Arch Rim -->
                     <div
-                        class="absolute -inset-1.5 rounded-t-[150px] sm:rounded-t-[170px] rounded-b-3xl bg-gradient-to-b from-yellow-400 via-purple-600 to-indigo-700 opacity-90 blur-sm group-hover:opacity-100 transition duration-500">
+                        class="absolute -inset-1.5 rounded-t-[150px] sm:rounded-t-[170px] rounded-b-3xl bg-gradient-to-b from-palette-yellow via-palette-plum to-palette-grape opacity-90 blur-sm group-hover:opacity-100 transition duration-500">
                     </div>
 
                     <!-- Arch Frame Card with Border -->
                     <div
-                        class="relative w-[230px] sm:w-[260px] h-[310px] sm:h-[350px] rounded-t-[146px] sm:rounded-t-[166px] rounded-b-[22px] overflow-hidden bg-dark-900 border-2 border-yellow-400/80 shadow-[0_0_35px_rgba(250,204,21,0.45),0_0_60px_rgba(168,85,247,0.3)]">
+                        class="relative w-[230px] sm:w-[260px] h-[310px] sm:h-[350px] rounded-t-[146px] sm:rounded-t-[166px] rounded-b-[22px] overflow-hidden bg-dark-900 border-2 border-palette-yellow shadow-[0_0_35px_rgba(255,225,105,0.4),0_0_60px_rgba(60,25,85,0.5)]">
                         <!-- Portrait Image -->
                         <img id="photo-primary" src="./images/profil-1.png" alt="Andini Karina Putri"
                             class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105" />
@@ -380,12 +394,12 @@
 
                 <!-- Location Badge Below -->
                 <div
-                    class="mt-6 bg-dark-900/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-purple-500/40 text-center shadow-[0_0_20px_rgba(168,85,247,0.25)]">
+                    class="mt-6 bg-dark-900/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-palette-plum/40 text-center shadow-[0_0_20px_rgba(60,25,85,0.3)]">
                     <p
-                        class="text-xs font-bold tracking-widest uppercase text-yellow-300 flex items-center justify-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-yellow-400 shadow-[0_0_8px_#FACC15] animate-pulse"></span>
+                        class="text-xs font-bold tracking-widest uppercase text-palette-yellow flex items-center justify-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
                         <span data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</span>
-                        <span class="w-2 h-2 rounded-full bg-yellow-400 shadow-[0_0_8px_#FACC15] animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
                     </p>
                 </div>
 
@@ -405,55 +419,55 @@
                 <!-- Group A -->
                 <div class="flex items-center gap-8 shrink-0">
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/php.svg" alt="PHP" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>PHP</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/html.svg" alt="HTML" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>HTML5</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/github.svg" alt="GitHub" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>GitHub</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/figma.svg" alt="Figma" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Figma</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/colab.png" alt="Google Colab" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Google Colab</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/orange.png" alt="Orange" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Orange ML</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/matlab.png" alt="MATLAB" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>MATLAB</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/cisco.svg" alt="Cisco" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Cisco Networking</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/excel.svg" alt="Excel" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Excel</span>
@@ -463,55 +477,55 @@
                 <!-- Group B (Duplicate for Loop) -->
                 <div class="flex items-center gap-8 shrink-0" aria-hidden="true">
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/php.svg" alt="PHP" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>PHP</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/html.svg" alt="HTML" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>HTML5</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/github.svg" alt="GitHub" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>GitHub</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/figma.svg" alt="Figma" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Figma</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/colab.png" alt="Google Colab" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Google Colab</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/orange.png" alt="Orange" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Orange ML</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/matlab.png" alt="MATLAB" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>MATLAB</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/cisco.svg" alt="Cisco" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Cisco Networking</span>
                     </div>
                     <div
-                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-sakura-500/20 shadow-xs">
+                        class="flex items-center gap-2.5 text-xs font-bold tracking-wider uppercase text-slate-300 bg-dark-850/80 px-4 py-2 rounded-xl border border-palette-plum/25 shadow-xs">
                         <img src="./icons/excel.svg" alt="Excel" onerror="handleIconError(this)"
                             class="w-5 h-5 object-contain" />
                         <span>Excel</span>
@@ -523,13 +537,13 @@
         <!-- 2. ABOUT ME SECTION (3-Column Layout with Fan/Centerpiece matching image) -->
         <section id="about" class="space-y-8 scroll-mt-24">
             <div class="text-left space-y-1">
-                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight"
-                    data-id="🌸 Tentang Saya 🌸" data-en="🌸 About Me 🌸">
-                    🌸 Tentang Saya 🌸
+                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                    data-id="Tentang Saya" data-en="About Me">
+                    Tentang Saya
                 </h2>
             </div>
 
-            <!-- 3 Columns: Bio+Stats (Left), Sakura Fan Centerpiece (Center), Philosophy/Mission (Right) -->
+            <!-- 3 Columns: Bio+Stats (Left), Fan Centerpiece (Center), Philosophy/Mission (Right) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
                 <!-- Left: Bio & Stats Grid -->
@@ -537,36 +551,36 @@
                     <p class="text-slate-300 text-sm leading-relaxed"
                         data-id="Saya adalah mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang berfokus pada pengembangan aplikasi web operasional."
                         data-en="I am an undergraduate Computer Science student at Universitas PGRI Wiranegara focused on developing operational web applications.">
-                        Saya adalah mahasiswa <strong>S1 Ilmu Komputer di Universitas PGRI Wiranegara</strong> yang
+                        Saya adalah mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI Wiranegara</strong> yang
                         berfokus pada pengembangan aplikasi web operasional.
                     </p>
                     <p class="text-slate-400 text-sm leading-relaxed"
                         data-id="Pengalaman kerja sebagai Quality Control dan PKL di Badan Pusat Statistik (BPS) menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta keandalan fungsional aplikasi."
                         data-en="Work experience as Quality Control and internship at the Central Bureau of Statistics (BPS) fostered high attention to detail in data validation, database relations, and application functional reliability.">
-                        Pengalaman kerja sebagai <em>Quality Control</em> dan PKL di <strong>Badan Pusat Statistik
+                        Pengalaman kerja sebagai <em>Quality Control</em> dan PKL di <strong class="text-palette-lilac">Badan Pusat Statistik
                             (BPS)</strong> menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta
                         keandalan fungsional aplikasi.
                     </p>
 
                     <!-- Stats 2x2 Grid -->
                     <div class="grid grid-cols-2 gap-4 pt-2">
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-purple-500/20 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-yellow-400">02+</p>
+                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
+                            <p class="font-display text-3xl font-extrabold text-palette-yellow">02+</p>
                             <p class="text-xs text-slate-400 mt-0.5" data-id="Aplikasi Web Rilis"
                                 data-en="Live Web Apps">Aplikasi Web Rilis</p>
                         </div>
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-purple-500/20 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-yellow-400">12+</p>
+                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
+                            <p class="font-display text-3xl font-extrabold text-palette-yellow">12+</p>
                             <p class="text-xs text-slate-400 mt-0.5" data-id="Teknologi & Tools" data-en="Tech & Tools">
                                 Teknologi & Tools</p>
                         </div>
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-purple-500/20 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-yellow-400">100%</p>
+                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
+                            <p class="font-display text-3xl font-extrabold text-palette-yellow">100%</p>
                             <p class="text-xs text-slate-400 mt-0.5" data-id="Desain Responsif"
                                 data-en="Responsive Design">Desain Responsif</p>
                         </div>
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-purple-500/20 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-yellow-400">BPS</p>
+                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
+                            <p class="font-display text-3xl font-extrabold text-palette-yellow">BPS</p>
                             <p class="text-xs text-slate-400 mt-0.5" data-id="Pengalaman Kerja"
                                 data-en="Field Experience">Pengalaman Kerja</p>
                         </div>
@@ -578,22 +592,22 @@
                     <div class="w-64 h-64 sm:w-72 sm:h-72 relative flex items-center justify-center animate-float">
                         <!-- Glowing backdrop circle -->
                         <div
-                            class="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600/30 via-yellow-500/10 to-transparent blur-2xl">
+                            class="absolute inset-0 rounded-full bg-gradient-to-tr from-palette-plum/25 via-palette-grape/30 to-transparent blur-2xl">
                         </div>
 
-                        <!-- Japanese Fan Illustration SVG with Purple & Gold Accents -->
-                        <svg class="w-full h-full filter drop-shadow-[0_0_25px_rgba(168,85,247,0.6)]"
+                        <!-- Illustration SVG with Palette Colors -->
+                        <svg class="w-full h-full filter drop-shadow-[0_0_25px_rgba(210,170,240,0.5)]"
                             viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <!-- Fan Blades Gradient -->
                             <defs>
                                 <linearGradient id="fanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#FEF08A" />
-                                    <stop offset="45%" stop-color="#C084FC" />
-                                    <stop offset="100%" stop-color="#7E22CE" />
+                                    <stop offset="0%" stop-color="#FFE169" />
+                                    <stop offset="45%" stop-color="#D2AAF0" />
+                                    <stop offset="100%" stop-color="#3C1955" />
                                 </linearGradient>
                                 <linearGradient id="ribGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                                    <stop offset="0%" stop-color="#140A26" />
-                                    <stop offset="100%" stop-color="#3B1261" />
+                                    <stop offset="0%" stop-color="#150820" />
+                                    <stop offset="100%" stop-color="#3C1955" />
                                 </linearGradient>
                             </defs>
 
@@ -607,18 +621,18 @@
                                 stroke="url(#ribGrad)" stroke-width="2.5" />
 
                             <!-- Branch Silhouette on Fan -->
-                            <path d="M 80 145 Q 120 120 155 125 T 225 110" stroke="#2D0D4E" stroke-width="3"
+                            <path d="M 80 145 Q 120 120 155 125 T 225 110" stroke="#150820" stroke-width="3"
                                 stroke-linecap="round" fill="none" />
-                            <circle cx="125" cy="120" r="7" fill="#FEF9C3" opacity="0.9" />
-                            <circle cx="155" cy="115" r="8" fill="#FEF08A" opacity="0.9" />
-                            <circle cx="185" cy="110" r="7.5" fill="#FEF9C3" opacity="0.9" />
-                            <circle cx="215" cy="112" r="6" fill="#FEF08A" opacity="0.85" />
+                            <circle cx="125" cy="120" r="7" fill="#FAF5FA" opacity="0.9" />
+                            <circle cx="155" cy="115" r="8" fill="#FFE169" opacity="0.9" />
+                            <circle cx="185" cy="110" r="7.5" fill="#FAF5FA" opacity="0.9" />
+                            <circle cx="215" cy="112" r="6" fill="#FFE169" opacity="0.85" />
 
                             <!-- Fan Handle & Tassel -->
-                            <circle cx="150" cy="200" r="8" fill="#1E0A38" stroke="#FACC15" stroke-width="2" />
-                            <path d="M 150 208 L 150 230" stroke="#FACC15" stroke-width="2.5" />
+                            <circle cx="150" cy="200" r="8" fill="#150820" stroke="#FFE169" stroke-width="2" />
+                            <path d="M 150 208 L 150 230" stroke="#FFE169" stroke-width="2.5" />
                             <!-- Tassel Fringe -->
-                            <path d="M 144 230 Q 150 235 156 230 L 158 255 Q 150 260 142 255 Z" fill="#FACC15"
+                            <path d="M 144 230 Q 150 235 156 230 L 158 255 Q 150 260 142 255 Z" fill="#FFE169"
                                 opacity="0.9" />
                         </svg>
                     </div>
@@ -628,9 +642,9 @@
                 <div class="lg:col-span-4 space-y-4">
                     <!-- Card 1: My Philosophy -->
                     <div
-                        class="p-5 rounded-2xl bg-dark-900/90 border border-sakura-500/25 hover:border-sakura-500/60 shadow-neon-card transition duration-300">
+                        class="p-5 rounded-2xl bg-dark-900/90 border border-palette-plum/25 hover:border-palette-yellow/50 shadow-neon-card transition duration-300">
                         <h3
-                            class="font-display text-base font-bold text-sakura-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            class="font-display text-base font-bold text-palette-yellow uppercase tracking-wider mb-2 flex items-center gap-2">
                             <span data-id="Filosofi Saya" data-en="My Philosophy">Filosofi Saya</span>
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal"
@@ -643,9 +657,9 @@
 
                     <!-- Card 2: The Mission -->
                     <div
-                        class="p-5 rounded-2xl bg-dark-900/90 border border-sakura-500/25 hover:border-sakura-500/60 shadow-neon-card transition duration-300">
+                        class="p-5 rounded-2xl bg-dark-900/90 border border-palette-plum/25 hover:border-palette-yellow/50 shadow-neon-card transition duration-300">
                         <h3
-                            class="font-display text-base font-bold text-sakura-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            class="font-display text-base font-bold text-palette-yellow uppercase tracking-wider mb-2 flex items-center gap-2">
                             <span data-id="Misi Saya" data-en="The Mission">Misi Saya</span>
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal"
@@ -666,33 +680,33 @@
 
                 <!-- KOLOM KIRI: EXPERIENCE -->
                 <div id="experience" class="scroll-mt-24 space-y-4">
-                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight"
-                        data-id="🌸 Pengalaman" data-en="🌸 Experience">
-                        🌸 Pengalaman
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                        data-id="Pengalaman" data-en="Experience">
+                        Pengalaman
                     </h2>
                     <div class="space-y-3">
 
                         <!-- BPS Magang -->
                         <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat
                                         Statistik</h3>
-                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2026</span>
+                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2026</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5"
+                                <p class="text-xs text-palette-plum mt-0.5"
                                     data-id="Mahasiswa PKL — Pengolahan Data & Web"
                                     data-en="Internship Student — Data Processing & Web">
                                     Mahasiswa PKL — Pengolahan Data & Web
                                 </p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                         data-id="Web Internal" data-en="Internal Web">Web Internal</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                         data-id="Validasi Data" data-en="Data Validation">Validasi Data</span>
                                 </div>
                             </div>
@@ -700,21 +714,21 @@
 
                         <!-- PT Semi Intan Sejahtera -->
                         <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan
                                         Sejahtera</h3>
-                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2022 – 2024</span>
+                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2022 – 2024</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5">Quality Control (QC)</p>
+                                <p class="text-xs text-palette-plum mt-0.5">Quality Control (QC)</p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                         data-id="Kepatuhan SOP" data-en="SOP Compliance">Kepatuhan SOP</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                         data-id="Inspeksi Harian" data-en="Daily Inspection">Inspeksi Harian</span>
                                 </div>
                             </div>
@@ -724,33 +738,33 @@
 
                 <!-- KOLOM KANAN: EDUCATION -->
                 <div id="education" class="scroll-mt-24 space-y-4">
-                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-tight"
-                        data-id="🌸 Pendidikan" data-en="🌸 Education">
-                        🌸 Pendidikan
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                        data-id="Pendidikan" data-en="Education">
+                        Pendidikan
                     </h2>
                     <div class="space-y-3">
 
                         <!-- S1 Universitas PGRI Wiranegara -->
                         <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide"
                                         data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
                                         S1 Ilmu Komputer
                                     </h3>
-                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0" data-id="2022 – Skrg"
+                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0" data-id="2022 – Skrg"
                                         data-en="2022 – Present">2022 – Skrg</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5">Universitas PGRI Wiranegara</p>
+                                <p class="text-xs text-palette-plum mt-0.5">Universitas PGRI Wiranegara</p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                         data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa
                                         Perangkat Lunak</span>
                                     <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                         data-id="Basis Data Relasional" data-en="Relational Database">Basis Data
                                         Relasional</span>
                                 </div>
@@ -759,15 +773,15 @@
 
                         <!-- SMA Negeri 1 Grati -->
                         <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMA Negeri 1 Grati
                                     </h3>
-                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2019 – 2022</span>
+                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2019 – 2022</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5" data-id="Pasuruan, Jawa Timur — Jurusan IPA"
+                                <p class="text-xs text-palette-plum mt-0.5" data-id="Pasuruan, Jawa Timur — Jurusan IPA"
                                     data-en="Pasuruan, East Java — Science Major">
                                     Pasuruan, Jawa Timur — Jurusan IPA
                                 </p>
@@ -784,15 +798,15 @@
 
                         <!-- SMP Negeri 1 Rejoso -->
                         <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso
                                     </h3>
-                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2016 – 2019</span>
+                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2016 – 2019</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5" data-id="Pasuruan, Jawa Timur"
+                                <p class="text-xs text-palette-plum mt-0.5" data-id="Pasuruan, Jawa Timur"
                                     data-en="Pasuruan, East Java">
                                     Pasuruan, Jawa Timur
                                 </p>
@@ -809,15 +823,15 @@
 
                         <!-- SDN Rejosolor I -->
                         <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-sakura-500/20 hover:border-sakura-500/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-sakura-400 to-sakura-600"></div>
+                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">SDN Rejosolor I
                                     </h3>
-                                    <span class="text-[10px] font-mono text-sakura-400 shrink-0">2010 – 2016</span>
+                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2010 – 2016</span>
                                 </div>
-                                <p class="text-xs text-sakura-300 mt-0.5" data-id="Pasuruan, Jawa Timur"
+                                <p class="text-xs text-palette-plum mt-0.5" data-id="Pasuruan, Jawa Timur"
                                     data-en="Pasuruan, East Java">
                                     Pasuruan, Jawa Timur
                                 </p>
@@ -841,28 +855,28 @@
         <!-- 3. SKILL SECTION (Sliding Marquee Grid) -->
         <section id="skill" class="space-y-8 scroll-mt-24">
             <div class="text-left space-y-1">
-                <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400"
+                <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                     data-id="TECH STACK & PERANGKAT" data-en="TECH STACK & TOOLS">TECH STACK & PERANGKAT
                 </p>
-                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight"
-                    data-id="🌸 Skill & Tools 🌸" data-en="🌸 Skills & Tools 🌸">
-                    🌸 Skills & <span class="text-sakura-400">Tools</span> 🌸
+                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                    data-id="Skills & Tools" data-en="Skills & Tools">
+                    Skills & <span class="text-palette-yellow">Tools</span>
                 </h2>
 
             </div>
 
             <!-- Double Marquee Grid -->
             <div
-                class="bg-dark-900/90 rounded-3xl border border-sakura-500/25 p-6 sm:p-8 shadow-neon-card marquee-container overflow-hidden">
+                class="bg-dark-900/90 rounded-3xl border border-palette-plum/30 p-6 sm:p-8 shadow-neon-card marquee-container overflow-hidden">
                 <!-- Row 1: Left -->
                 <div class="mb-4 overflow-hidden relative">
                     <div class="marquee-track-left">
                         <div class="flex items-center gap-4 shrink-0 pr-4">
                             <!-- PHP -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/php.svg" alt="PHP" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -874,9 +888,9 @@
 
                             <!-- HTML -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/html.svg" alt="HTML" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -888,9 +902,9 @@
 
                             <!-- GitHub -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/github.svg" alt="GitHub" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -902,9 +916,9 @@
 
                             <!-- Cisco -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/cisco.svg" alt="Cisco" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -916,9 +930,9 @@
 
                             <!-- Figma -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/figma.svg" alt="Figma" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -930,9 +944,9 @@
 
                             <!-- Canva -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/canva.svg" alt="Canva" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -946,9 +960,9 @@
                         <!-- Duplicate -->
                         <div class="flex items-center gap-4 shrink-0 pr-4" aria-hidden="true">
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/php.svg" alt="PHP" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -958,9 +972,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/html.svg" alt="HTML" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -970,9 +984,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/github.svg" alt="GitHub" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -982,9 +996,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/cisco.svg" alt="Cisco" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -994,9 +1008,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/figma.svg" alt="Figma" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1006,9 +1020,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/canva.svg" alt="Canva" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1027,9 +1041,9 @@
                         <div class="flex items-center gap-4 shrink-0 pr-4">
                             <!-- Google Colab -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/colab.png" alt="Google Colab" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1041,9 +1055,9 @@
 
                             <!-- Excel -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/excel.svg" alt="Excel" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1055,9 +1069,9 @@
 
                             <!-- Word -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/word.svg" alt="Word" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1069,9 +1083,9 @@
 
                             <!-- Orange -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/orange.png" alt="Orange" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1083,9 +1097,9 @@
 
                             <!-- MATLAB -->
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/matlab.png" alt="MATLAB" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1099,9 +1113,9 @@
                         <!-- Duplicate -->
                         <div class="flex items-center gap-4 shrink-0 pr-4" aria-hidden="true">
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/colab.png" alt="Google Colab" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1111,9 +1125,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/excel.svg" alt="Excel" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1123,9 +1137,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/word.svg" alt="Word" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1135,9 +1149,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/orange.png" alt="Orange" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1147,9 +1161,9 @@
                                 </div>
                             </div>
                             <div
-                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-sakura-500/20 hover:border-sakura-500/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
+                                class="inline-flex items-center gap-3 bg-dark-850 hover:bg-dark-800 border border-palette-plum/25 hover:border-palette-yellow/60 rounded-2xl px-4 py-3 transition-all duration-300 min-w-[200px]">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-sakura-500/20 flex items-center justify-center shrink-0 p-2">
+                                    class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/25 flex items-center justify-center shrink-0 p-2">
                                     <img src="./icons/matlab.png" alt="MATLAB" onerror="handleIconError(this)"
                                         class="w-full h-full object-contain" />
                                 </div>
@@ -1168,11 +1182,11 @@
         <section id="project" class="space-y-8 scroll-mt-24">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div class="space-y-1">
-                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-sakura-400"
+                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                         data-id="PORTFOLIO KARYA" data-en="PORTFOLIO WORKS">PORTFOLIO KARYA</p>
-                    <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white tracking-tight"
-                        data-id="🌸 Proyek Pilihan 🌸" data-en="🌸 Featured Projects 🌸">
-                        🌸 Proyek Pilihan 🌸
+                    <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                        data-id="Proyek Pilihan" data-en="Featured Projects">
+                        Proyek Pilihan
                     </h2>
                 </div>
             </div>
@@ -1181,9 +1195,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project 1: Rajut.in -->
                 <article
-                    class="rounded-3xl bg-dark-900/90 border border-sakura-500/25 hover:border-sakura-500/70 shadow-neon-card transition duration-300 flex flex-col overflow-hidden group">
+                    class="rounded-3xl bg-dark-900/90 border border-palette-plum/30 hover:border-palette-yellow/60 shadow-neon-card transition duration-300 flex flex-col overflow-hidden group">
                     <div class="p-4 sm:p-5 bg-dark-850/80 border-b border-dark-800">
-                        <div class="rounded-2xl overflow-hidden aspect-[16/9] border border-sakura-500/20 bg-dark-950">
+                        <div class="rounded-2xl overflow-hidden aspect-[16/9] border border-palette-plum/20 bg-dark-950">
                             <img src="./images/rajutin.png" alt="Rajut.in — Sistem Stok Bahan & Keuangan"
                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                         </div>
@@ -1193,16 +1207,16 @@
                         <div>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-sakura-500/15 text-sakura-300 border border-sakura-500/30"
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-palette-grape text-palette-yellow border border-palette-yellow/30"
                                     data-id="Inventaris & Keuangan" data-en="Inventory & Finance">
                                     Inventaris & Keuangan
                                 </span>
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-slate-300 border border-dark-700">
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-palette-lilac/80 border border-dark-700">
                                     PHP • Tailwind CSS
                                 </span>
                             </div>
-                            <h3 class="font-display text-2xl font-bold uppercase text-white group-hover:text-sakura-300 transition"
+                            <h3 class="font-display text-2xl font-bold uppercase text-palette-lilac group-hover:text-palette-yellow transition"
                                 data-id="Rajut.in — Sistem Stok Bahan & Keuangan"
                                 data-en="Rajut.in — Stock & Financial System">
                                 Rajut.in — Sistem Stok Bahan & Keuangan
@@ -1218,12 +1232,12 @@
 
                         <div class="pt-4 border-t border-dark-800 flex items-center justify-between gap-3">
                             <button onclick="openCaseStudy('rajutin')"
-                                class="text-xs font-bold uppercase tracking-wider text-yellow-400 hover:text-yellow-300 transition cursor-pointer"
+                                class="text-xs font-bold uppercase tracking-wider text-palette-yellow hover:text-yellow-300 transition cursor-pointer"
                                 data-id="Detail Kasus →" data-en="Case Study →">
                                 Detail Kasus →
                             </button>
                             <a href="https://rajutin-seven.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-500 text-dark-950 text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(250,204,21,0.45)] transition">
+                                class="inline-flex items-center gap-2 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(255,225,105,0.45)] transition">
                                 Live Demo
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5"
                                     viewBox="0 0 24 24">
@@ -1236,9 +1250,9 @@
 
                 <!-- Project 2: Sistem Absensi QR -->
                 <article
-                    class="rounded-3xl bg-dark-900/90 border border-purple-500/25 hover:border-purple-500/70 shadow-neon-card transition duration-300 flex flex-col overflow-hidden group">
+                    class="rounded-3xl bg-dark-900/90 border border-palette-plum/30 hover:border-palette-yellow/60 shadow-neon-card transition duration-300 flex flex-col overflow-hidden group">
                     <div class="p-4 sm:p-5 bg-dark-850/80 border-b border-dark-800">
-                        <div class="rounded-2xl overflow-hidden aspect-[16/9] border border-purple-500/20 bg-dark-950">
+                        <div class="rounded-2xl overflow-hidden aspect-[16/9] border border-palette-plum/20 bg-dark-950">
                             <img src="./images/absen.png" alt="Sistem Absensi QR Code Mahasiswa"
                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                         </div>
@@ -1248,17 +1262,17 @@
                         <div>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30"
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-palette-grape text-palette-yellow border border-palette-yellow/30"
                                     data-id="Otomasi QR Code" data-en="QR Code Automation">
                                     Otomasi QR Code
                                 </span>
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-slate-300 border border-dark-700"
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-palette-lilac/80 border border-dark-700"
                                     data-id="Dashboard Admin" data-en="Admin Dashboard">
                                     Dashboard Admin
                                 </span>
                             </div>
-                            <h3 class="font-display text-2xl font-bold uppercase text-white group-hover:text-yellow-300 transition"
+                            <h3 class="font-display text-2xl font-bold uppercase text-palette-lilac group-hover:text-palette-yellow transition"
                                 data-id="Sistem Absensi QR Code Mahasiswa" data-en="Student QR Code Attendance System">
                                 Sistem Absensi QR Code Mahasiswa
                             </h3>
@@ -1273,12 +1287,12 @@
 
                         <div class="pt-4 border-t border-dark-800 flex items-center justify-between gap-3">
                             <button onclick="openCaseStudy('absensi')"
-                                class="text-xs font-bold uppercase tracking-wider text-yellow-400 hover:text-yellow-300 transition cursor-pointer"
+                                class="text-xs font-bold uppercase tracking-wider text-palette-yellow hover:text-yellow-300 transition cursor-pointer"
                                 data-id="Detail Kasus →" data-en="Case Study →">
                                 Detail Kasus →
                             </button>
                             <a href="https://sistem-absensi-qr.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-500 text-dark-950 text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(250,204,21,0.45)] transition">
+                                class="inline-flex items-center gap-2 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(255,225,105,0.45)] transition">
                                 Live Demo
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5"
                                     viewBox="0 0 24 24">
@@ -1294,13 +1308,13 @@
         <!-- 5. CONTACT SECTION -->
         <footer id="contact" class="pb-16 scroll-mt-24">
             <div
-                class="rounded-3xl bg-gradient-to-br from-dark-900 via-dark-850 to-dark-900 border border-purple-500/35 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_0_40px_rgba(168,85,247,0.2)]">
+                class="rounded-3xl bg-gradient-to-br from-dark-900 via-dark-850 to-dark-900 border border-palette-plum/35 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_0_40px_rgba(60,25,85,0.4)]">
                 <div class="space-y-3">
-                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-yellow-400"
+                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                         data-id="HUBUNGI SAYA" data-en="GET IN TOUCH">HUBUNGI SAYA</p>
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white leading-tight"
-                        data-id="🌸 Mari Berkolaborasi 🌸" data-en="🌸 Let's Create Together 🌸">
-                        🌸 Mari Berkolaborasi 🌸
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-palette-lilac leading-tight"
+                        data-id="Mari Berkolaborasi" data-en="Let's Create Together">
+                        Mari Berkolaborasi
                     </h2>
                     <p class="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed"
                         data-id="Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun diskusi teknis."
@@ -1313,9 +1327,9 @@
                 <div class="flex flex-col sm:items-end gap-4 w-full md:w-auto">
                     <!-- Copy Email Button -->
                     <button onclick="copyEmail()"
-                        class="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.45)] border border-yellow-400/40 transition w-full sm:w-auto cursor-pointer">
+                        class="inline-flex items-center justify-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.25)] border border-palette-yellow/40 transition w-full sm:w-auto cursor-pointer">
                         <span id="copy-text">andinikp2004@gmail.com</span>
-                        <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" stroke-width="2"
+                        <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -1325,12 +1339,12 @@
                     <!-- Links -->
                     <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-400 pt-1">
                         <a href="https://github.com/andinikp" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-yellow-400 transition">GitHub</a>
+                            class="hover:text-palette-yellow transition">GitHub</a>
                         <span>•</span>
                         <a href="https://instagram.com/andinikarn" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-yellow-400 transition">Instagram</a>
+                            class="hover:text-palette-yellow transition">Instagram</a>
                         <span>•</span>
-                        <a href="./cv/CV-Andini-Karina-Putri.pdf" download class="hover:text-yellow-400 transition"
+                        <a href="./cv/CV-Andini-Karina-Putri.pdf" download class="hover:text-palette-yellow transition"
                             data-id="Unduh CV" data-en="Download CV">Unduh CV</a>
                     </div>
                 </div>
@@ -1349,17 +1363,17 @@
     <div id="case-modal"
         class="fixed inset-0 z-50 hidden items-center justify-center bg-dark-950/80 backdrop-blur-md p-4">
         <div
-            class="bg-dark-900 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-[0_0_50px_rgba(168,85,247,0.35)] border border-purple-500/35 max-h-[90vh] overflow-y-auto">
+            class="bg-dark-900 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-[0_0_50px_rgba(60,25,85,0.5)] border border-palette-plum/35 max-h-[90vh] overflow-y-auto">
             <div class="flex items-start justify-between gap-4 pb-4 border-b border-dark-800">
                 <div>
                     <span id="modal-tag"
-                        class="text-[11px] font-mono font-bold uppercase tracking-wider text-yellow-400">Studi
+                        class="text-[11px] font-mono font-bold uppercase tracking-wider text-palette-yellow">Studi
                         Kasus</span>
-                    <h3 id="modal-title" class="font-display text-2xl font-bold uppercase text-white mt-1">Judul Proyek
+                    <h3 id="modal-title" class="font-display text-2xl font-bold uppercase text-palette-lilac mt-1">Judul Proyek
                     </h3>
                 </div>
                 <button onclick="closeCaseStudy()"
-                    class="w-8 h-8 rounded-full bg-dark-800 hover:bg-purple-600 text-slate-300 hover:text-white flex items-center justify-center font-bold transition">✕</button>
+                    class="w-8 h-8 rounded-full bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-white flex items-center justify-center font-bold transition">✕</button>
             </div>
 
             <div id="modal-body" class="py-5 space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
@@ -1370,11 +1384,9 @@
                     class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-dark-700 text-slate-300 hover:bg-dark-800 transition cursor-pointer"
                     data-id="Tutup" data-en="Close">Tutup</button>
                 <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer"
-                    class="px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-500 text-dark-950 shadow-[0_0_15px_rgba(250,204,21,0.5)] transition"
+                    class="px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider bg-palette-yellow hover:bg-yellow-500 text-palette-grape shadow-[0_0_15px_rgba(255,225,105,0.45)] transition"
                     data-id="Buka Live Demo →" data-en="Open Live Demo →">Buka Live Demo →</a>
             </div>
-        </div>
-    </div>
         </div>
     </div>
 
@@ -1454,11 +1466,11 @@
                     link: 'https://rajutin-seven.vercel.app/',
                     content: `
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
                 <p>Usaha kerajinan rajut memiliki variasi produk siap kirim dan pesanan khusus dengan pemakaian jenis benang beragam. Tanpa sistem terintegrasi, risiko selisih bahan baku tinggi dan penghitungan laba bersih riil setelah dipotong biaya modal menjadi sulit.</p>
               </div>
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
                 <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
                   <li><strong>Dashboard Finansial Real-time:</strong> Menghitung total omset, estimasi laba bersih setelah biaya benang, dan pesanan aktif secara akurat.</li>
                   <li><strong>Manajemen Pesanan Kustom:</strong> Memisahkan pesanan reguler dengan pesanan kustom yang memerlukan jadwal pengerjaan khusus.</li>
@@ -1473,11 +1485,11 @@
                     link: 'https://rajutin-seven.vercel.app/',
                     content: `
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Challenges:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Challenges:</h4>
                 <p>Knitting craft businesses manage diverse ready-stock items and bespoke orders using multiple yarn types. Without an integrated system, raw material discrepancies are common and calculating true net profits after material costs is difficult.</p>
               </div>
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solutions:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Solutions:</h4>
                 <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
                   <li><strong>Real-time Financial Dashboard:</strong> Accurately tracks revenue, estimated net profit after yarn costs, and active orders.</li>
                   <li><strong>Custom Order Management:</strong> Isolates regular stock items from custom orders requiring specialized production timelines.</li>
@@ -1494,11 +1506,11 @@
                     link: 'https://sistem-absensi-qr.vercel.app/',
                     content: `
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Tantangan:</h4>
                 <p>Pencatatan absensi fisik manual memicu antrean di ruang kelas dan menyulitkan rekapitulasi data kehadiran harian berdasarkan program studi serta angkatan.</p>
               </div>
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Solusi:</h4>
                 <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
                   <li><strong>Pemindaian Cepat Kamera:</strong> Pemindaian QR Code instan yang memvalidasi identitas mahasiswa dan mencatat waktu presensi secara otomatis.</li>
                   <li><strong>Manajemen Data Master:</strong> Tata kelola data mahasiswa, angkatan, dan program studi yang terpusat dan mudah diakses admin.</li>
@@ -1513,11 +1525,11 @@
                     link: 'https://sistem-absensi-qr.vercel.app/',
                     content: `
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Challenges:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Challenges:</h4>
                 <p>Manual physical attendance registers create classroom congestion and make compiling daily attendance statistics across study programs and batches tedious.</p>
               </div>
               <div>
-                <h4 class="font-bold text-sakura-400 text-sm mb-1 uppercase tracking-wide">Solutions:</h4>
+                <h4 class="font-bold text-palette-yellow text-sm mb-1 uppercase tracking-wide">Solutions:</h4>
                 <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
                   <li><strong>Instant Camera Scanning:</strong> Real-time QR Code scanning that validates student credentials and logs timestamped presence instantly.</li>
                   <li><strong>Master Data Administration:</strong> Centralized governance over student rosters, academic cohorts, and study programs.</li>
@@ -1574,27 +1586,35 @@
 
             const translatable = document.querySelectorAll('[data-id][data-en]');
 
-            if (isInitial) {
+            const updateContent = () => {
                 translatable.forEach(el => {
-                    el.textContent = lang === 'id' ? el.dataset.id : el.dataset.en;
+                    const val = lang === 'id' ? el.dataset.id : el.dataset.en;
+                    if (val.includes('<')) {
+                        el.innerHTML = val;
+                    } else {
+                        el.textContent = val;
+                    }
                 });
                 updateBadgesAndMeta(lang);
+            };
+
+            if (isInitial) {
+                updateContent();
                 return;
             }
 
             // Smooth cross-fade transition without layout shift
             translatable.forEach(el => {
-                el.style.transition = 'opacity 150ms ease';
+                el.style.transition = 'opacity 180ms cubic-bezier(0.4, 0, 0.2, 1)';
                 el.style.opacity = '0';
             });
 
             setTimeout(() => {
+                updateContent();
                 translatable.forEach(el => {
-                    el.textContent = lang === 'id' ? el.dataset.id : el.dataset.en;
                     el.style.opacity = '1';
                 });
-                updateBadgesAndMeta(lang);
-            }, 150);
+            }, 180);
         }
 
         function updateBadgesAndMeta(lang) {
@@ -1603,23 +1623,23 @@
             const badgeEn = document.getElementById('lang-badge-en');
             if (badgeId && badgeEn) {
                 if (lang === 'id') {
-                    badgeId.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 bg-purple-600 text-white shadow-xs';
-                    badgeEn.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-dark-950/70 hover:text-dark-950';
+                    badgeId.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 bg-palette-grape text-palette-lilac shadow-xs';
+                    badgeEn.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-palette-grape/70 hover:text-palette-grape';
                 } else {
-                    badgeId.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-dark-950/70 hover:text-dark-950';
-                    badgeEn.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 bg-purple-600 text-white shadow-xs';
+                    badgeId.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-palette-grape/70 hover:text-palette-grape';
+                    badgeEn.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 bg-palette-grape text-palette-lilac shadow-xs';
                 }
             }
 
             // Update mobile language badges
             document.querySelectorAll('.mobile-lang-badge-id').forEach(el => {
                 el.className = lang === 'id'
-                    ? 'mobile-lang-badge-id px-3 py-1 rounded-full text-xs font-bold font-mono bg-purple-600 text-white shadow-xs'
+                    ? 'mobile-lang-badge-id px-3 py-1 rounded-full text-xs font-bold font-mono bg-palette-grape text-palette-lilac shadow-xs'
                     : 'mobile-lang-badge-id px-3 py-1 rounded-full text-xs font-bold font-mono text-slate-400';
             });
             document.querySelectorAll('.mobile-lang-badge-en').forEach(el => {
                 el.className = lang === 'en'
-                    ? 'mobile-lang-badge-en px-3 py-1 rounded-full text-xs font-bold font-mono bg-purple-600 text-white shadow-xs'
+                    ? 'mobile-lang-badge-en px-3 py-1 rounded-full text-xs font-bold font-mono bg-palette-grape text-palette-lilac shadow-xs'
                     : 'mobile-lang-badge-en px-3 py-1 rounded-full text-xs font-bold font-mono text-slate-400';
             });
 
