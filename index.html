@@ -191,31 +191,32 @@
         class="fixed bottom-[-10%] right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-t from-palette-plum/15 via-palette-yellow/10 to-transparent blur-[150px] pointer-events-none z-0">
     </div>
 
-    <!-- 0. FLOATING TOP PILL NAVBAR (Symmetrical Rata Kanan-Kiri) -->
+    <!-- 0. FLOATING TOP PILL NAVBAR -->
     <div class="fixed top-5 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
         <header
-            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-5 sm:px-7 py-2.5 flex items-center justify-between gap-2 sm:gap-4 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 max-w-4xl lg:max-w-5xl w-full">
-            <!-- Brand Logo (Left Flank) -->
-            <a href="#home"
-                class="font-display text-lg sm:text-xl font-black tracking-wider text-palette-grape hover:text-palette-grape/80 transition flex items-center gap-2 shrink-0">
-                <span class="w-2.5 h-2.5 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169]"></span>
-                <span class="font-extrabold tracking-widest text-sm uppercase">ANDINI</span>
-            </a>
+            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-5 sm:px-7 py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 max-w-4xl lg:max-w-5xl w-full">
 
             <!-- Desktop Nav Items: Evenly Distributed (Rata Kanan Kiri) -->
             <nav
-                class="hidden md:flex flex-1 items-center justify-evenly px-3 lg:px-6 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
-                <a href="#home" class="hover:text-palette-grape transition py-1 text-center" data-id="Home" data-en="Home">Home</a>
-                <a href="#about" class="hover:text-palette-grape transition py-1 text-center" data-id="Tentang" data-en="About">Tentang</a>
-                <a href="#experience" class="hover:text-palette-grape transition py-1 text-center" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
-                <a href="#education" class="hover:text-palette-grape transition py-1 text-center" data-id="Pendidikan" data-en="Education">Pendidikan</a>
-                <a href="#skill" class="hover:text-palette-grape transition py-1 text-center" data-id="Skill" data-en="Skill">Skill</a>
-                <a href="#project" class="hover:text-palette-grape transition py-1 text-center" data-id="Proyek" data-en="Project">Proyek</a>
-                <a href="#contact" class="hover:text-palette-grape transition py-1 text-center" data-id="Kontak" data-en="Contact">Kontak</a>
+                class="hidden md:flex flex-1 items-center justify-evenly px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
+                <a href="#home" class="hover:text-palette-grape transition py-1 text-center" data-id="Home"
+                    data-en="Home">Home</a>
+                <a href="#about" class="hover:text-palette-grape transition py-1 text-center" data-id="Tentang"
+                    data-en="About">Tentang</a>
+                <a href="#experience" class="hover:text-palette-grape transition py-1 text-center" data-id="Pengalaman"
+                    data-en="Experience">Pengalaman</a>
+                <a href="#education" class="hover:text-palette-grape transition py-1 text-center" data-id="Pendidikan"
+                    data-en="Education">Pendidikan</a>
+                <a href="#skill" class="hover:text-palette-grape transition py-1 text-center" data-id="Skill"
+                    data-en="Skill">Skill</a>
+                <a href="#project" class="hover:text-palette-grape transition py-1 text-center" data-id="Proyek"
+                    data-en="Project">Proyek</a>
+                <a href="#contact" class="hover:text-palette-grape transition py-1 text-center" data-id="Kontak"
+                    data-en="Contact">Kontak</a>
             </nav>
 
-            <!-- Right Actions: Language Selector + Hire Me Button -->
-            <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+            <!-- Right Actions: Language Selector + Hire Me Button (+ Mobile Full Width) -->
+            <div class="flex items-center justify-between md:justify-end gap-2 sm:gap-2.5 w-full md:w-auto shrink-0">
                 <!-- Language Toggle (Segmented Pill ID | EN) -->
                 <button type="button" onclick="toggleLang()" id="lang-btn"
                     class="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-palette-lilac hover:bg-white text-palette-grape transition border border-palette-plum/50 shadow-xs shrink-0 cursor-pointer w-[64px] justify-center"
@@ -226,40 +227,26 @@
                         class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-palette-grape/70 hover:text-palette-grape">EN</span>
                 </button>
 
-                <a href="#contact"
-                    class="bg-palette-yellow hover:bg-yellow-500 text-palette-grape font-black tracking-wider uppercase py-2 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 shrink-0 w-[114px] text-center flex items-center justify-center whitespace-nowrap"
-                    data-id="Rekrut Saya" data-en="Hire Me">
-                    Rekrut Saya
-                </a>
+                <div class="flex items-center gap-2">
+                    <a href="#contact"
+                        class="bg-palette-yellow hover:bg-yellow-500 text-palette-grape font-black tracking-wider uppercase py-2 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 shrink-0 w-[114px] text-center flex items-center justify-center whitespace-nowrap"
+                        data-id="Rekrut Saya" data-en="Hire Me">
+                        Rekrut Saya
+                    </a>
 
-                <!-- Mobile Hamburger Toggle -->
-                <button type="button" onclick="toggleMobileMenu()"
-                    class="md:hidden p-1.5 text-palette-grape focus:outline-none" aria-label="Toggle Navigation">
-                    <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </header>
-    </div>
-
-                <!-- Mobile Hamburger Toggle -->
-                <button type="button" onclick="toggleMobileMenu()"
-                    class="md:hidden p-1.5 text-palette-grape focus:outline-none" aria-label="Toggle Navigation">
-                    <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+                    <!-- Mobile Hamburger Toggle -->
+                    <button type="button" onclick="toggleMobileMenu()"
+                        class="md:hidden p-1.5 text-palette-grape focus:outline-none" aria-label="Toggle Navigation">
+                        <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
     </div>
@@ -268,18 +255,23 @@
     <div id="mobile-menu"
         class="hidden fixed top-20 inset-x-4 z-40 md:hidden bg-dark-900/95 backdrop-blur-xl border border-palette-plum/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(60,25,85,0.4)] text-center space-y-4">
         <nav class="flex flex-col space-y-3 text-sm font-bold tracking-widest uppercase text-palette-lilac">
-            <a href="#home" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Home" data-en="Home">Home</a>
+            <a href="#home" onclick="toggleMobileMenu()" class="hover:text-palette-yellow py-2 border-b border-dark-800"
+                data-id="Home" data-en="Home">Home</a>
             <a href="#about" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Tentang" data-en="About">Tentang</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Tentang"
+                data-en="About">Tentang</a>
             <a href="#experience" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pengalaman" data-en="Experience">Pengalaman</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pengalaman"
+                data-en="Experience">Pengalaman</a>
             <a href="#education" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pendidikan" data-en="Education">Pendidikan</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pendidikan"
+                data-en="Education">Pendidikan</a>
             <a href="#skill" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Skill" data-en="Skill">Skill</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Skill"
+                data-en="Skill">Skill</a>
             <a href="#project" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Proyek" data-en="Project">Proyek</a>
+                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Proyek"
+                data-en="Project">Proyek</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-palette-yellow py-2" data-id="Kontak"
                 data-en="Contact">Kontak</a>
         </nav>
@@ -317,17 +309,18 @@
                 </div>
 
                 <p class="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed font-normal"
-                    data-id="Mahasiswa S1 Ilmu Komputer yang berfokus merancang aplikasi web operasional terstruktur, responsif, dan mudah digunakan untuk manajemen inventaris, pencatatan keuangan, dan presensi digital."
-                    data-en="Computer Science undergraduate focused on designing structured, responsive, and user-friendly operational web applications for inventory management, financial recording, and digital attendance.">
-                    Mahasiswa S1 Ilmu Komputer yang berfokus merancang aplikasi web operasional terstruktur, responsif,
-                    dan mudah digunakan untuk manajemen inventaris, pencatatan keuangan, dan presensi digital.
+                    data-id="Mahasiswa Ilmu Komputer yang tertarik pada pengembangan web—menggabungkan desain antarmuka yang rapi, logika sistem, dan pengelolaan data menjadi aplikasi yang siap pakai."
+                    data-en="A Computer Science student with an interest in web development—integrating clean interface design, system logic, and data management into functional, ready-to-use applications.">
+                    Mahasiswa Ilmu Komputer yang tertarik pada pengembangan web—menggabungkan desain antarmuka yang
+                    rapi, logika sistem, dan pengelolaan data menjadi aplikasi yang siap pakai.
                 </p>
 
                 <!-- Actions: Download CV + Social Icons -->
                 <div class="flex flex-wrap items-center gap-4 pt-2">
                     <a href="./cv/CV-Andini-Karina-Putri.pdf" download
                         class="inline-flex items-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac text-xs font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.3)] border-2 border-palette-yellow transition duration-300 transform hover:scale-[1.02]">
-                        <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2.5"
+                            viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
@@ -397,9 +390,11 @@
                     class="mt-6 bg-dark-900/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-palette-plum/40 text-center shadow-[0_0_20px_rgba(60,25,85,0.3)]">
                     <p
                         class="text-xs font-bold tracking-widest uppercase text-palette-yellow flex items-center justify-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
+                        <span
+                            class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
                         <span data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</span>
-                        <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
+                        <span
+                            class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
                     </p>
                 </div>
 
@@ -551,13 +546,15 @@
                     <p class="text-slate-300 text-sm leading-relaxed"
                         data-id="Saya adalah mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang berfokus pada pengembangan aplikasi web operasional."
                         data-en="I am an undergraduate Computer Science student at Universitas PGRI Wiranegara focused on developing operational web applications.">
-                        Saya adalah mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI Wiranegara</strong> yang
+                        Saya adalah mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI
+                            Wiranegara</strong> yang
                         berfokus pada pengembangan aplikasi web operasional.
                     </p>
                     <p class="text-slate-400 text-sm leading-relaxed"
                         data-id="Pengalaman kerja sebagai Quality Control dan PKL di Badan Pusat Statistik (BPS) menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta keandalan fungsional aplikasi."
                         data-en="Work experience as Quality Control and internship at the Central Bureau of Statistics (BPS) fostered high attention to detail in data validation, database relations, and application functional reliability.">
-                        Pengalaman kerja sebagai <em>Quality Control</em> dan PKL di <strong class="text-palette-lilac">Badan Pusat Statistik
+                        Pengalaman kerja sebagai <em>Quality Control</em> dan PKL di <strong
+                            class="text-palette-lilac">Badan Pusat Statistik
                             (BPS)</strong> menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta
                         keandalan fungsional aplikasi.
                     </p>
@@ -689,7 +686,8 @@
                         <!-- BPS Magang -->
                         <div
                             class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                            </div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat
@@ -715,7 +713,8 @@
                         <!-- PT Semi Intan Sejahtera -->
                         <div
                             class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                            </div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan
@@ -747,15 +746,16 @@
                         <!-- S1 Universitas PGRI Wiranegara -->
                         <div
                             class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                            </div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide"
                                         data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
                                         S1 Ilmu Komputer
                                     </h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0" data-id="2022 – Skrg"
-                                        data-en="2022 – Present">2022 – Skrg</span>
+                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0"
+                                        data-id="2023 – Skrg" data-en="2023 – Present">2023 – Skrg</span>
                                 </div>
                                 <p class="text-xs text-palette-plum mt-0.5">Universitas PGRI Wiranegara</p>
                                 <div class="flex flex-wrap gap-1.5 mt-2">
@@ -774,7 +774,8 @@
                         <!-- SMA Negeri 1 Grati -->
                         <div
                             class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                            </div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMA Negeri 1 Grati
@@ -799,7 +800,8 @@
                         <!-- SMP Negeri 1 Rejoso -->
                         <div
                             class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                            </div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso
@@ -824,7 +826,8 @@
                         <!-- SDN Rejosolor I -->
                         <div
                             class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                            </div>
                             <div class="min-w-0">
                                 <div class="flex items-center justify-between gap-2 flex-wrap">
                                     <h3 class="font-bold text-sm text-white uppercase tracking-wide">SDN Rejosolor I
@@ -856,11 +859,11 @@
         <section id="skill" class="space-y-8 scroll-mt-24">
             <div class="text-left space-y-1">
                 <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
-                    data-id="TECH STACK & PERANGKAT" data-en="TECH STACK & TOOLS">TECH STACK & PERANGKAT
+                    data-id="TEKNOLOGI & PERANGKAT" data-en="TECH STACK & TOOLS">TEKNOLOGI & PERANGKAT
                 </p>
                 <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
-                    data-id="Skills & Tools" data-en="Skills & Tools">
-                    Skills & <span class="text-palette-yellow">Tools</span>
+                    data-id="KEAHLIAN & TOOLS" data-en="Skills & Tools">
+                    KEAHLIAN & <span class="text-palette-yellow">TOOLS</span>
                 </h2>
 
             </div>
@@ -1197,7 +1200,8 @@
                 <article
                     class="rounded-3xl bg-dark-900/90 border border-palette-plum/30 hover:border-palette-yellow/60 shadow-neon-card transition duration-300 flex flex-col overflow-hidden group">
                     <div class="p-4 sm:p-5 bg-dark-850/80 border-b border-dark-800">
-                        <div class="rounded-2xl overflow-hidden aspect-[16/9] border border-palette-plum/20 bg-dark-950">
+                        <div
+                            class="rounded-2xl overflow-hidden aspect-[16/9] border border-palette-plum/20 bg-dark-950">
                             <img src="./images/rajutin.png" alt="Rajut.in — Sistem Stok Bahan & Keuangan"
                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                         </div>
@@ -1252,7 +1256,8 @@
                 <article
                     class="rounded-3xl bg-dark-900/90 border border-palette-plum/30 hover:border-palette-yellow/60 shadow-neon-card transition duration-300 flex flex-col overflow-hidden group">
                     <div class="p-4 sm:p-5 bg-dark-850/80 border-b border-dark-800">
-                        <div class="rounded-2xl overflow-hidden aspect-[16/9] border border-palette-plum/20 bg-dark-950">
+                        <div
+                            class="rounded-2xl overflow-hidden aspect-[16/9] border border-palette-plum/20 bg-dark-950">
                             <img src="./images/absen.png" alt="Sistem Absensi QR Code Mahasiswa"
                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                         </div>
@@ -1369,7 +1374,8 @@
                     <span id="modal-tag"
                         class="text-[11px] font-mono font-bold uppercase tracking-wider text-palette-yellow">Studi
                         Kasus</span>
-                    <h3 id="modal-title" class="font-display text-2xl font-bold uppercase text-palette-lilac mt-1">Judul Proyek
+                    <h3 id="modal-title" class="font-display text-2xl font-bold uppercase text-palette-lilac mt-1">Judul
+                        Proyek
                     </h3>
                 </div>
                 <button onclick="closeCaseStudy()"
