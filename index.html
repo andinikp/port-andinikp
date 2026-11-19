@@ -245,6 +245,8 @@
                     data-en="Education">Pendidikan</a>
                 <a href="#skill" class="nav-item transition py-1 text-center" data-id="Skill"
                     data-en="Skill">Skill</a>
+                <a href="#certifications" class="nav-item transition py-1 text-center" data-id="Sertifikat"
+                    data-en="Certificates">Sertifikat</a>
                 <a href="#project" class="nav-item transition py-1 text-center" data-id="Proyek"
                     data-en="Project">Proyek</a>
                 <a href="#contact" class="nav-item transition py-1 text-center" data-id="Kontak"
@@ -306,6 +308,9 @@
             <a href="#skill" onclick="toggleMobileMenu()"
                 class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Skill"
                 data-en="Skill">Skill</a>
+            <a href="#certifications" onclick="toggleMobileMenu()"
+                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Sertifikat"
+                data-en="Certificates">Sertifikat</a>
             <a href="#project" onclick="toggleMobileMenu()"
                 class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Proyek"
                 data-en="Project">Proyek</a>
@@ -1272,7 +1277,425 @@
             </div>
         </section>
 
-        <!-- 4. PROJECT SECTION (Karya Web Aplikasi) -->
+        <!-- 4. CERTIFICATIONS & CREDENTIALS SECTION -->
+        <section id="certifications" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div class="space-y-1">
+                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
+                        data-id="KREDENSIAL & PENCAPAIAN" data-en="CREDENTIALS & ACHIEVEMENTS">KREDENSIAL & PENCAPAIAN</p>
+                    <h2 id="certifications-title"
+                        class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                        data-id="Sertifikasi & <span class='text-palette-yellow'>Kredensial</span>"
+                        data-en="Certifications & <span class='text-palette-yellow'>Credentials</span>">
+                        Sertifikasi & <span class="text-palette-yellow">Kredensial</span>
+                    </h2>
+                    <p class="text-sm text-slate-300 max-w-xl font-normal"
+                        data-id="Lisensi kursus profesional Dicoding, keikutsertaan webinar data BPS, seminar machine learning, kompetisi nasional, serta kepengurusan organisasi."
+                        data-en="Verified Dicoding licenses, BPS data webinars, machine learning seminars, national competitions, and student organization leadership.">
+                        Lisensi kursus profesional Dicoding, keikutsertaan webinar data BPS, seminar machine learning, kompetisi nasional, serta kepengurusan organisasi.
+                    </p>
+                </div>
+
+                <!-- Category Filter Tabs -->
+                <div class="flex items-center gap-1.5 p-1.5 bg-dark-900 border border-palette-plum/30 rounded-2xl shrink-0 self-start md:self-end overflow-x-auto max-w-full">
+                    <button type="button" onclick="filterCertCards('all', this)"
+                        class="cert-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition font-mono bg-palette-yellow text-palette-grape shadow-xs cursor-pointer whitespace-nowrap"
+                        data-id="Semua (8)" data-en="All (8)">Semua (8)</button>
+                    <button type="button" onclick="filterCertCards('course', this)"
+                        class="cert-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition font-mono text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
+                        data-id="Dicoding (3)" data-en="Dicoding (3)">Dicoding (3)</button>
+                    <button type="button" onclick="filterCertCards('academic', this)"
+                        class="cert-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition font-mono text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
+                        data-id="BPS & Akademik (4)" data-en="BPS & Academic (4)">BPS & Akademik (4)</button>
+                    <button type="button" onclick="filterCertCards('org', this)"
+                        class="cert-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition font-mono text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
+                        data-id="Organisasi (1)" data-en="Organization (1)">Organisasi (1)</button>
+                </div>
+            </div>
+
+            <!-- Certificates Grid (8 Cards) -->
+            <div id="certs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+                <!-- 1. Dicoding Dasar AI -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="course">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('dicoding-ai')">
+                        <img src="./images/sertifikat/sertifikat_course_653_3744283_080226205129_1.jpg" alt="Belajar Dasar AI"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            Dicoding Academy
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Feb 2026</span>
+                                <span class="text-palette-plum font-semibold">ID: MEPJ2837WP3V</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="Belajar Dasar AI" data-en="Learn AI Basics">
+                                Belajar Dasar AI
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Fundamental Artificial Intelligence, Machine Learning, Deep Learning, & etika implementasi AI industri."
+                                data-en="Fundamentals of AI, Machine Learning, Deep Learning, and industry AI implementation ethics.">
+                                Fundamental Artificial Intelligence, Machine Learning, Deep Learning, & etika implementasi AI industri.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('dicoding-ai')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Detail & Verifikasi →" data-en="Details & Verify →">
+                                Detail & Verifikasi →
+                            </button>
+                            <a href="./sertifikat/sertifikat_course_653_3744283_080226205129%20(1).pdf" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen PDF">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Dicoding Pemrograman Python -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="course">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('dicoding-python')">
+                        <img src="./images/sertifikat/python.jpg" alt="Memulai Pemrograman dengan Python"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            Dicoding Academy
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Feb 2026</span>
+                                <span class="text-palette-plum font-semibold">ID: JMZVOM313XN9</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="Memulai Pemrograman dengan Python" data-en="Starting Programming with Python">
+                                Memulai Pemrograman dengan Python
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Sintaks Python, tipe & struktur data, modularisasi kode, penanganan eksepsi, serta otomasi data."
+                                data-en="Python syntax, core data structures, modular programming, exception handling, and data automation.">
+                                Sintaks Python, tipe & struktur data, modularisasi kode, penanganan eksepsi, serta otomasi data.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('dicoding-python')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Detail & Verifikasi →" data-en="Details & Verify →">
+                                Detail & Verifikasi →
+                            </button>
+                            <a href="./sertifikat/python.pdf" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen PDF">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Dicoding Machine Learning -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="course">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('dicoding-ml')">
+                        <img src="./images/sertifikat/sertifikat_course_184_3744283_270226145308_1.jpg" alt="Belajar Machine Learning untuk Pemula"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            Dicoding Academy
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Feb 2026</span>
+                                <span class="text-palette-plum font-semibold">ID: QLZ99KO3MZ5D</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="Belajar Machine Learning untuk Pemula" data-en="Learn Machine Learning for Beginners">
+                                Belajar Machine Learning untuk Pemula
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Supervised & Unsupervised Learning, evaluasi model, data cleaning, serta implementasi TensorFlow."
+                                data-en="Supervised & Unsupervised Learning, model metrics, data cleaning, and TensorFlow implementation.">
+                                Supervised & Unsupervised Learning, evaluasi model, data cleaning, serta implementasi TensorFlow.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('dicoding-ml')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Detail & Verifikasi →" data-en="Details & Verify →">
+                                Detail & Verifikasi →
+                            </button>
+                            <a href="./sertifikat/sertifikat_course_184_3744283_270226145308%20(1).pdf" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen PDF">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Webinar BPS Web Scraping -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('bps-scraping')">
+                        <img src="./images/sertifikat/Andini_Karina_Putri_1.jpg" alt="Web Scraping untuk Pemula"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            BPS Kota Pasuruan
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Sep 2024</span>
+                                <span class="text-palette-plum font-semibold">Webinar BPS</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="Webinar: Web Scraping untuk Pemula" data-en="Webinar: Web Scraping for Beginners">
+                                Webinar: Web Scraping untuk Pemula
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Ekstraksi data otomatis dari web publik untuk agregasi data statistik dan pelaporan berkala BPS."
+                                data-en="Automated public web scraping workflows for statistical data aggregation and BPS regular reporting.">
+                                Ekstraksi data otomatis dari web publik untuk agregasi data statistik dan pelaporan berkala BPS.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('bps-scraping')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Lihat Detail →" data-en="View Details →">
+                                Lihat Detail →
+                            </button>
+                            <a href="./sertifikat/Andini%20Karina%20Putri-1.pdf" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen PDF">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Webinar BPS R Studio -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('bps-rstudio')">
+                        <img src="./images/sertifikat/Andini_Karina_Putri_4.jpg" alt="Analisis Data Statistik dengan R Studio"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            BPS Kab. Pasuruan
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Okt 2024</span>
+                                <span class="text-palette-plum font-semibold">Webinar BPS</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="Analisis Data Statistik dengan R Studio" data-en="Statistical Data Analysis with R Studio">
+                                Analisis Data Statistik dengan R Studio
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Pemodelan statistik terapan, visualisasi ggplot2, serta interpretasi regresi linear berbasis R Studio."
+                                data-en="Applied statistical modeling, ggplot2 visualization, and regression analysis using R Studio.">
+                                Pemodelan statistik terapan, visualisasi ggplot2, serta interpretasi regresi linear berbasis R Studio.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('bps-rstudio')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Lihat Detail →" data-en="View Details →">
+                                Lihat Detail →
+                            </button>
+                            <a href="./sertifikat/Andini%20Karina%20Putri-4.pdf" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen PDF">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Seminar Uniwara Machine Learning -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('seminar-ml')">
+                        <img src="./images/sertifikat/Sertifikat___ANDINI_KARINA_PUTRI.jpg" alt="Seminar ML & Deep Learning"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            Uniwara
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Mei 2024</span>
+                                <span class="text-palette-plum font-semibold">Seminar</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="Seminar: Optimasi Machine Learning & Deep Learning" data-en="Seminar: ML & Deep Learning Optimization">
+                                Seminar: Optimasi Machine Learning & Deep Learning
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Studi arsitektur deep learning, konvergensi neural networks, serta implementasi kasus industri terkini."
+                                data-en="Deep learning architectures, neural network convergence, and real-world industrial use cases.">
+                                Studi arsitektur deep learning, konvergensi neural networks, serta implementasi kasus industri terkini.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('seminar-ml')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Lihat Detail →" data-en="View Details →">
+                                Lihat Detail →
+                            </button>
+                            <a href="./sertifikat/Sertifikat%20-%20ANDINI%20KARINA%20PUTRI.pdf" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen PDF">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. ON MIPA-PT 2024 Puspresnas -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('onmipa-2024')">
+                        <img src="./images/sertifikat/Andini_Karina_Putri_1_2.jpg" alt="ON MIPA-PT 2024 Bidang Matematika"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            Puspresnas / BPTI
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Apr 2024</span>
+                                <span class="text-palette-plum font-semibold">Kompetisi Nasional</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="ON MIPA-PT 2024 Bidang Matematika" data-en="ON MIPA-PT 2024 Mathematics Field">
+                                ON MIPA-PT 2024 Bidang Matematika
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Peserta seleksi tingkat wilayah Olimpiade Nasional MIPA Perguruan Tinggi yang diselenggarakan Kemendikbudristek."
+                                data-en="Regional selection participant of National University Mathematics & Natural Sciences Olympiad by Ministry of Education.">
+                                Peserta seleksi tingkat wilayah Olimpiade Nasional MIPA Perguruan Tinggi yang diselenggarakan Kemendikbudristek.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('onmipa-2024')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Lihat Detail →" data-en="View Details →">
+                                Lihat Detail →
+                            </button>
+                            <a href="./sertifikat/Andini%20Karina%20Putri-1%20(2).pdf" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen PDF">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. UKM KOPMA Bendahara -->
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="org">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('kopma-diesnatalis')">
+                        <img src="./images/sertifikat/4_1.jpg" alt="Bendahara 1 Gebyar Koperasi KOPMA"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            UKM KOPMA Uniwara
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                                <span>Feb 2025</span>
+                                <span class="text-palette-plum font-semibold">Organisasi</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
+                                data-id="Bendahara 1: Gebyar Koperasi & Dies Natalis Ke-X" data-en="1st Treasurer: Cooperative Festival & 10th Anniversary">
+                                Bendahara 1: Gebyar Koperasi & Dies Natalis Ke-X
+                            </h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
+                                data-id="Manajemen arus kas, anggaran belanja kegiatan, dan penyusunan laporan pertanggungjawaban dana."
+                                data-en="Cash flow bookkeeping, event expenditure budgeting, and financial accountability reporting.">
+                                Manajemen arus kas, anggaran belanja kegiatan, dan penyusunan laporan pertanggungjawaban dana.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
+                            <button type="button" onclick="openCertModal('kopma-diesnatalis')"
+                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
+                                data-id="Lihat Detail →" data-en="View Details →">
+                                Lihat Detail →
+                            </button>
+                            <a href="./sertifikat/4%20(1).png" target="_blank" rel="noopener noreferrer"
+                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
+                                title="Buka Dokumen Asli">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. PROJECT SECTION (Karya Web Aplikasi) -->
         <section id="project" class="space-y-8 scroll-mt-24">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div class="space-y-1">
@@ -1489,6 +1912,61 @@
         </div>
     </div>
 
+    <!-- CERTIFICATE LIGHTBOX MODAL -->
+    <div id="cert-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-dark-950/85 backdrop-blur-md p-3 sm:p-5"
+        onclick="if(event.target === this) closeCertModal()">
+        <div
+            class="bg-dark-900 rounded-3xl max-w-3xl w-full p-5 sm:p-7 shadow-[0_0_60px_rgba(60,25,85,0.65)] border border-palette-plum/40 max-h-[92vh] overflow-y-auto flex flex-col space-y-4">
+            <!-- Modal Header -->
+            <div class="flex items-start justify-between gap-4 pb-3 border-b border-dark-800">
+                <div class="space-y-1">
+                    <span id="cert-modal-tag"
+                        class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-800 border border-palette-plum/30 text-palette-yellow">KREDENSIAL</span>
+                    <h3 id="cert-modal-title" class="font-display text-xl sm:text-2xl font-bold uppercase text-palette-lilac mt-1">
+                        Judul Sertifikat
+                    </h3>
+                    <p id="cert-modal-issuer" class="text-xs text-palette-plum font-semibold">Penerbit</p>
+                </div>
+                <button type="button" onclick="closeCertModal()"
+                    class="w-9 h-9 rounded-full bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-white flex items-center justify-center font-bold transition cursor-pointer shrink-0">✕</button>
+            </div>
+
+            <!-- Preview Image -->
+            <div class="relative rounded-2xl overflow-hidden bg-dark-950 border border-palette-plum/25 flex items-center justify-center max-h-[48vh] p-2">
+                <img id="cert-modal-img" src="" alt="Pratinjau Sertifikat" class="w-full max-h-[46vh] object-contain rounded-xl" />
+            </div>
+
+            <!-- Details & Description -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-dark-850 p-4 rounded-xl border border-dark-800">
+                <div>
+                    <span class="text-slate-400 font-mono block text-[10px] uppercase" data-id="Tanggal Terbit:" data-en="Issue Date:">Tanggal Terbit:</span>
+                    <span id="cert-modal-date" class="text-palette-lilac font-bold text-xs">-</span>
+                </div>
+                <div>
+                    <span class="text-slate-400 font-mono block text-[10px] uppercase" data-id="ID Kredensial / No. Dokumen:" data-en="Credential ID / Doc No.:">ID Kredensial / No. Dokumen:</span>
+                    <span id="cert-modal-id" class="text-palette-yellow font-mono font-bold text-xs">-</span>
+                </div>
+                <div class="sm:col-span-2 pt-2 border-t border-dark-800">
+                    <p id="cert-modal-desc" class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">-</p>
+                </div>
+            </div>
+
+            <!-- Modal Footer Actions -->
+            <div class="pt-2 flex flex-wrap items-center justify-end gap-3">
+                <button type="button" onclick="closeCertModal()"
+                    class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-dark-700 text-slate-300 hover:bg-dark-800 transition cursor-pointer"
+                    data-id="Tutup" data-en="Close">Tutup</button>
+                <a id="cert-modal-verify" href="#" target="_blank" rel="noopener noreferrer"
+                    class="hidden px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border border-palette-plum/40 hover:border-palette-yellow text-palette-lilac hover:text-palette-yellow bg-dark-800 transition cursor-pointer"
+                    data-id="Verifikasi Kredensial ↗" data-en="Verify Credential ↗">Verifikasi Kredensial ↗</a>
+                <a id="cert-modal-pdf" href="#" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider bg-palette-yellow hover:bg-yellow-500 text-palette-grape shadow-[0_0_15px_rgba(255,225,105,0.45)] transition cursor-pointer"
+                    data-id="Buka Dokumen Asli →" data-en="Open Original Doc →">Buka Dokumen Asli →</a>
+            </div>
+        </div>
+    </div>
+
     <!-- SCRIPT LOGIC -->
     <script>
         // Language Toggle State
@@ -1664,6 +2142,7 @@
             const modal = document.getElementById('case-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeCaseStudy() {
@@ -1671,7 +2150,248 @@
             const modal = document.getElementById('case-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+            document.body.style.overflow = '';
         }
+
+        // ── CERTIFICATE DATA & MODAL LOGIC ────────────────
+        const certificateData = {
+            'dicoding-ai': {
+                img: './images/sertifikat/sertifikat_course_653_3744283_080226205129_1.jpg',
+                file: './sertifikat/sertifikat_course_653_3744283_080226205129%20(1).pdf',
+                verifyUrl: 'https://www.dicoding.com/certificates/MEPJ2837WP3V',
+                credentialId: 'MEPJ2837WP3V',
+                category: 'course',
+                id: {
+                    title: 'Belajar Dasar AI',
+                    issuer: 'Dicoding Academy',
+                    date: 'Februari 2026 (Berlaku s.d. Feb 2029)',
+                    badge: 'Dicoding Academy',
+                    description: 'Mempelajari konsep fundamental Artificial Intelligence (AI), Machine Learning, Deep Learning, computer vision, natural language processing, serta etika implementasi AI dalam industri modern.'
+                },
+                en: {
+                    title: 'Learn AI Basics',
+                    issuer: 'Dicoding Academy',
+                    date: 'February 2026 (Valid until Feb 2029)',
+                    badge: 'Dicoding Academy',
+                    description: 'Learned fundamental concepts of Artificial Intelligence (AI), Machine Learning, Deep Learning, computer vision, NLP, and AI implementation ethics in the modern industry.'
+                }
+            },
+            'dicoding-python': {
+                img: './images/sertifikat/python.jpg',
+                file: './sertifikat/python.pdf',
+                verifyUrl: 'https://www.dicoding.com/certificates/JMZVOM313XN9',
+                credentialId: 'JMZVOM313XN9',
+                category: 'course',
+                id: {
+                    title: 'Memulai Pemrograman dengan Python',
+                    issuer: 'Dicoding Academy',
+                    date: 'Februari 2026 (Berlaku s.d. Feb 2029)',
+                    badge: 'Dicoding Academy',
+                    description: 'Menguasai sintaks dasar dan lanjutan bahasa Python, struktur data (list, tuple, dict, set), logika kontrol alur, penanganan error & eksepsi, modularisasi kode, serta dasar manipulasi data.'
+                },
+                en: {
+                    title: 'Starting Programming with Python',
+                    issuer: 'Dicoding Academy',
+                    date: 'February 2026 (Valid until Feb 2029)',
+                    badge: 'Dicoding Academy',
+                    description: 'Mastered Python syntax, fundamental data structures (lists, tuples, dicts, sets), control flow, error & exception handling, code modularity, and data manipulation basics.'
+                }
+            },
+            'dicoding-ml': {
+                img: './images/sertifikat/sertifikat_course_184_3744283_270226145308_1.jpg',
+                file: './sertifikat/sertifikat_course_184_3744283_270226145308%20(1).pdf',
+                verifyUrl: 'https://www.dicoding.com/certificates/QLZ99KO3MZ5D',
+                credentialId: 'QLZ99KO3MZ5D',
+                category: 'course',
+                id: {
+                    title: 'Belajar Machine Learning untuk Pemula',
+                    issuer: 'Dicoding Academy',
+                    date: 'Februari 2026 (Berlaku s.d. Feb 2029)',
+                    badge: 'Dicoding Academy',
+                    description: 'Mendalami algoritma Supervised dan Unsupervised Learning, pembersihan dan preprocessing data, feature engineering, metrik evaluasi model (confusion matrix, ROC-AUC), dan deployment model dasar dengan TensorFlow.'
+                },
+                en: {
+                    title: 'Learn Machine Learning for Beginners',
+                    issuer: 'Dicoding Academy',
+                    date: 'February 2026 (Valid until Feb 2029)',
+                    badge: 'Dicoding Academy',
+                    description: 'Explored Supervised and Unsupervised Learning algorithms, data preprocessing, feature engineering, model evaluation metrics, and initial model deployment with TensorFlow.'
+                }
+            },
+            'bps-scraping': {
+                img: './images/sertifikat/Andini_Karina_Putri_1.jpg',
+                file: './sertifikat/Andini%20Karina%20Putri-1.pdf',
+                verifyUrl: '',
+                credentialId: 'BPS-KOTA-PASURUAN / 2024',
+                category: 'academic',
+                id: {
+                    title: 'Webinar Berbatik: Web Scraping untuk Pemula',
+                    issuer: 'BPS Kota Pasuruan',
+                    date: '25 September 2024',
+                    badge: 'Webinar BPS',
+                    description: 'Pelatihan teknik otomasi perolehan data dari halaman web publik untuk mendukung agregasi data indikator statistik, penambangan data terbuka, dan pembersihan dataset berkala BPS.'
+                },
+                en: {
+                    title: 'Webinar: Web Scraping for Beginners',
+                    issuer: 'BPS Pasuruan Municipality',
+                    date: 'September 25, 2024',
+                    badge: 'BPS Webinar',
+                    description: 'Training in automated web scraping workflows from public web sources to support statistical indicators, open data collection, and regular dataset cleaning at BPS.'
+                }
+            },
+            'bps-rstudio': {
+                img: './images/sertifikat/Andini_Karina_Putri_4.jpg',
+                file: './sertifikat/Andini%20Karina%20Putri-4.pdf',
+                verifyUrl: '',
+                credentialId: 'BPS-KAB-PASURUAN / 2024',
+                category: 'academic',
+                id: {
+                    title: 'Webinar Estetik: Analisis Data Statistik dengan R Studio',
+                    issuer: 'BPS Kabupaten Pasuruan',
+                    date: '25 Oktober 2024',
+                    badge: 'Webinar BPS',
+                    description: 'Workshop interaktif pemodelan data statistik terapan, grafik visualisasi komparatif menggunakan package ggplot2, serta pengujian hipotesis dan regresi data riil menggunakan R Studio.'
+                },
+                en: {
+                    title: 'Webinar: Statistical Data Analysis with R Studio',
+                    issuer: 'BPS Pasuruan Regency',
+                    date: 'October 25, 2024',
+                    badge: 'BPS Webinar',
+                    description: 'Interactive workshop on applied statistical data modeling, comparative data visualization with ggplot2, hypothesis testing, and regression analysis using R Studio.'
+                }
+            },
+            'seminar-ml': {
+                img: './images/sertifikat/Sertifikat___ANDINI_KARINA_PUTRI.jpg',
+                file: './sertifikat/Sertifikat%20-%20ANDINI%20KARINA%20PUTRI.pdf',
+                verifyUrl: '',
+                credentialId: 'UNIWARA-SEM-2024',
+                category: 'academic',
+                id: {
+                    title: 'Seminar: Optimasi Machine Learning & Deep Learning',
+                    issuer: 'Universitas PGRI Wiranegara',
+                    date: '25 Mei 2024',
+                    badge: 'Seminar Akademik',
+                    description: 'Seminar akademik tentang perkembangan arsitektur Deep Learning modern, optimasi hyperparameter, konvergensi neural networks, dan implementasi algoritma cerdas untuk persoalan nyata.'
+                },
+                en: {
+                    title: 'Seminar: ML & Deep Learning Optimization',
+                    issuer: 'Universitas PGRI Wiranegara',
+                    date: 'May 25, 2024',
+                    badge: 'Academic Seminar',
+                    description: 'Academic seminar exploring modern deep learning architectures, hyperparameter optimization, neural network convergence, and real-world intelligent problem-solving.'
+                }
+            },
+            'onmipa-2024': {
+                img: './images/sertifikat/Andini_Karina_Putri_1_2.jpg',
+                file: './sertifikat/Andini%20Karina%20Putri-1%20(2).pdf',
+                verifyUrl: '',
+                credentialId: 'PUSPRESNAS-BPTI-2024',
+                category: 'academic',
+                id: {
+                    title: 'ON MIPA-PT 2024 Bidang Matematika',
+                    issuer: 'Balai Pengembangan Talenta Indonesia (BPTI) / Kemendikbudristek',
+                    date: '24–25 April 2024',
+                    badge: 'Kompetisi Nasional',
+                    description: 'Sertifikat penghargaan sebagai Peserta Seleksi Tingkat Wilayah Olimpiade Nasional Matematika dan Ilmu Pengetahuan Alam Perguruan Tinggi (ON MIPA-PT) Tahun 2024, Bidang Matematika.'
+                },
+                en: {
+                    title: 'ON MIPA-PT 2024 Mathematics Field',
+                    issuer: 'National Talent Development Center (BPTI) / Ministry of Education',
+                    date: 'April 24–25, 2024',
+                    badge: 'National Competition',
+                    description: 'Award certificate as Regional Selection Participant in the 2024 National Mathematics and Natural Sciences Olympiad for Higher Education (ON MIPA-PT), Mathematics Division.'
+                }
+            },
+            'kopma-diesnatalis': {
+                img: './images/sertifikat/4_1.jpg',
+                file: './sertifikat/4%20(1).png',
+                verifyUrl: '',
+                credentialId: 'KOPMA-X-2025',
+                category: 'org',
+                id: {
+                    title: 'Bendahara 1: Gebyar Koperasi & Dies Natalis Ke-X',
+                    issuer: 'UKM Koperasi Mahasiswa (KOPMA) Uniwara',
+                    date: '18 Februari 2025',
+                    badge: 'Kepengurusan Organisasi',
+                    description: 'Sertifikat kepanitiaan sebagai Bendahara 1 dalam rangkaian acara Gebyar Koperasi dan Dies Natalis Ke-X UKM KOPMA Universitas PGRI Wiranegara, bertanggung jawab atas pembukuan kas dan pertanggungjawaban anggaran.'
+                },
+                en: {
+                    title: '1st Treasurer: Cooperative Festival & 10th Anniversary',
+                    issuer: 'KOPMA Student Cooperative Uniwara',
+                    date: 'February 18, 2025',
+                    badge: 'Organization Leadership',
+                    description: 'Certificate of committee service as 1st Treasurer for KOPMA Cooperative Festival & 10th Anniversary, managing event cash flow bookkeeping and overall budget accountability.'
+                }
+            }
+        };
+
+        let currentCertKey = null;
+
+        function openCertModal(key) {
+            currentCertKey = key;
+            const cert = certificateData[key];
+            if (!cert) return;
+            const data = (cert[currentLang]) ? cert[currentLang] : cert.id;
+
+            document.getElementById('cert-modal-tag').textContent = data.badge;
+            document.getElementById('cert-modal-title').textContent = data.title;
+            document.getElementById('cert-modal-issuer').textContent = data.issuer;
+            document.getElementById('cert-modal-date').textContent = data.date;
+            document.getElementById('cert-modal-id').textContent = cert.credentialId || '-';
+            document.getElementById('cert-modal-desc').textContent = data.description;
+
+            const imgEl = document.getElementById('cert-modal-img');
+            imgEl.src = cert.img;
+            imgEl.alt = data.title;
+
+            const pdfLink = document.getElementById('cert-modal-pdf');
+            pdfLink.href = cert.file;
+
+            const verifyLink = document.getElementById('cert-modal-verify');
+            if (cert.verifyUrl) {
+                verifyLink.href = cert.verifyUrl;
+                verifyLink.classList.remove('hidden');
+            } else {
+                verifyLink.classList.add('hidden');
+            }
+
+            const modal = document.getElementById('cert-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            currentCertKey = null;
+            const modal = document.getElementById('cert-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        function filterCertCards(category, btn) {
+            const cards = document.querySelectorAll('.cert-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.cert-filter-btn').forEach(b => {
+                b.className = 'cert-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition font-mono text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap';
+            });
+            btn.className = 'cert-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition font-mono bg-palette-yellow text-palette-grape shadow-xs cursor-pointer whitespace-nowrap';
+        }
+
+        // Close modals on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (currentModalKey) closeCaseStudy();
+                if (currentCertKey) closeCertModal();
+            }
+        });
 
         // Auto-detect icon fallback (.png, .svg, .webp, .jpg)
         function handleIconError(img) {
@@ -1766,6 +2486,9 @@
             if (currentModalKey) {
                 openCaseStudy(currentModalKey);
             }
+            if (currentCertKey) {
+                openCertModal(currentCertKey);
+            }
 
             // Update html lang attribute & title
             document.documentElement.lang = lang === 'id' ? 'id' : 'en';
@@ -1785,6 +2508,7 @@
             { nav: 'experience', section: 'experience', title: 'experience-title' },
             { nav: 'education', section: 'education', title: 'education-title' },
             { nav: 'skill', section: 'skill', title: 'skill-title' },
+            { nav: 'certifications', section: 'certifications', title: 'certifications-title' },
             { nav: 'project', section: 'project', title: 'project-title' },
             { nav: 'contact', section: 'contact', title: 'contact-title' }
         ];
