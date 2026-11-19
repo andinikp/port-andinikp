@@ -175,6 +175,29 @@
             transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Active Nav Link & Section Title Highlight (Yellow Jasmine) */
+        .nav-item {
+            transition: color 220ms ease, font-weight 180ms ease;
+        }
+        .nav-item:hover {
+            color: #DBAD23 !important;
+        }
+        .nav-item.active {
+            color: #DBAD23 !important;
+            font-weight: 800 !important;
+        }
+        .mobile-nav-item.active {
+            color: #FFE169 !important;
+        }
+
+        .section-heading {
+            transition: color 320ms ease, text-shadow 320ms ease;
+        }
+        .section-heading.active {
+            color: #FFE169 !important;
+            text-shadow: 0 0 25px rgba(255, 225, 105, 0.45);
+        }
+
         /* Dynamic Atmospheric Gradient Flow (Vibrant Golden Crown to Deep Midnight Grape) */
         body {
             background-color: #0a0211;
@@ -212,19 +235,19 @@
             <!-- Desktop Nav Items: Evenly Distributed (Rata Kanan Kiri) -->
             <nav
                 class="hidden md:flex flex-1 items-center justify-evenly px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
-                <a href="#home" class="hover:text-palette-grape transition py-1 text-center" data-id="Home"
+                <a href="#home" class="nav-item transition py-1 text-center" data-id="Home"
                     data-en="Home">Home</a>
-                <a href="#about" class="hover:text-palette-grape transition py-1 text-center" data-id="Tentang"
+                <a href="#about" class="nav-item transition py-1 text-center" data-id="Tentang"
                     data-en="About">Tentang</a>
-                <a href="#experience" class="hover:text-palette-grape transition py-1 text-center" data-id="Pengalaman"
+                <a href="#experience" class="nav-item transition py-1 text-center" data-id="Pengalaman"
                     data-en="Experience">Pengalaman</a>
-                <a href="#education" class="hover:text-palette-grape transition py-1 text-center" data-id="Pendidikan"
+                <a href="#education" class="nav-item transition py-1 text-center" data-id="Pendidikan"
                     data-en="Education">Pendidikan</a>
-                <a href="#skill" class="hover:text-palette-grape transition py-1 text-center" data-id="Skill"
+                <a href="#skill" class="nav-item transition py-1 text-center" data-id="Skill"
                     data-en="Skill">Skill</a>
-                <a href="#project" class="hover:text-palette-grape transition py-1 text-center" data-id="Proyek"
+                <a href="#project" class="nav-item transition py-1 text-center" data-id="Proyek"
                     data-en="Project">Proyek</a>
-                <a href="#contact" class="hover:text-palette-grape transition py-1 text-center" data-id="Kontak"
+                <a href="#contact" class="nav-item transition py-1 text-center" data-id="Kontak"
                     data-en="Contact">Kontak</a>
             </nav>
 
@@ -269,24 +292,24 @@
     <div id="mobile-menu"
         class="hidden fixed top-20 inset-x-4 z-40 md:hidden bg-dark-900/95 backdrop-blur-xl border border-palette-plum/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(60,25,85,0.4)] text-center space-y-4">
         <nav class="flex flex-col space-y-3 text-sm font-bold tracking-widest uppercase text-palette-lilac">
-            <a href="#home" onclick="toggleMobileMenu()" class="hover:text-palette-yellow py-2 border-b border-dark-800"
+            <a href="#home" onclick="toggleMobileMenu()" class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition"
                 data-id="Home" data-en="Home">Home</a>
             <a href="#about" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Tentang"
+                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Tentang"
                 data-en="About">Tentang</a>
             <a href="#experience" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pengalaman"
+                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Pengalaman"
                 data-en="Experience">Pengalaman</a>
             <a href="#education" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Pendidikan"
+                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Pendidikan"
                 data-en="Education">Pendidikan</a>
             <a href="#skill" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Skill"
+                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Skill"
                 data-en="Skill">Skill</a>
             <a href="#project" onclick="toggleMobileMenu()"
-                class="hover:text-palette-yellow py-2 border-b border-dark-800" data-id="Proyek"
+                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Proyek"
                 data-en="Project">Proyek</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-palette-yellow py-2" data-id="Kontak"
+            <a href="#contact" onclick="toggleMobileMenu()" class="mobile-nav-item hover:text-palette-yellow py-2 transition" data-id="Kontak"
                 data-en="Contact">Kontak</a>
         </nav>
         <div class="pt-3 border-t border-dark-800 flex items-center justify-center gap-3">
@@ -309,8 +332,8 @@
             class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[calc(100vh-140px)] py-8">
             <!-- Left Bio Column -->
             <div class="lg:col-span-7 space-y-6 text-left">
-                <h1
-                    class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.08]">
+                <h1 id="home-title"
+                    class="section-heading font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.08]">
                     <span class="text-palette-lilac">ANDINI </span>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-palette-yellow via-palette-plum to-palette-lilac">KARINA PUTRI</span>
                 </h1>
@@ -546,7 +569,8 @@
         <!-- 2. ABOUT ME SECTION (3-Column Layout with Fan/Centerpiece matching image) -->
         <section id="about" class="space-y-8 scroll-mt-24">
             <div class="text-left space-y-1">
-                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                <h2 id="about-title"
+                    class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
                     data-id="Tentang Saya" data-en="About Me">
                     Tentang Saya
                 </h2>
@@ -556,21 +580,16 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
                 <!-- Left: Bio & Stats Grid -->
-                <div class="lg:col-span-4 space-y-6">
+                <div class="lg:col-span-4 space-y-5">
                     <p class="text-slate-300 text-sm leading-relaxed"
-                        data-id="Saya adalah mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang berfokus pada pengembangan aplikasi web operasional."
-                        data-en="I am an undergraduate Computer Science student at Universitas PGRI Wiranegara focused on developing operational web applications.">
-                        Saya adalah mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI
-                            Wiranegara</strong> yang
-                        berfokus pada pengembangan aplikasi web operasional.
+                        data-id="Saya mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang antusias membangun aplikasi web dari nol mulai dari merancang antarmuka yang bersih hingga mengelola database di balik layar."
+                        data-en="I am an undergraduate Computer Science student at Universitas PGRI Wiranegara who is enthusiastic about building web applications from scratch, from designing clean user interfaces to managing databases behind the scenes.">
+                        Saya mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI Wiranegara</strong> yang antusias membangun aplikasi web dari nol mulai dari merancang antarmuka yang bersih hingga mengelola database di balik layar.
                     </p>
-                    <p class="text-slate-400 text-sm leading-relaxed"
-                        data-id="Pengalaman kerja sebagai Quality Control dan PKL di Badan Pusat Statistik (BPS) menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta keandalan fungsional aplikasi."
-                        data-en="Work experience as Quality Control and internship at the Central Bureau of Statistics (BPS) fostered high attention to detail in data validation, database relations, and application functional reliability.">
-                        Pengalaman kerja sebagai <em>Quality Control</em> dan PKL di <strong
-                            class="text-palette-lilac">Badan Pusat Statistik
-                            (BPS)</strong> menumbuhkan ketelitian tinggi terhadap validasi data, relasi database, serta
-                        keandalan fungsional aplikasi.
+                    <p class="text-slate-300 text-sm leading-relaxed"
+                        data-id="Pengalaman PKL di Badan Pusat Statistik (BPS) melatih cara kerja saya dalam mengolah data secara terstruktur serta memastikan setiap fitur web berjalan rapi, akurat, dan mudah digunakan."
+                        data-en="My internship experience at the Central Bureau of Statistics (BPS) trained my approach to structured data processing and ensuring every web feature runs smoothly, accurately, and intuitively.">
+                        Pengalaman PKL di <strong class="text-palette-lilac">Badan Pusat Statistik (BPS)</strong> melatih cara kerja saya dalam mengolah data secara terstruktur serta memastikan setiap fitur web berjalan rapi, akurat, dan mudah digunakan.
                     </p>
 
                     <!-- Stats 2x2 Grid -->
@@ -691,7 +710,8 @@
 
                 <!-- KOLOM KIRI: EXPERIENCE -->
                 <div id="experience" class="scroll-mt-24 space-y-4">
-                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                    <h2 id="experience-title"
+                        class="section-heading font-display text-2xl sm:text-3xl font-extrabold uppercase text-palette-lilac tracking-tight"
                         data-id="Pengalaman" data-en="Experience">
                         Pengalaman
                     </h2>
@@ -806,7 +826,8 @@
 
                 <!-- KOLOM KANAN: EDUCATION -->
                 <div id="education" class="scroll-mt-24 space-y-4">
-                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                    <h2 id="education-title"
+                        class="section-heading font-display text-2xl sm:text-3xl font-extrabold uppercase text-palette-lilac tracking-tight"
                         data-id="Pendidikan" data-en="Education">
                         Pendidikan
                     </h2>
@@ -930,7 +951,8 @@
                 <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                     data-id="TEKNOLOGI & PERANGKAT" data-en="TECH STACK & TOOLS">TEKNOLOGI & PERANGKAT
                 </p>
-                <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                <h2 id="skill-title"
+                    class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
                     data-id="KEAHLIAN & TOOLS" data-en="Skills & Tools">
                     KEAHLIAN & <span class="text-palette-yellow">TOOLS</span>
                 </h2>
@@ -1256,7 +1278,8 @@
                 <div class="space-y-1">
                     <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                         data-id="PORTFOLIO KARYA" data-en="PORTFOLIO WORKS">PORTFOLIO KARYA</p>
-                    <h2 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                    <h2 id="project-title"
+                        class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
                         data-id="Proyek Pilihan" data-en="Featured Projects">
                         Proyek Pilihan
                     </h2>
@@ -1386,7 +1409,8 @@
                 <div class="space-y-3">
                     <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                         data-id="HUBUNGI SAYA" data-en="GET IN TOUCH">HUBUNGI SAYA</p>
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-palette-lilac leading-tight"
+                    <h2 id="contact-title"
+                        class="section-heading font-display text-3xl sm:text-4xl font-extrabold uppercase text-palette-lilac leading-tight"
                         data-id="Mari Berkolaborasi" data-en="Let's Create Together">
                         Mari Berkolaborasi
                     </h2>
@@ -1754,9 +1778,75 @@
             applyLang(currentLang === 'id' ? 'en' : 'id', false);
         }
 
+        // ── ACTIVE NAV & SECTION HEADING HIGHLIGHT ────────────────
+        const sectionMap = [
+            { nav: 'home', section: 'home', title: 'home-title' },
+            { nav: 'about', section: 'about', title: 'about-title' },
+            { nav: 'experience', section: 'experience', title: 'experience-title' },
+            { nav: 'education', section: 'education', title: 'education-title' },
+            { nav: 'skill', section: 'skill', title: 'skill-title' },
+            { nav: 'project', section: 'project', title: 'project-title' },
+            { nav: 'contact', section: 'contact', title: 'contact-title' }
+        ];
+
+        function setActiveMenu(targetId) {
+            sectionMap.forEach(item => {
+                const isTarget = item.nav === targetId;
+
+                // Desktop Nav Links (Font turns Yellow)
+                const desktopLink = document.querySelector(`nav a[href="#${item.nav}"]`);
+                if (desktopLink) {
+                    desktopLink.classList.toggle('active', isTarget);
+                }
+
+                // Mobile Nav Links
+                const mobileLink = document.querySelector(`#mobile-menu a[href="#${item.nav}"]`);
+                if (mobileLink) {
+                    mobileLink.classList.toggle('active', isTarget);
+                }
+
+                // Section Titles (Font turns Yellow Jasmine)
+                const titleEl = document.getElementById(item.title);
+                if (titleEl) {
+                    titleEl.classList.toggle('active', isTarget);
+                }
+            });
+        }
+
+        // Click Handler: Immediately switch active yellow font on click
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                const href = link.getAttribute('href');
+                if (href) {
+                    const targetId = href.replace('#', '');
+                    if (sectionMap.some(item => item.nav === targetId)) {
+                        setActiveMenu(targetId);
+                    }
+                }
+            });
+        });
+
+        // Scroll Spy via IntersectionObserver
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveMenu(entry.target.id);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '-15% 0px -60% 0px',
+            threshold: 0
+        });
+
         // Apply on load
         document.addEventListener('DOMContentLoaded', () => {
             applyLang(currentLang, true);
+            setActiveMenu('home');
+            sectionMap.forEach(item => {
+                const sectionEl = document.getElementById(item.section);
+                if (sectionEl) navObserver.observe(sectionEl);
+            });
         });
     </script>
 </body>
