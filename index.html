@@ -310,9 +310,9 @@
             <!-- Left Bio Column -->
             <div class="lg:col-span-7 space-y-6 text-left">
                 <h1
-                    class="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-palette-lilac uppercase leading-none">
-                    <span data-id="Halo, Saya " data-en="Hi, I'm ">Halo, Saya </span><span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-palette-yellow via-palette-plum to-palette-lilac">ANDINI</span>
+                    class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.08]">
+                    <span class="text-palette-lilac">ANDINI </span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-palette-yellow via-palette-plum to-palette-lilac">KARINA PUTRI</span>
                 </h1>
 
                 <!-- Typewriter Subtitle -->
@@ -1470,10 +1470,20 @@
         // Language Toggle State
         let currentLang = localStorage.getItem('lang') || 'id';
 
-        // Typewriter Animation with Language Support
+        // Typewriter Animation with Language Support (Matched with Description Pillars)
         const typewriterPhrases = {
-            id: ["Web Developer", "Pengembang Aplikasi Web", "Problem Solver", "UI/UX Enthusiast"],
-            en: ["Web Developer", "Web App Developer", "Problem Solver", "UI/UX Enthusiast"]
+            id: [
+                "Web Developer",
+                "Pengembang Aplikasi Web",
+                "UI/UX & Desain Antarmuka",
+                "Manajemen Data & Sistem"
+            ],
+            en: [
+                "Web Developer",
+                "Web Application Developer",
+                "UI/UX & Interface Designer",
+                "Data & System Management"
+            ]
         };
         let wordIndex = 0;
         let charIndex = 0;
@@ -1689,6 +1699,16 @@
                 translatable.forEach(el => {
                     el.style.opacity = '1';
                 });
+                // Switch typewriter words smoothly to active language
+                wordIndex = 0;
+                charIndex = 0;
+                isDeleting = false;
+                if (typeEl) {
+                    const activeWords = typewriterPhrases[lang] || typewriterPhrases.id;
+                    typeEl.textContent = activeWords[0];
+                    charIndex = activeWords[0].length;
+                    isDeleting = true;
+                }
             }, 180);
         }
 
