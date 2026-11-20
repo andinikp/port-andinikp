@@ -186,8 +186,18 @@
             color: #DBAD23 !important;
             font-weight: 800 !important;
         }
+        .mobile-nav-item {
+            color: #3C1955;
+            transition: all 200ms ease;
+        }
+        .mobile-nav-item:hover {
+            color: #DBAD23 !important;
+            background-color: rgba(210, 170, 240, 0.25);
+        }
         .mobile-nav-item.active {
-            color: #FFE169 !important;
+            color: #B38600 !important;
+            font-weight: 800 !important;
+            background-color: rgba(255, 225, 105, 0.3) !important;
         }
 
         .section-heading {
@@ -228,13 +238,18 @@
     </div>
 
     <!-- 0. FLOATING TOP PILL NAVBAR -->
-    <div class="fixed top-5 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+    <div id="navbar-container" class="fixed top-5 inset-x-0 z-50 flex flex-col items-center px-4 pointer-events-none">
         <header
             class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-5 sm:px-7 py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 max-w-4xl lg:max-w-5xl w-full">
 
-            <!-- Desktop Nav Items: Evenly Distributed (Rata Kanan Kiri) -->
+            <!-- Mobile Brand Label (< 1024px) -->
+            <a href="#home" class="lg:hidden font-display text-lg sm:text-xl font-black uppercase tracking-wider text-palette-grape hover:opacity-80 transition shrink-0">
+                ANDINI.
+            </a>
+
+            <!-- Desktop Nav Items: hidden lg:flex items-center gap-6 -->
             <nav
-                class="hidden md:flex flex-1 items-center justify-evenly px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
+                class="hidden lg:flex flex-1 items-center justify-center gap-6 px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
                 <a href="#home" class="nav-item transition py-1 text-center" data-id="Beranda"
                     data-en="Home">Beranda</a>
                 <a href="#about" class="nav-item transition py-1 text-center" data-id="Tentang"
@@ -253,8 +268,8 @@
                     data-en="Contact">Kontak</a>
             </nav>
 
-            <!-- Right Actions: Language Selector + Hire Me Button (+ Mobile Full Width) -->
-            <div class="flex items-center justify-between md:justify-end gap-2 sm:gap-2.5 w-full md:w-auto shrink-0">
+            <!-- Right Actions: Language Selector + Desktop Hire Me Button + Mobile Hamburger -->
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
                 <!-- Language Toggle (Segmented Pill ID | EN) -->
                 <button type="button" onclick="toggleLang()" id="lang-btn"
                     class="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-palette-lilac hover:bg-white text-palette-grape transition border border-palette-plum/50 shadow-xs shrink-0 cursor-pointer w-[64px] justify-center"
@@ -265,67 +280,59 @@
                         class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-palette-grape/70 hover:text-palette-grape">EN</span>
                 </button>
 
-                <div class="flex items-center gap-2">
-                    <a href="#contact"
-                        class="bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black tracking-wider uppercase py-2.5 px-6 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 shrink-0 w-[155px] text-center flex items-center justify-center whitespace-nowrap"
-                        data-id="Rekrut Saya" data-en="Hire Me">
-                        Rekrut Saya
-                    </a>
+                <!-- Desktop Rekrut Saya Button -->
+                <a href="#contact"
+                    class="hidden lg:flex bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black tracking-wider uppercase py-2.5 px-6 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 shrink-0 w-[155px] text-center items-center justify-center whitespace-nowrap"
+                    data-id="Rekrut Saya" data-en="Hire Me">
+                    Rekrut Saya
+                </a>
 
-                    <!-- Mobile Hamburger Toggle -->
-                    <button type="button" onclick="toggleMobileMenu()"
-                        class="md:hidden p-1.5 text-palette-grape focus:outline-none" aria-label="Toggle Navigation">
-                        <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+                <!-- Mobile Hamburger Toggle (< 1024px) -->
+                <button type="button" onclick="toggleMobileMenu()" id="hamburger-btn"
+                    class="lg:hidden p-1.5 rounded-full text-palette-grape hover:bg-palette-plum/20 focus:outline-none transition cursor-pointer" aria-label="Toggle Navigation">
+                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
         </header>
-    </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu"
-        class="hidden fixed top-20 inset-x-4 z-40 md:hidden bg-dark-900/95 backdrop-blur-xl border border-palette-plum/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(60,25,85,0.4)] text-center space-y-4">
-        <nav class="flex flex-col space-y-3 text-sm font-bold tracking-widest uppercase text-palette-lilac">
-            <a href="#home" onclick="toggleMobileMenu()" class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition"
-                data-id="Home" data-en="Home">Home</a>
-            <a href="#about" onclick="toggleMobileMenu()"
-                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Tentang"
-                data-en="About">Tentang</a>
-            <a href="#experience" onclick="toggleMobileMenu()"
-                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Pengalaman"
-                data-en="Experience">Pengalaman</a>
-            <a href="#education" onclick="toggleMobileMenu()"
-                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Pendidikan"
-                data-en="Education">Pendidikan</a>
-            <a href="#skill" onclick="toggleMobileMenu()"
-                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Skill"
-                data-en="Skill">Skill</a>
-            <a href="#certifications" onclick="toggleMobileMenu()"
-                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Sertifikat"
-                data-en="Certificates">Sertifikat</a>
-            <a href="#project" onclick="toggleMobileMenu()"
-                class="mobile-nav-item hover:text-palette-yellow py-2 border-b border-dark-800 transition" data-id="Proyek"
-                data-en="Project">Proyek</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="mobile-nav-item hover:text-palette-yellow py-2 transition" data-id="Kontak"
-                data-en="Contact">Kontak</a>
-        </nav>
-        <div class="pt-3 border-t border-dark-800 flex items-center justify-center gap-3">
-            <span class="text-xs text-slate-400 font-mono">Bahasa:</span>
-            <button type="button" onclick="toggleLang()"
-                class="inline-flex items-center p-1 rounded-full bg-dark-800 border border-palette-plum/30">
-                <span
-                    class="mobile-lang-badge-id px-3 py-1 rounded-full text-xs font-bold font-mono transition-all duration-200">ID</span>
-                <span
-                    class="mobile-lang-badge-en px-3 py-1 rounded-full text-xs font-bold font-mono transition-all duration-200">EN</span>
-            </button>
+        <!-- Mobile Dropdown Menu Panel (melayang tepat di bawah navbar, lebar mengikuti navbar, rounded-3xl, shadow, warna senada) -->
+        <div id="mobile-menu"
+            class="hidden pointer-events-auto mt-2 w-full max-w-4xl lg:hidden bg-palette-lilac/95 backdrop-blur-xl border border-palette-plum/50 rounded-3xl p-5 sm:p-6 shadow-[0_15px_40px_rgba(60,25,85,0.35)] text-center space-y-4">
+            <nav class="flex flex-col gap-3 text-xs sm:text-sm font-bold tracking-widest uppercase text-palette-grape">
+                <a href="#home" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Beranda" data-en="Home">Beranda</a>
+                <a href="#about" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Tentang" data-en="About">Tentang</a>
+                <a href="#experience" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Pengalaman" data-en="Experience">Pengalaman</a>
+                <a href="#education" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Pendidikan" data-en="Education">Pendidikan</a>
+                <a href="#skill" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Skill" data-en="Skill">Skill</a>
+                <a href="#certifications" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Sertifikat" data-en="Certificates">Sertifikat</a>
+                <a href="#project" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Proyek" data-en="Project">Proyek</a>
+                <a href="#contact" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
+                    data-id="Kontak" data-en="Contact">Kontak</a>
+            </nav>
+
+            <!-- Full-width Hire Me button on mobile dropdown -->
+            <div class="pt-2 border-t border-palette-plum/30">
+                <a href="#contact" onclick="closeMobileMenu()"
+                    class="block w-full bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black tracking-wider uppercase py-3 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 text-center"
+                    data-id="Rekrut Saya" data-en="Hire Me">
+                    Rekrut Saya
+                </a>
+            </div>
         </div>
     </div>
 
@@ -446,7 +453,7 @@
                     <!-- 1. Cutout Photo (Tanpa Kotak/Border) dengan Fade Lembut di Bagian Bawah -->
                     <div class="relative w-full flex justify-center items-end overflow-hidden pt-2"
                         style="mask-image: linear-gradient(to bottom, black 65%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);">
-                        <img id="photo-primary" src="./images/profil-1.png" alt="Andini Karina Putri"
+                        <img id="photo-primary" src="./images/profil-1.png?v=2" alt="Andini Karina Putri"
                             class="w-[280px] sm:w-[320px] md:w-[350px] h-auto object-contain filter drop-shadow-[0_15px_35px_rgba(60,25,85,0.7)] hover:scale-105 transition-transform duration-500" />
                     </div>
 
@@ -2019,21 +2026,43 @@
             setTimeout(typeLoop, 800);
         });
 
-        // Toggle Mobile Menu
+        // Toggle & Close Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const hamburger = document.getElementById('hamburger-icon');
             const close = document.getElementById('close-icon');
             if (menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden');
-                hamburger.classList.add('hidden');
-                close.classList.remove('hidden');
+                if (hamburger) hamburger.classList.add('hidden');
+                if (close) close.classList.remove('hidden');
             } else {
                 menu.classList.add('hidden');
-                hamburger.classList.remove('hidden');
-                close.classList.add('hidden');
+                if (hamburger) hamburger.classList.remove('hidden');
+                if (close) close.classList.add('hidden');
             }
         }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const hamburger = document.getElementById('hamburger-icon');
+            const close = document.getElementById('close-icon');
+            if (menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                if (hamburger) hamburger.classList.remove('hidden');
+                if (close) close.classList.add('hidden');
+            }
+        }
+
+        // Close mobile dropdown when clicking outside navbar
+        document.addEventListener('click', (e) => {
+            const navbarContainer = document.getElementById('navbar-container');
+            const menu = document.getElementById('mobile-menu');
+            if (menu && !menu.classList.contains('hidden')) {
+                if (navbarContainer && !navbarContainer.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
 
         // One-Click Copy Email
         function copyEmail() {
