@@ -179,21 +179,26 @@
         .nav-item {
             transition: color 220ms ease, font-weight 180ms ease;
         }
+
         .nav-item:hover {
             color: #DBAD23 !important;
         }
+
         .nav-item.active {
             color: #DBAD23 !important;
             font-weight: 800 !important;
         }
+
         .mobile-nav-item {
             color: #3C1955;
             transition: all 200ms ease;
         }
+
         .mobile-nav-item:hover {
             color: #DBAD23 !important;
             background-color: rgba(210, 170, 240, 0.25);
         }
+
         .mobile-nav-item.active {
             color: #B38600 !important;
             font-weight: 800 !important;
@@ -203,6 +208,7 @@
         .section-heading {
             transition: color 320ms ease, text-shadow 320ms ease;
         }
+
         .section-heading.active {
             color: #FFE169 !important;
             text-shadow: 0 0 25px rgba(255, 225, 105, 0.45);
@@ -243,7 +249,8 @@
             class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-5 sm:px-7 py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 max-w-4xl lg:max-w-5xl w-full">
 
             <!-- Mobile Brand Label (< 1024px) -->
-            <a href="#home" class="lg:hidden font-display text-lg sm:text-xl font-black uppercase tracking-wider text-palette-grape hover:opacity-80 transition shrink-0">
+            <a href="#home"
+                class="lg:hidden font-display text-lg sm:text-xl font-black uppercase tracking-wider text-palette-grape hover:opacity-80 transition shrink-0">
                 ANDINI.
             </a>
 
@@ -258,8 +265,7 @@
                     data-en="Experience">Pengalaman</a>
                 <a href="#education" class="nav-item transition py-1 text-center" data-id="Pendidikan"
                     data-en="Education">Pendidikan</a>
-                <a href="#skill" class="nav-item transition py-1 text-center" data-id="Skill"
-                    data-en="Skill">Skill</a>
+                <a href="#skill" class="nav-item transition py-1 text-center" data-id="Skill" data-en="Skill">Skill</a>
                 <a href="#certifications" class="nav-item transition py-1 text-center" data-id="Sertifikat"
                     data-en="Certificates">Sertifikat</a>
                 <a href="#project" class="nav-item transition py-1 text-center" data-id="Proyek"
@@ -289,13 +295,13 @@
 
                 <!-- Mobile Hamburger Toggle (< 1024px) -->
                 <button type="button" onclick="toggleMobileMenu()" id="hamburger-btn"
-                    class="lg:hidden p-1.5 rounded-full text-palette-grape hover:bg-palette-plum/20 focus:outline-none transition cursor-pointer" aria-label="Toggle Navigation">
+                    class="lg:hidden p-1.5 rounded-full text-palette-grape hover:bg-palette-plum/20 focus:outline-none transition cursor-pointer"
+                    aria-label="Toggle Navigation">
                     <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -347,18 +353,18 @@
                 <!-- Location Badge (Pill di atas Nama) -->
                 <div
                     class="inline-flex items-center gap-2 bg-dark-900/90 backdrop-blur-md px-4 py-2 rounded-full border border-palette-plum/40 shadow-[0_0_20px_rgba(60,25,85,0.3)] w-fit">
-                    <span
-                        class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
                     <span class="text-xs font-bold tracking-widest uppercase text-palette-yellow"
                         data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</span>
-                    <span
-                        class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
                 </div>
 
                 <h1 id="home-title"
                     class="section-heading font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.08]">
                     <span class="text-palette-lilac">ANDINI </span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-palette-yellow via-palette-plum to-palette-lilac">KARINA PUTRI</span>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-palette-yellow via-palette-plum to-palette-lilac">KARINA
+                        PUTRI</span>
                 </h1>
 
                 <!-- Typewriter Subtitle -->
@@ -417,7 +423,7 @@
                 </div>
             </div>
 
-            <!-- Right Visual: Transparent Cutout Portrait with Striped Circle & 3D Spheres -->
+            <!-- Right Visual: Circular Portrait with Bright Gradient & 3D Spheres -->
             <div class="lg:col-span-5 flex items-center justify-center relative py-6">
 
                 <!-- Ambient Purple & Gold Halo Backdrop -->
@@ -428,33 +434,27 @@
                 <!-- Centerpiece Composition Wrapper -->
                 <div class="relative flex items-center justify-center w-full max-w-[340px] sm:max-w-[400px]">
 
-                    <!-- 2. Striped Pattern Circle Backdrop (Brighter, Visible Luminous Glow) -->
-                    <div
-                        class="absolute w-72 sm:w-80 md:w-[350px] h-72 sm:h-80 md:h-[350px] -top-2 sm:-top-4 rounded-full border-2 border-palette-yellow/60 shadow-[0_0_50px_rgba(210,170,240,0.45),0_0_90px_rgba(255,225,105,0.25),inset_0_0_45px_rgba(210,170,240,0.3)] -z-10"
-                        style="background: repeating-linear-gradient(to bottom, rgba(255, 225, 105, 0.42) 0px, rgba(255, 225, 105, 0.42) 2.5px, transparent 2.5px, transparent 11px), radial-gradient(circle at 50% 35%, rgba(210, 170, 240, 0.58) 0%, rgba(135, 65, 185, 0.68) 45%, rgba(60, 25, 85, 0.88) 100%);">
-                    </div>
-
-                    <!-- 3. Ornamen Bola 1: Sudut Kiri Atas (Melayang di depan lingkaran) -->
-                    <div
-                        class="absolute -top-4 -left-3 sm:-top-6 sm:-left-4 z-10 w-11 sm:w-13 h-11 sm:h-13 rounded-full transition-transform hover:scale-115 duration-300 pointer-events-none"
+                    <!-- 3. Ornamen Bola 1: Sudut Kiri Atas (Melayang di luar lingkaran) -->
+                    <div class="absolute -top-3 -left-3 sm:-top-5 sm:-left-4 z-20 w-11 sm:w-13 h-11 sm:h-13 rounded-full transition-transform hover:scale-115 duration-300 pointer-events-none"
                         style="background: radial-gradient(circle at 30% 30%, #FFF9C4 0%, #FFE169 35%, #D2AAF0 70%, #3C1955 100%); box-shadow: 0 10px 25px rgba(255, 225, 105, 0.55), inset -2px -3px 5px rgba(30, 10, 50, 0.8), inset 2px 2px 4px rgba(255, 255, 255, 0.95);">
                         <!-- Glossy highlight -->
-                        <div class="w-3.5 h-2 rounded-full bg-white/80 blur-[0.5px] mt-1.5 ml-2 transform -rotate-45"></div>
+                        <div class="w-3.5 h-2 rounded-full bg-white/80 blur-[0.5px] mt-1.5 ml-2 transform -rotate-45">
+                        </div>
                     </div>
 
-                    <!-- 3. Ornamen Bola 2: Sudut Kanan Bawah (Melayang di depan lingkaran) -->
-                    <div
-                        class="absolute bottom-6 -right-2 sm:bottom-8 sm:-right-4 z-10 w-13 sm:w-16 h-13 sm:h-16 rounded-full transition-transform hover:scale-115 duration-300 pointer-events-none"
+                    <!-- 3. Ornamen Bola 2: Sudut Kanan Bawah (Melayang di luar lingkaran) -->
+                    <div class="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 z-20 w-13 sm:w-16 h-13 sm:h-16 rounded-full transition-transform hover:scale-115 duration-300 pointer-events-none"
                         style="background: radial-gradient(circle at 30% 30%, #FAF5FA 0%, #D2AAF0 35%, #8B4BB8 70%, #200835 100%); box-shadow: 0 12px 30px rgba(210, 170, 240, 0.5), inset -3px -4px 7px rgba(15, 3, 25, 0.9), inset 2px 2px 5px rgba(255, 255, 255, 0.85);">
                         <!-- Glossy highlight -->
-                        <div class="w-4 h-2.5 rounded-full bg-white/85 blur-[0.5px] mt-2 ml-2.5 transform -rotate-45"></div>
+                        <div class="w-4 h-2.5 rounded-full bg-white/85 blur-[0.5px] mt-2 ml-2.5 transform -rotate-45">
+                        </div>
                     </div>
 
-                    <!-- 1. Cutout Photo (Tanpa Kotak/Border) dengan Fade Lembut di Bagian Bawah -->
-                    <div class="relative w-full flex justify-center items-end overflow-hidden pt-2"
-                        style="mask-image: linear-gradient(to bottom, black 65%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);">
+                    <!-- 1 & 2. Container Lingkaran dengan Gradasi Terang & Foto Profil Menempel di Bawah -->
+                    <div class="relative w-72 sm:w-80 md:w-[350px] h-72 sm:h-80 md:h-[350px] rounded-full overflow-hidden border-2 border-yellow-300/70 shadow-[0_0_50px_rgba(210,170,240,0.45),0_0_90px_rgba(255,225,105,0.25)] flex items-end justify-center"
+                        style="background: linear-gradient(135deg, #FEF08A 0%, #F3E8FF 55%, #D8B4FE 100%);">
                         <img id="photo-primary" src="./images/profil-1.png?v=2" alt="Andini Karina Putri"
-                            class="w-[280px] sm:w-[320px] md:w-[350px] h-auto object-contain filter drop-shadow-[0_15px_35px_rgba(60,25,85,0.7)] hover:scale-105 transition-transform duration-500" />
+                            class="w-full h-full object-cover object-bottom transition-transform duration-500 hover:scale-105" />
                     </div>
 
                 </div>
@@ -608,12 +608,16 @@
                     <p class="text-slate-300 text-sm leading-relaxed"
                         data-id="Saya mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang antusias membangun aplikasi web dari nol mulai dari merancang antarmuka yang bersih hingga mengelola database di balik layar."
                         data-en="I am an undergraduate Computer Science student at Universitas PGRI Wiranegara who is enthusiastic about building web applications from scratch, from designing clean user interfaces to managing databases behind the scenes.">
-                        Saya mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI Wiranegara</strong> yang antusias membangun aplikasi web dari nol mulai dari merancang antarmuka yang bersih hingga mengelola database di balik layar.
+                        Saya mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI
+                            Wiranegara</strong> yang antusias membangun aplikasi web dari nol mulai dari merancang
+                        antarmuka yang bersih hingga mengelola database di balik layar.
                     </p>
                     <p class="text-slate-300 text-sm leading-relaxed"
                         data-id="Pengalaman PKL di Badan Pusat Statistik (BPS) melatih cara kerja saya dalam mengolah data secara terstruktur serta memastikan setiap fitur web berjalan rapi, akurat, dan mudah digunakan."
                         data-en="My internship experience at the Central Bureau of Statistics (BPS) trained my approach to structured data processing and ensuring every web feature runs smoothly, accurately, and intuitively.">
-                        Pengalaman PKL di <strong class="text-palette-lilac">Badan Pusat Statistik (BPS)</strong> melatih cara kerja saya dalam mengolah data secara terstruktur serta memastikan setiap fitur web berjalan rapi, akurat, dan mudah digunakan.
+                        Pengalaman PKL di <strong class="text-palette-lilac">Badan Pusat Statistik (BPS)</strong>
+                        melatih cara kerja saya dalam mengolah data secara terstruktur serta memastikan setiap fitur web
+                        berjalan rapi, akurat, dan mudah digunakan.
                     </p>
 
                     <!-- Stats 2x2 Grid -->
@@ -744,39 +748,43 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <!-- 1. BPS Magang -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat Statistik</h3>
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat Statistik
+                                </h3>
                                 <span class="text-[10px] font-mono text-palette-yellow shrink-0">2026</span>
                             </div>
-                            <p class="text-xs text-palette-plum mt-1"
-                                data-id="Mahasiswa PKL — Pengolahan Data & Web"
+                            <p class="text-xs text-palette-plum mt-1" data-id="Mahasiswa PKL — Pengolahan Data & Web"
                                 data-en="Internship Student — Data Processing & Web">
                                 Mahasiswa PKL — Pengolahan Data & Web
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Web Internal" data-en="Internal Web">Web Internal</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Validasi Data" data-en="Data Validation">Validasi Data</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. Agen Statistik -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start gap-4">
                                 <h3 class="font-bold text-sm text-white uppercase tracking-wide"
                                     data-id="Agen Statistik" data-en="Statistics Agent">Agen Statistik</h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0"
-                                    data-id="2024 – Skrg" data-en="2024 – Present">2024 – Skrg</span>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0" data-id="2024 – Skrg"
+                                    data-en="2024 – Present">2024 – Skrg</span>
                             </div>
                             <p class="text-xs text-palette-plum mt-1"
                                 data-id="Pojok Statistik BPS — Literasi & Layanan Data"
@@ -785,22 +793,26 @@
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Literasi Data" data-en="Data Literacy">Literasi Data</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Edukasi Publik" data-en="Public Education">Edukasi Publik</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. UKM Koperasi Mahasiswa -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start gap-4">
                                 <h3 class="font-bold text-sm text-white uppercase tracking-wide"
-                                    data-id="UKM Koperasi Mahasiswa" data-en="Student Cooperative (UKM)">UKM Koperasi Mahasiswa</h3>
+                                    data-id="UKM Koperasi Mahasiswa" data-en="Student Cooperative (UKM)">UKM Koperasi
+                                    Mahasiswa</h3>
                                 <span class="text-[10px] font-mono text-palette-yellow shrink-0">2023 – 2026</span>
                             </div>
                             <p class="text-xs text-palette-plum mt-1"
@@ -810,29 +822,35 @@
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Tata Kelola" data-en="Governance">Tata Kelola</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Administrasi" data-en="Administration">Administrasi</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 4. PT Semi Intan Sejahtera -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan Sejahtera</h3>
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan Sejahtera
+                                </h3>
                                 <span class="text-[10px] font-mono text-palette-yellow shrink-0">2022 – 2024</span>
                             </div>
                             <p class="text-xs text-palette-plum mt-1">Quality Control (QC)</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Kepatuhan SOP" data-en="SOP Compliance">Kepatuhan SOP</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
                                 data-id="Inspeksi Harian" data-en="Daily Inspection">Inspeksi Harian</span>
                         </div>
                     </div>
@@ -857,7 +875,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <!-- 1. S1 Universitas PGRI Wiranegara -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
@@ -866,22 +885,27 @@
                                     data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
                                     S1 Ilmu Komputer
                                 </h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0"
-                                    data-id="2023 – Skrg" data-en="2023 – Present">2023 – Skrg</span>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0" data-id="2023 – Skrg"
+                                    data-en="2023 – Present">2023 – Skrg</span>
                             </div>
                             <p class="text-xs text-palette-plum mt-1">Universitas PGRI Wiranegara</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa Perangkat Lunak</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Basis Data Relasional" data-en="Relational Database">Basis Data Relasional</span>
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa Perangkat
+                                Lunak</span>
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Basis Data Relasional" data-en="Relational Database">Basis Data
+                                Relasional</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. SMA Negeri 1 Grati -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
@@ -904,12 +928,14 @@
                 </div>
 
                 <!-- 3. SMP Negeri 1 Rejoso -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso</h3>
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso
+                                </h3>
                                 <span class="text-[10px] font-mono text-palette-yellow shrink-0">2016 – 2019</span>
                             </div>
                             <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur"
@@ -927,7 +953,8 @@
                 </div>
 
                 <!-- 4. SDN Rejosolor I -->
-                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
                     <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
                     <div class="min-w-0 flex-1 flex flex-col justify-between">
                         <div>
@@ -1284,7 +1311,8 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div class="space-y-1">
                     <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
-                        data-id="KREDENSIAL & PENCAPAIAN" data-en="CREDENTIALS & ACHIEVEMENTS">KREDENSIAL & PENCAPAIAN</p>
+                        data-id="KREDENSIAL & PENCAPAIAN" data-en="CREDENTIALS & ACHIEVEMENTS">KREDENSIAL & PENCAPAIAN
+                    </p>
                     <h2 id="certifications-title"
                         class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
                         data-id="Sertifikasi & <span class='text-palette-yellow'>Kredensial</span>"
@@ -1294,7 +1322,8 @@
                 </div>
 
                 <!-- Category Filter Tabs -->
-                <div class="inline-flex flex-wrap justify-center gap-2 p-1.5 w-fit mx-auto md:mx-0 bg-dark-900 border border-palette-plum/30 rounded-2xl">
+                <div
+                    class="inline-flex flex-wrap justify-center gap-2 p-1.5 w-fit mx-auto md:mx-0 bg-dark-900 border border-palette-plum/30 rounded-2xl">
                     <button type="button" onclick="filterCertCards('all', this)"
                         class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition font-mono bg-palette-yellow text-palette-grape shadow-xs cursor-pointer whitespace-nowrap"
                         data-id="Semua (8)" data-en="All (8)">Semua (8)</button>
@@ -1314,17 +1343,31 @@
             <div id="certs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 
                 <!-- 1. Dicoding Dasar AI -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="course">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('dicoding-ai')">
-                        <img src="./images/sertifikat/sertifikat_course_653_3744283_080226205129_1.jpg" alt="Belajar Dasar AI"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="course">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('dicoding-ai')">
+                        <img src="./images/sertifikat/sertifikat_course_653_3744283_080226205129_1.jpg"
+                            alt="Belajar Dasar AI"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Dicoding Academy
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1342,7 +1385,8 @@
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Fundamental Artificial Intelligence, Machine Learning, Deep Learning, & etika implementasi AI industri."
                                 data-en="Fundamentals of AI, Machine Learning, Deep Learning, and industry AI implementation ethics.">
-                                Fundamental Artificial Intelligence, Machine Learning, Deep Learning, & etika implementasi AI industri.
+                                Fundamental Artificial Intelligence, Machine Learning, Deep Learning, & etika
+                                implementasi AI industri.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1351,27 +1395,44 @@
                                 data-id="Detail & Verifikasi →" data-en="Details & Verify →">
                                 Detail & Verifikasi →
                             </button>
-                            <a href="./sertifikat/sertifikat_course_653_3744283_080226205129%20(1).pdf" target="_blank" rel="noopener noreferrer"
+                            <a href="./sertifikat/sertifikat_course_653_3744283_080226205129%20(1).pdf" target="_blank"
+                                rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. Dicoding Pemrograman Python -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="course">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('dicoding-python')">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="course">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('dicoding-python')">
                         <img src="./images/sertifikat/python.jpg" alt="Memulai Pemrograman dengan Python"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Dicoding Academy
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1389,7 +1450,8 @@
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Sintaks Python, tipe & struktur data, modularisasi kode, penanganan eksepsi, serta otomasi data."
                                 data-en="Python syntax, core data structures, modular programming, exception handling, and data automation.">
-                                Sintaks Python, tipe & struktur data, modularisasi kode, penanganan eksepsi, serta otomasi data.
+                                Sintaks Python, tipe & struktur data, modularisasi kode, penanganan eksepsi, serta
+                                otomasi data.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1401,24 +1463,41 @@
                             <a href="./sertifikat/python.pdf" target="_blank" rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. Dicoding Machine Learning -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="course">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('dicoding-ml')">
-                        <img src="./images/sertifikat/sertifikat_course_184_3744283_270226145308_1.jpg" alt="Belajar Machine Learning untuk Pemula"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="course">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('dicoding-ml')">
+                        <img src="./images/sertifikat/sertifikat_course_184_3744283_270226145308_1.jpg"
+                            alt="Belajar Machine Learning untuk Pemula"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Dicoding Academy
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1430,13 +1509,15 @@
                                 <span class="text-palette-plum font-semibold">ID: QLZ99KO3MZ5D</span>
                             </div>
                             <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
-                                data-id="Belajar Machine Learning untuk Pemula" data-en="Learn Machine Learning for Beginners">
+                                data-id="Belajar Machine Learning untuk Pemula"
+                                data-en="Learn Machine Learning for Beginners">
                                 Belajar Machine Learning untuk Pemula
                             </h3>
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Supervised & Unsupervised Learning, evaluasi model, data cleaning, serta implementasi TensorFlow."
                                 data-en="Supervised & Unsupervised Learning, model metrics, data cleaning, and TensorFlow implementation.">
-                                Supervised & Unsupervised Learning, evaluasi model, data cleaning, serta implementasi TensorFlow.
+                                Supervised & Unsupervised Learning, evaluasi model, data cleaning, serta implementasi
+                                TensorFlow.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1445,27 +1526,44 @@
                                 data-id="Detail & Verifikasi →" data-en="Details & Verify →">
                                 Detail & Verifikasi →
                             </button>
-                            <a href="./sertifikat/sertifikat_course_184_3744283_270226145308%20(1).pdf" target="_blank" rel="noopener noreferrer"
+                            <a href="./sertifikat/sertifikat_course_184_3744283_270226145308%20(1).pdf" target="_blank"
+                                rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 4. Webinar BPS Web Scraping -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('bps-scraping')">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('bps-scraping')">
                         <img src="./images/sertifikat/Andini_Karina_Putri_1.jpg" alt="Web Scraping untuk Pemula"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             BPS Kota Pasuruan
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1477,13 +1575,15 @@
                                 <span class="text-palette-plum font-semibold">Webinar BPS</span>
                             </div>
                             <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
-                                data-id="Webinar: Web Scraping untuk Pemula" data-en="Webinar: Web Scraping for Beginners">
+                                data-id="Webinar: Web Scraping untuk Pemula"
+                                data-en="Webinar: Web Scraping for Beginners">
                                 Webinar: Web Scraping untuk Pemula
                             </h3>
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Ekstraksi data otomatis dari web publik untuk agregasi data statistik dan pelaporan berkala BPS."
                                 data-en="Automated public web scraping workflows for statistical data aggregation and BPS regular reporting.">
-                                Ekstraksi data otomatis dari web publik untuk agregasi data statistik dan pelaporan berkala BPS.
+                                Ekstraksi data otomatis dari web publik untuk agregasi data statistik dan pelaporan
+                                berkala BPS.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1492,27 +1592,45 @@
                                 data-id="Lihat Detail →" data-en="View Details →">
                                 Lihat Detail →
                             </button>
-                            <a href="./sertifikat/Andini%20Karina%20Putri-1.pdf" target="_blank" rel="noopener noreferrer"
+                            <a href="./sertifikat/Andini%20Karina%20Putri-1.pdf" target="_blank"
+                                rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 5. Webinar BPS R Studio -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('bps-rstudio')">
-                        <img src="./images/sertifikat/Andini_Karina_Putri_4.jpg" alt="Analisis Data Statistik dengan R Studio"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('bps-rstudio')">
+                        <img src="./images/sertifikat/Andini_Karina_Putri_4.jpg"
+                            alt="Analisis Data Statistik dengan R Studio"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             BPS Kab. Pasuruan
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1524,13 +1642,15 @@
                                 <span class="text-palette-plum font-semibold">Webinar BPS</span>
                             </div>
                             <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
-                                data-id="Analisis Data Statistik dengan R Studio" data-en="Statistical Data Analysis with R Studio">
+                                data-id="Analisis Data Statistik dengan R Studio"
+                                data-en="Statistical Data Analysis with R Studio">
                                 Analisis Data Statistik dengan R Studio
                             </h3>
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Pemodelan statistik terapan, visualisasi ggplot2, serta interpretasi regresi linear berbasis R Studio."
                                 data-en="Applied statistical modeling, ggplot2 visualization, and regression analysis using R Studio.">
-                                Pemodelan statistik terapan, visualisasi ggplot2, serta interpretasi regresi linear berbasis R Studio.
+                                Pemodelan statistik terapan, visualisasi ggplot2, serta interpretasi regresi linear
+                                berbasis R Studio.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1539,27 +1659,45 @@
                                 data-id="Lihat Detail →" data-en="View Details →">
                                 Lihat Detail →
                             </button>
-                            <a href="./sertifikat/Andini%20Karina%20Putri-4.pdf" target="_blank" rel="noopener noreferrer"
+                            <a href="./sertifikat/Andini%20Karina%20Putri-4.pdf" target="_blank"
+                                rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 6. Seminar Uniwara Machine Learning -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('seminar-ml')">
-                        <img src="./images/sertifikat/Sertifikat___ANDINI_KARINA_PUTRI.jpg" alt="Seminar ML & Deep Learning"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('seminar-ml')">
+                        <img src="./images/sertifikat/Sertifikat___ANDINI_KARINA_PUTRI.jpg"
+                            alt="Seminar ML & Deep Learning"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Uniwara
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1571,13 +1709,15 @@
                                 <span class="text-palette-plum font-semibold">Seminar</span>
                             </div>
                             <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
-                                data-id="Seminar: Optimasi Machine Learning & Deep Learning" data-en="Seminar: ML & Deep Learning Optimization">
+                                data-id="Seminar: Optimasi Machine Learning & Deep Learning"
+                                data-en="Seminar: ML & Deep Learning Optimization">
                                 Seminar: Optimasi Machine Learning & Deep Learning
                             </h3>
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Studi arsitektur deep learning, konvergensi neural networks, serta implementasi kasus industri terkini."
                                 data-en="Deep learning architectures, neural network convergence, and real-world industrial use cases.">
-                                Studi arsitektur deep learning, konvergensi neural networks, serta implementasi kasus industri terkini.
+                                Studi arsitektur deep learning, konvergensi neural networks, serta implementasi kasus
+                                industri terkini.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1586,27 +1726,45 @@
                                 data-id="Lihat Detail →" data-en="View Details →">
                                 Lihat Detail →
                             </button>
-                            <a href="./sertifikat/Sertifikat%20-%20ANDINI%20KARINA%20PUTRI.pdf" target="_blank" rel="noopener noreferrer"
+                            <a href="./sertifikat/Sertifikat%20-%20ANDINI%20KARINA%20PUTRI.pdf" target="_blank"
+                                rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 7. ON MIPA-PT 2024 Puspresnas -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="academic">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('onmipa-2024')">
-                        <img src="./images/sertifikat/Andini_Karina_Putri_1_2.jpg" alt="ON MIPA-PT 2024 Bidang Matematika"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="academic">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('onmipa-2024')">
+                        <img src="./images/sertifikat/Andini_Karina_Putri_1_2.jpg"
+                            alt="ON MIPA-PT 2024 Bidang Matematika"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Puspresnas / BPTI
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1624,7 +1782,8 @@
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Peserta seleksi tingkat wilayah Olimpiade Nasional MIPA Perguruan Tinggi yang diselenggarakan Kemendikbudristek."
                                 data-en="Regional selection participant of National University Mathematics & Natural Sciences Olympiad by Ministry of Education.">
-                                Peserta seleksi tingkat wilayah Olimpiade Nasional MIPA Perguruan Tinggi yang diselenggarakan Kemendikbudristek.
+                                Peserta seleksi tingkat wilayah Olimpiade Nasional MIPA Perguruan Tinggi yang
+                                diselenggarakan Kemendikbudristek.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1633,27 +1792,44 @@
                                 data-id="Lihat Detail →" data-en="View Details →">
                                 Lihat Detail →
                             </button>
-                            <a href="./sertifikat/Andini%20Karina%20Putri-1%20(2).pdf" target="_blank" rel="noopener noreferrer"
+                            <a href="./sertifikat/Andini%20Karina%20Putri-1%20(2).pdf" target="_blank"
+                                rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 8. UKM KOPMA Bendahara -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1" data-category="org">
-                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer" onclick="openCertModal('kopma-diesnatalis')">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
+                    data-category="org">
+                    <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
+                        onclick="openCertModal('kopma-diesnatalis')">
                         <img src="./images/sertifikat/4_1.jpg" alt="Bendahara 1 Gebyar Koperasi KOPMA"
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                        <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <span
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             UKM KOPMA Uniwara
                         </span>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
-                            <span class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-950/40 backdrop-blur-[2px]">
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-palette-yellow text-palette-grape text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
                                 <span data-id="Pratinjau" data-en="Preview">Pratinjau</span>
                             </span>
                         </div>
@@ -1665,13 +1841,15 @@
                                 <span class="text-palette-plum font-semibold">Organisasi</span>
                             </div>
                             <h3 class="font-display font-bold text-base text-palette-lilac group-hover:text-palette-yellow transition-colors leading-snug line-clamp-2"
-                                data-id="Bendahara 1: Gebyar Koperasi & Dies Natalis Ke-X" data-en="1st Treasurer: Cooperative Festival & 10th Anniversary">
+                                data-id="Bendahara 1: Gebyar Koperasi & Dies Natalis Ke-X"
+                                data-en="1st Treasurer: Cooperative Festival & 10th Anniversary">
                                 Bendahara 1: Gebyar Koperasi & Dies Natalis Ke-X
                             </h3>
                             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed"
                                 data-id="Manajemen arus kas, anggaran belanja kegiatan, dan penyusunan laporan pertanggungjawaban dana."
                                 data-en="Cash flow bookkeeping, event expenditure budgeting, and financial accountability reporting.">
-                                Manajemen arus kas, anggaran belanja kegiatan, dan penyusunan laporan pertanggungjawaban dana.
+                                Manajemen arus kas, anggaran belanja kegiatan, dan penyusunan laporan pertanggungjawaban
+                                dana.
                             </p>
                         </div>
                         <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
@@ -1683,7 +1861,10 @@
                             <a href="./sertifikat/4%20(1).png" target="_blank" rel="noopener noreferrer"
                                 class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
                                 title="Buka Dokumen Asli">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -1928,7 +2109,8 @@
                                 class="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white">PDF</button>
                         </div>
                     </div>
-                    <h3 id="cert-modal-title" class="font-display text-xl sm:text-2xl font-bold uppercase text-palette-lilac mt-1">
+                    <h3 id="cert-modal-title"
+                        class="font-display text-xl sm:text-2xl font-bold uppercase text-palette-lilac mt-1">
                         Judul Sertifikat
                     </h3>
                     <p id="cert-modal-issuer" class="text-xs text-palette-plum font-semibold">Penerbit</p>
@@ -1938,23 +2120,32 @@
             </div>
 
             <!-- Preview Image & Document -->
-            <div id="cert-preview-container" class="relative rounded-2xl bg-dark-950 border border-palette-plum/25 p-4 flex flex-col items-center justify-center" style="height: auto;">
-                <img id="cert-modal-img" src="" alt="Pratinjau Sertifikat" class="block mx-auto rounded-xl" style="width: auto; max-width: 100%; height: auto; max-height: 380px; object-fit: contain; margin: 0 auto;" />
-                <iframe id="cert-modal-iframe" src="" class="hidden w-full h-[420px] min-h-[420px] rounded-xl border-0" style="width: 100%; height: 420px; min-height: 420px;"></iframe>
+            <div id="cert-preview-container"
+                class="relative rounded-2xl bg-dark-950 border border-palette-plum/25 p-4 flex flex-col items-center justify-center"
+                style="height: auto;">
+                <img id="cert-modal-img" src="" alt="Pratinjau Sertifikat" class="block mx-auto rounded-xl"
+                    style="width: auto; max-width: 100%; height: auto; max-height: 380px; object-fit: contain; margin: 0 auto;" />
+                <iframe id="cert-modal-iframe" src="" class="hidden w-full h-[420px] min-h-[420px] rounded-xl border-0"
+                    style="width: 100%; height: 420px; min-height: 420px;"></iframe>
             </div>
 
             <!-- Details & Description -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-dark-850 p-4 rounded-xl border border-dark-800">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-dark-850 p-4 rounded-xl border border-dark-800">
                 <div>
-                    <span class="text-slate-400 font-mono block text-[10px] uppercase" data-id="Tanggal Terbit:" data-en="Issue Date:">Tanggal Terbit:</span>
+                    <span class="text-slate-400 font-mono block text-[10px] uppercase" data-id="Tanggal Terbit:"
+                        data-en="Issue Date:">Tanggal Terbit:</span>
                     <span id="cert-modal-date" class="text-palette-lilac font-bold text-xs">-</span>
                 </div>
                 <div>
-                    <span class="text-slate-400 font-mono block text-[10px] uppercase" data-id="ID Kredensial / No. Dokumen:" data-en="Credential ID / Doc No.:">ID Kredensial / No. Dokumen:</span>
+                    <span class="text-slate-400 font-mono block text-[10px] uppercase"
+                        data-id="ID Kredensial / No. Dokumen:" data-en="Credential ID / Doc No.:">ID Kredensial / No.
+                        Dokumen:</span>
                     <span id="cert-modal-id" class="text-palette-yellow font-mono font-bold text-xs">-</span>
                 </div>
                 <div class="sm:col-span-2 pt-2 border-t border-dark-800">
-                    <p id="cert-modal-desc" class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">-</p>
+                    <p id="cert-modal-desc" class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">-
+                    </p>
                 </div>
             </div>
 
