@@ -1911,8 +1911,16 @@
             <!-- Modal Header -->
             <div class="flex items-start justify-between gap-4 pb-3 border-b border-dark-800">
                 <div class="space-y-1">
-                    <span id="cert-modal-tag"
-                        class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-800 border border-palette-plum/30 text-palette-yellow">KREDENSIAL</span>
+                    <div class="flex items-center gap-2">
+                        <span id="cert-modal-tag"
+                            class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-800 border border-palette-plum/30 text-palette-yellow">KREDENSIAL</span>
+                        <div class="inline-flex rounded-lg border border-dark-700 bg-dark-850 p-0.5">
+                            <button type="button" id="btn-cert-img" onclick="switchCertPreview('img')"
+                                class="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape">IMG</button>
+                            <button type="button" id="btn-cert-pdf" onclick="switchCertPreview('pdf')"
+                                class="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white">PDF</button>
+                        </div>
+                    </div>
                     <h3 id="cert-modal-title" class="font-display text-xl sm:text-2xl font-bold uppercase text-palette-lilac mt-1">
                         Judul Sertifikat
                     </h3>
@@ -1922,9 +1930,10 @@
                     class="w-9 h-9 rounded-full bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-white flex items-center justify-center font-bold transition cursor-pointer shrink-0">✕</button>
             </div>
 
-            <!-- Preview Image -->
-            <div class="relative rounded-2xl overflow-hidden bg-dark-950 border border-palette-plum/25 h-auto p-4 flex items-center justify-center">
-                <img id="cert-modal-img" src="" alt="Pratinjau Sertifikat" class="w-auto h-auto max-w-full max-h-[340px] object-contain mx-auto rounded-xl" />
+            <!-- Preview Image & Document -->
+            <div id="cert-preview-container" class="relative rounded-2xl bg-dark-950 border border-palette-plum/25 p-4 flex flex-col items-center justify-center" style="height: auto;">
+                <img id="cert-modal-img" src="" alt="Pratinjau Sertifikat" class="rounded-xl" style="width: auto; max-width: 100%; height: auto; max-height: 380px; object-fit: contain; display: block; margin: 0 auto;" />
+                <iframe id="cert-modal-iframe" src="" class="hidden w-full h-[420px] min-h-[420px] rounded-xl border-0" style="width: 100%; height: 420px; min-height: 420px;"></iframe>
             </div>
 
             <!-- Details & Description -->
@@ -2331,8 +2340,34 @@
             document.getElementById('cert-modal-desc').textContent = data.description;
 
             const imgEl = document.getElementById('cert-modal-img');
-            imgEl.src = cert.img;
-            imgEl.alt = data.title;
+            const iframeEl = document.getElementById('cert-modal-iframe');
+            const btnImg = document.getElementById('btn-cert-img');
+            const btnPdf = document.getElementById('btn-cert-pdf');
+
+            // Default display: image view
+            if (cert.img) {
+                imgEl.src = cert.img;
+                imgEl.alt = data.title;
+                imgEl.classList.remove('hidden');
+                if (iframeEl) {
+                    iframeEl.src = '';
+                    iframeEl.classList.add('hidden');
+                }
+                if (btnImg && btnPdf) {
+                    btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
+                    btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
+                }
+            } else if (cert.file) {
+                imgEl.classList.add('hidden');
+                if (iframeEl) {
+                    iframeEl.src = cert.file;
+                    iframeEl.classList.remove('hidden');
+                }
+                if (btnImg && btnPdf) {
+                    btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
+                    btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
+                }
+            }
 
             const pdfLink = document.getElementById('cert-modal-pdf');
             pdfLink.href = cert.file;
@@ -2351,11 +2386,46 @@
             document.body.style.overflow = 'hidden';
         }
 
+        function switchCertPreview(type) {
+            const cert = certificateData[currentCertKey];
+            if (!cert) return;
+            const imgEl = document.getElementById('cert-modal-img');
+            const iframeEl = document.getElementById('cert-modal-iframe');
+            const btnImg = document.getElementById('btn-cert-img');
+            const btnPdf = document.getElementById('btn-cert-pdf');
+
+            if (type === 'pdf') {
+                imgEl.classList.add('hidden');
+                if (iframeEl) {
+                    iframeEl.classList.remove('hidden');
+                    if (!iframeEl.src || !iframeEl.src.includes(cert.file.replace('./', ''))) {
+                        iframeEl.src = cert.file;
+                    }
+                }
+                if (btnImg && btnPdf) {
+                    btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
+                    btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
+                }
+            } else {
+                if (iframeEl) {
+                    iframeEl.classList.add('hidden');
+                    iframeEl.src = '';
+                }
+                imgEl.classList.remove('hidden');
+                if (btnImg && btnPdf) {
+                    btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
+                    btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
+                }
+            }
+        }
+
         function closeCertModal() {
             currentCertKey = null;
             const modal = document.getElementById('cert-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+            const iframeEl = document.getElementById('cert-modal-iframe');
+            if (iframeEl) iframeEl.src = '';
             document.body.style.overflow = '';
         }
 
