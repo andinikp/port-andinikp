@@ -1932,7 +1932,7 @@
 
             <!-- Preview Image & Document -->
             <div id="cert-preview-container" class="relative rounded-2xl bg-dark-950 border border-palette-plum/25 p-4 flex flex-col items-center justify-center" style="height: auto;">
-                <img id="cert-modal-img" src="" alt="Pratinjau Sertifikat" class="rounded-xl" style="width: auto; max-width: 100%; height: auto; max-height: 380px; object-fit: contain; display: block; margin: 0 auto;" />
+                <img id="cert-modal-img" src="" alt="Pratinjau Sertifikat" class="block mx-auto rounded-xl" style="width: auto; max-width: 100%; height: auto; max-height: 380px; object-fit: contain; margin: 0 auto;" />
                 <iframe id="cert-modal-iframe" src="" class="hidden w-full h-[420px] min-h-[420px] rounded-xl border-0" style="width: 100%; height: 420px; min-height: 420px;"></iframe>
             </div>
 
@@ -2344,30 +2344,11 @@
             const btnImg = document.getElementById('btn-cert-img');
             const btnPdf = document.getElementById('btn-cert-pdf');
 
-            // Default display: image view
-            if (cert.img) {
-                imgEl.src = cert.img;
-                imgEl.alt = data.title;
-                imgEl.classList.remove('hidden');
-                if (iframeEl) {
-                    iframeEl.src = '';
-                    iframeEl.classList.add('hidden');
-                }
-                if (btnImg && btnPdf) {
-                    btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
-                    btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
-                }
-            } else if (cert.file) {
-                imgEl.classList.add('hidden');
-                if (iframeEl) {
-                    iframeEl.src = cert.file;
-                    iframeEl.classList.remove('hidden');
-                }
-                if (btnImg && btnPdf) {
-                    btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
-                    btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
-                }
-            }
+            imgEl.src = cert.img || '';
+            imgEl.alt = data.title;
+
+            // Reset view to IMG when modal opens
+            switchCertPreview('img');
 
             const pdfLink = document.getElementById('cert-modal-pdf');
             pdfLink.href = cert.file;
@@ -2395,23 +2376,36 @@
             const btnPdf = document.getElementById('btn-cert-pdf');
 
             if (type === 'pdf') {
+                // Hide image completely
                 imgEl.classList.add('hidden');
+                imgEl.style.display = 'none';
+
+                // Show PDF iframe with #view=FitH
                 if (iframeEl) {
                     iframeEl.classList.remove('hidden');
-                    if (!iframeEl.src || !iframeEl.src.includes(cert.file.replace('./', ''))) {
-                        iframeEl.src = cert.file;
+                    iframeEl.style.display = 'block';
+                    const targetPdfUrl = cert.file + '#view=FitH';
+                    if (iframeEl.src !== targetPdfUrl) {
+                        iframeEl.src = targetPdfUrl;
                     }
                 }
+
                 if (btnImg && btnPdf) {
                     btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
                     btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
                 }
             } else {
+                // Hide PDF iframe
                 if (iframeEl) {
                     iframeEl.classList.add('hidden');
+                    iframeEl.style.display = 'none';
                     iframeEl.src = '';
                 }
+
+                // Show image
                 imgEl.classList.remove('hidden');
+                imgEl.style.display = 'block';
+
                 if (btnImg && btnPdf) {
                     btnPdf.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition text-slate-400 hover:text-white";
                     btnImg.className = "px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold transition bg-palette-yellow text-palette-grape";
@@ -2425,7 +2419,15 @@
             modal.classList.add('hidden');
             modal.classList.remove('flex');
             const iframeEl = document.getElementById('cert-modal-iframe');
-            if (iframeEl) iframeEl.src = '';
+            if (iframeEl) {
+                iframeEl.src = '';
+                iframeEl.style.display = 'none';
+                iframeEl.classList.add('hidden');
+            }
+            const imgEl = document.getElementById('cert-modal-img');
+            if (imgEl) {
+                imgEl.style.display = '';
+            }
             document.body.style.overflow = '';
         }
 
