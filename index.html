@@ -235,8 +235,8 @@
             <!-- Desktop Nav Items: Evenly Distributed (Rata Kanan Kiri) -->
             <nav
                 class="hidden md:flex flex-1 items-center justify-evenly px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
-                <a href="#home" class="nav-item transition py-1 text-center" data-id="Home"
-                    data-en="Home">Home</a>
+                <a href="#home" class="nav-item transition py-1 text-center" data-id="Beranda"
+                    data-en="Home">Beranda</a>
                 <a href="#about" class="nav-item transition py-1 text-center" data-id="Tentang"
                     data-en="About">Tentang</a>
                 <a href="#experience" class="nav-item transition py-1 text-center" data-id="Pengalaman"
@@ -710,7 +710,7 @@
         </section>
 
         <!-- 2. EXPERIENCE SECTION -->
-        <section id="experience" class="space-y-6 scroll-mt-28 max-w-4xl mx-auto w-full">
+        <section id="experience" class="space-y-6 scroll-mt-28 max-w-5xl mx-auto px-6 w-full">
             <div class="space-y-1">
                 <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                     data-id="REKAM JEJAK KERJA & AKTIVITAS" data-en="WORK & ACTIVITIES TRACK RECORD">
@@ -722,117 +722,108 @@
                     Pengalaman
                 </h2>
             </div>
-                    <div class="space-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                        <!-- BPS Magang -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                <!-- 1. BPS Magang -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat Statistik</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2026</span>
                             </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat
-                                        Statistik</h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2026</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5"
-                                    data-id="Mahasiswa PKL — Pengolahan Data & Web"
-                                    data-en="Internship Student — Data Processing & Web">
-                                    Mahasiswa PKL — Pengolahan Data & Web
-                                </p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Web Internal" data-en="Internal Web">Web Internal</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Validasi Data" data-en="Data Validation">Validasi Data</span>
-                                </div>
-                            </div>
+                            <p class="text-xs text-palette-plum mt-1"
+                                data-id="Mahasiswa PKL — Pengolahan Data & Web"
+                                data-en="Internship Student — Data Processing & Web">
+                                Mahasiswa PKL — Pengolahan Data & Web
+                            </p>
                         </div>
-
-                        <!-- Agen Statistik -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide"
-                                        data-id="Agen Statistik" data-en="Statistics Agent">Agen Statistik</h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0"
-                                        data-id="2024 – Skrg" data-en="2024 – Present">2024 – Skrg</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5"
-                                    data-id="Pojok Statistik BPS — Literasi & Layanan Data"
-                                    data-en="BPS Statistics Corner — Literacy & Data Services">
-                                    Pojok Statistik BPS — Literasi & Layanan Data
-                                </p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Literasi Data" data-en="Data Literacy">Literasi Data</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Edukasi Publik" data-en="Public Education">Edukasi Publik</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- UKM Koperasi Mahasiswa -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide"
-                                        data-id="UKM Koperasi Mahasiswa" data-en="Student Cooperative (UKM)">UKM Koperasi Mahasiswa</h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2023 – 2026</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5"
-                                    data-id="Pengurus Organisasi — Manajemen & Administrasi"
-                                    data-en="Organization Committee — Management & Administration">
-                                    Pengurus Organisasi — Manajemen & Administrasi
-                                </p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Tata Kelola" data-en="Governance">Tata Kelola</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Administrasi" data-en="Administration">Administrasi</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PT Semi Intan Sejahtera -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan
-                                        Sejahtera</h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2022 – 2024</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5">Quality Control (QC)</p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Kepatuhan SOP" data-en="SOP Compliance">Kepatuhan SOP</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Inspeksi Harian" data-en="Daily Inspection">Inspeksi Harian</span>
-                                </div>
-                            </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Web Internal" data-en="Internal Web">Web Internal</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Validasi Data" data-en="Data Validation">Validasi Data</span>
                         </div>
                     </div>
+                </div>
+
+                <!-- 2. Agen Statistik -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
+                                    data-id="Agen Statistik" data-en="Statistics Agent">Agen Statistik</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0"
+                                    data-id="2024 – Skrg" data-en="2024 – Present">2024 – Skrg</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1"
+                                data-id="Pojok Statistik BPS — Literasi & Layanan Data"
+                                data-en="BPS Statistics Corner — Literacy & Data Services">
+                                Pojok Statistik BPS — Literasi & Layanan Data
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Literasi Data" data-en="Data Literacy">Literasi Data</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Edukasi Publik" data-en="Public Education">Edukasi Publik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. UKM Koperasi Mahasiswa -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
+                                    data-id="UKM Koperasi Mahasiswa" data-en="Student Cooperative (UKM)">UKM Koperasi Mahasiswa</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2023 – 2026</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1"
+                                data-id="Pengurus Organisasi — Manajemen & Administrasi"
+                                data-en="Organization Committee — Management & Administration">
+                                Pengurus Organisasi — Manajemen & Administrasi
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Tata Kelola" data-en="Governance">Tata Kelola</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Administrasi" data-en="Administration">Administrasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. PT Semi Intan Sejahtera -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan Sejahtera</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2022 – 2024</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1">Quality Control (QC)</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Kepatuhan SOP" data-en="SOP Compliance">Kepatuhan SOP</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Inspeksi Harian" data-en="Daily Inspection">Inspeksi Harian</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <!-- 3. EDUCATION SECTION -->
-        <section id="education" class="space-y-6 scroll-mt-28 max-w-4xl mx-auto w-full">
+        <section id="education" class="space-y-6 scroll-mt-28 max-w-5xl mx-auto px-6 w-full">
             <div class="space-y-1">
                 <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                     data-id="LATAR BELAKANG AKADEMIS" data-en="ACADEMIC BACKGROUND">
@@ -844,115 +835,102 @@
                     Pendidikan
                 </h2>
             </div>
-            <div class="space-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                        <!-- S1 Universitas PGRI Wiranegara -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
+                <!-- 1. S1 Universitas PGRI Wiranegara -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
+                                    data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
+                                    S1 Ilmu Komputer
+                                </h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0"
+                                    data-id="2023 – Skrg" data-en="2023 – Present">2023 – Skrg</span>
                             </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide"
-                                        data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
-                                        S1 Ilmu Komputer
-                                    </h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0"
-                                        data-id="2023 – Skrg" data-en="2023 – Present">2023 – Skrg</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5">Universitas PGRI Wiranegara</p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa
-                                        Perangkat Lunak</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                        data-id="Basis Data Relasional" data-en="Relational Database">Basis Data
-                                        Relasional</span>
-                                </div>
-                            </div>
+                            <p class="text-xs text-palette-plum mt-1">Universitas PGRI Wiranegara</p>
                         </div>
-
-                        <!-- SMA Negeri 1 Grati -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMA Negeri 1 Grati
-                                    </h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2019 – 2022</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5" data-id="Pasuruan, Jawa Timur — Jurusan IPA"
-                                    data-en="Pasuruan, East Java — Science Major">
-                                    Pasuruan, Jawa Timur — Jurusan IPA
-                                </p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                        data-id="IPA" data-en="Science">IPA</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                        data-id="Analisis" data-en="Analysis">Analisis</span>
-                                </div>
-                            </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa Perangkat Lunak</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Basis Data Relasional" data-en="Relational Database">Basis Data Relasional</span>
                         </div>
-
-                        <!-- SMP Negeri 1 Rejoso -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso
-                                    </h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2016 – 2019</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5" data-id="Pasuruan, Jawa Timur"
-                                    data-en="Pasuruan, East Java">
-                                    Pasuruan, Jawa Timur
-                                </p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                        data-id="Akademik" data-en="Academics">Akademik</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                        data-id="Karakter" data-en="Character">Karakter</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- SDN Rejosolor I -->
-                        <div
-                            class="flex gap-4 p-4 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                            <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum">
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center justify-between gap-2 flex-wrap">
-                                    <h3 class="font-bold text-sm text-white uppercase tracking-wide">SDN Rejosolor I
-                                    </h3>
-                                    <span class="text-[10px] font-mono text-palette-yellow shrink-0">2010 – 2016</span>
-                                </div>
-                                <p class="text-xs text-palette-plum mt-0.5" data-id="Pasuruan, Jawa Timur"
-                                    data-en="Pasuruan, East Java">
-                                    Pasuruan, Jawa Timur
-                                </p>
-                                <div class="flex flex-wrap gap-1.5 mt-2">
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                        data-id="Pendidikan Dasar" data-en="Elementary">Pendidikan Dasar</span>
-                                    <span
-                                        class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                        data-id="Fondasi" data-en="Foundation">Fondasi</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+                </div>
+
+                <!-- 2. SMA Negeri 1 Grati -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMA Negeri 1 Grati</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2019 – 2022</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur — Jurusan IPA"
+                                data-en="Pasuruan, East Java — Science Major">
+                                Pasuruan, Jawa Timur — Jurusan IPA
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                data-id="IPA" data-en="Science">IPA</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                data-id="Analisis" data-en="Analysis">Analisis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. SMP Negeri 1 Rejoso -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2016 – 2019</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur"
+                                data-en="Pasuruan, East Java">
+                                Pasuruan, Jawa Timur
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                data-id="Akademik" data-en="Academics">Akademik</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                data-id="Karakter" data-en="Character">Karakter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. SDN Rejosolor I -->
+                <div class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SDN Rejosolor I</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2010 – 2016</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur"
+                                data-en="Pasuruan, East Java">
+                                Pasuruan, Jawa Timur
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                data-id="Pendidikan Dasar" data-en="Elementary">Pendidikan Dasar</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
+                                data-id="Fondasi" data-en="Foundation">Fondasi</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <!-- 3. SKILL SECTION (Sliding Marquee Grid) -->
