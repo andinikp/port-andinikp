@@ -190,19 +190,19 @@
         }
 
         .mobile-nav-item {
-            color: #3C1955;
             transition: all 200ms ease;
         }
 
         .mobile-nav-item:hover {
-            color: #DBAD23 !important;
-            background-color: rgba(210, 170, 240, 0.25);
+            border-color: rgba(255, 225, 105, 0.5) !important;
+            color: #FFE169 !important;
         }
 
         .mobile-nav-item.active {
-            color: #B38600 !important;
-            font-weight: 800 !important;
-            background-color: rgba(255, 225, 105, 0.3) !important;
+            border-color: #FFE169 !important;
+            background-color: rgba(60, 25, 85, 0.85) !important;
+            color: #FFE169 !important;
+            box-shadow: 0 0 15px rgba(255, 225, 105, 0.2) !important;
         }
 
         .section-heading {
@@ -244,11 +244,31 @@
     </div>
 
     <!-- 0. FLOATING TOP PILL NAVBAR -->
-    <div id="navbar-container" class="fixed top-5 inset-x-0 z-50 flex flex-col items-end lg:items-center px-4 sm:px-6 pointer-events-none">
+    <div id="navbar-container" class="fixed top-5 inset-x-0 z-50 flex flex-col items-center px-4 sm:px-6 pointer-events-none">
         <header
-            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-3.5 sm:px-5 lg:px-7 py-2 lg:py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 w-fit ml-auto lg:w-full lg:max-w-5xl">
+            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-3 py-2 sm:px-4 lg:px-7 lg:py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 w-full max-w-4xl lg:max-w-5xl">
 
-            <!-- Desktop Nav Items: 5 Main Menus -->
+            <!-- Mobile Menu Trigger Pill Button (< 1024px) -->
+            <button type="button" onclick="toggleMobileMenu()" id="mobile-menu-trigger"
+                class="lg:hidden bg-palette-grape hover:bg-palette-grape/90 text-palette-lilac rounded-full px-4 py-2 flex items-center gap-2.5 text-xs font-bold tracking-wide transition border border-palette-plum/30 shadow-xs cursor-pointer"
+                aria-label="Toggle Navigation">
+                <!-- Hamburger Icon (☰) -->
+                <svg id="hamburger-icon" class="w-4 h-4 text-palette-yellow transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Close Icon (✕) -->
+                <svg id="close-icon" class="w-4 h-4 text-palette-yellow hidden transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <!-- Active Section Label -->
+                <span id="mobile-active-label" class="capitalize">Beranda</span>
+                <!-- Chevron Arrow Icon -->
+                <svg id="chevron-icon" class="w-3.5 h-3.5 text-palette-plum transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+
+            <!-- Desktop Nav Items: 5 Main Menus (>= 1024px) -->
             <nav
                 class="hidden lg:flex flex-1 items-center justify-center gap-8 lg:gap-10 px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
                 <a href="#home" class="nav-item transition py-1 text-center" data-id="Beranda"
@@ -263,7 +283,7 @@
                     data-en="Contact">Kontak</a>
             </nav>
 
-            <!-- Right Actions: Language Selector + Desktop Hire Me Button + Mobile Hamburger -->
+            <!-- Right Actions: Language Selector + Desktop Hire Me Button -->
             <div class="flex items-center gap-2 sm:gap-3 shrink-0">
                 <!-- Language Toggle (Segmented Pill ID | EN) -->
                 <button type="button" onclick="toggleLang()" id="lang-btn"
@@ -281,47 +301,48 @@
                     data-id="Rekrut Saya" data-en="Hire Me">
                     Rekrut Saya
                 </a>
-
-                <!-- Mobile Hamburger Toggle (< 1024px) -->
-                <button type="button" onclick="toggleMobileMenu()" id="hamburger-btn"
-                    class="lg:hidden p-1.5 rounded-full text-palette-grape hover:bg-palette-plum/20 focus:outline-none transition cursor-pointer"
-                    aria-label="Toggle Navigation">
-                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
             </div>
         </header>
 
-        <!-- Mobile Dropdown Menu Panel (w-64 max-w-[calc(100vw-2rem)] ml-auto lg:hidden) -->
+        <!-- Mobile Dropdown Menu Panel (Grid 2 Kolom Bernomor, < 1024px) -->
         <div id="mobile-menu"
-            class="hidden pointer-events-auto mt-2 w-64 max-w-[calc(100vw-2rem)] ml-auto lg:hidden bg-palette-lilac/95 backdrop-blur-xl border border-palette-plum/50 rounded-3xl p-4 sm:p-5 shadow-[0_15px_40px_rgba(60,25,85,0.35)] text-center space-y-3">
-            <nav class="flex flex-col gap-2 text-xs sm:text-sm font-bold tracking-widest uppercase text-palette-grape">
-                <a href="#home" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Beranda" data-en="Home">Beranda</a>
-                <a href="#about" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Tentang" data-en="About">Tentang</a>
-                <a href="#experience" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Pengalaman" data-en="Experience">Pengalaman</a>
-                <a href="#project" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Proyek" data-en="Projects">Proyek</a>
-                <a href="#contact" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Kontak" data-en="Contact">Kontak</a>
-            </nav>
-
-            <!-- Full-width Hire Me button on mobile dropdown -->
-            <div class="pt-2 border-t border-palette-plum/30">
-                <a href="#contact" onclick="closeMobileMenu()"
-                    class="block w-full bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black tracking-wider uppercase py-2.5 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 text-center"
-                    data-id="Rekrut Saya" data-en="Hire Me">
-                    Rekrut Saya
+            class="hidden pointer-events-auto mt-2 w-full max-w-4xl lg:hidden bg-dark-900/95 backdrop-blur-xl border border-palette-plum/40 rounded-3xl p-4 shadow-[0_15px_40px_rgba(10,2,17,0.75)]">
+            <nav class="grid grid-cols-2 gap-2.5">
+                <!-- 01 Beranda -->
+                <a href="#home" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">01</span>
+                    <span data-id="Beranda" data-en="Home">Beranda</span>
                 </a>
-            </div>
+
+                <!-- 02 Tentang -->
+                <a href="#about" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">02</span>
+                    <span data-id="Tentang" data-en="About">Tentang</span>
+                </a>
+
+                <!-- 03 Pengalaman -->
+                <a href="#experience" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">03</span>
+                    <span data-id="Pengalaman" data-en="Experience">Pengalaman</span>
+                </a>
+
+                <!-- 04 Proyek -->
+                <a href="#project" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">04</span>
+                    <span data-id="Proyek" data-en="Projects">Proyek</span>
+                </a>
+
+                <!-- 05 Kontak (col-span-2) -->
+                <a href="#contact" onclick="closeMobileMenu()"
+                    class="mobile-nav-item col-span-2 rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center justify-center gap-2.5 text-center">
+                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">05</span>
+                    <span data-id="Kontak" data-en="Contact">Kontak</span>
+                </a>
+            </nav>
         </div>
     </div>
 
@@ -2269,19 +2290,22 @@
             setTimeout(typeLoop, 800);
         });
 
-        // Toggle & Close Mobile Menu
+        // Toggle & Close Mobile Menu (with Chevron rotation)
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const hamburger = document.getElementById('hamburger-icon');
             const close = document.getElementById('close-icon');
+            const chevron = document.getElementById('chevron-icon');
             if (menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden');
                 if (hamburger) hamburger.classList.add('hidden');
                 if (close) close.classList.remove('hidden');
+                if (chevron) chevron.classList.add('rotate-180');
             } else {
                 menu.classList.add('hidden');
                 if (hamburger) hamburger.classList.remove('hidden');
                 if (close) close.classList.add('hidden');
+                if (chevron) chevron.classList.remove('rotate-180');
             }
         }
 
@@ -2289,10 +2313,12 @@
             const menu = document.getElementById('mobile-menu');
             const hamburger = document.getElementById('hamburger-icon');
             const close = document.getElementById('close-icon');
+            const chevron = document.getElementById('chevron-icon');
             if (menu && !menu.classList.contains('hidden')) {
                 menu.classList.add('hidden');
                 if (hamburger) hamburger.classList.remove('hidden');
                 if (close) close.classList.add('hidden');
+                if (chevron) chevron.classList.remove('rotate-180');
             }
         }
 
@@ -2816,6 +2842,9 @@
                     : 'mobile-lang-badge-en px-3 py-1 rounded-full text-xs font-bold font-mono text-slate-400';
             });
 
+            // Update mobile active label on language switch
+            updateMobileActiveLabel();
+
             // Update modal in real-time if currently open
             if (currentModalKey) {
                 openCaseStudy(currentModalKey);
@@ -2845,12 +2874,29 @@
             { nav: 'contact', section: 'contact', title: 'contact-title' }
         ];
 
+        const navLabels = {
+            home: { id: 'Beranda', en: 'Home' },
+            about: { id: 'Tentang', en: 'About' },
+            experience: { id: 'Pengalaman', en: 'Experience' },
+            project: { id: 'Proyek', en: 'Projects' },
+            contact: { id: 'Kontak', en: 'Contact' }
+        };
+
         let currentActiveNav = 'home';
         let clickLockTimeout = null;
         let isClickLocked = false;
 
+        function updateMobileActiveLabel() {
+            const labelEl = document.getElementById('mobile-active-label');
+            if (labelEl && navLabels[currentActiveNav]) {
+                labelEl.textContent = navLabels[currentActiveNav][currentLang] || navLabels[currentActiveNav].id;
+            }
+        }
+
         function setActiveMenu(targetId) {
             currentActiveNav = targetId;
+            updateMobileActiveLabel();
+
             sectionMap.forEach(item => {
                 const isTarget = item.nav === targetId;
 
