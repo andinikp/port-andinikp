@@ -244,15 +244,9 @@
     </div>
 
     <!-- 0. FLOATING TOP PILL NAVBAR -->
-    <div id="navbar-container" class="fixed top-5 inset-x-0 z-50 flex flex-col items-center px-4 pointer-events-none">
+    <div id="navbar-container" class="fixed top-5 inset-x-0 z-50 flex flex-col items-end lg:items-center px-4 sm:px-6 pointer-events-none">
         <header
-            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-5 sm:px-7 py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 max-w-4xl lg:max-w-5xl w-full">
-
-            <!-- Mobile Brand Label (< 1024px) -->
-            <a href="#home"
-                class="lg:hidden font-display text-lg sm:text-xl font-black uppercase tracking-wider text-palette-grape hover:opacity-80 transition shrink-0">
-                ANDINI.
-            </a>
+            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-3.5 sm:px-5 lg:px-7 py-2 lg:py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 w-fit ml-auto lg:w-full lg:max-w-5xl">
 
             <!-- Desktop Nav Items: 5 Main Menus -->
             <nav
@@ -304,10 +298,10 @@
             </div>
         </header>
 
-        <!-- Mobile Dropdown Menu Panel (melayang tepat di bawah navbar, lebar mengikuti navbar, rounded-3xl, shadow, warna senada) -->
+        <!-- Mobile Dropdown Menu Panel (w-64 max-w-[calc(100vw-2rem)] ml-auto lg:hidden) -->
         <div id="mobile-menu"
-            class="hidden pointer-events-auto mt-2 w-full max-w-4xl lg:hidden bg-palette-lilac/95 backdrop-blur-xl border border-palette-plum/50 rounded-3xl p-5 sm:p-6 shadow-[0_15px_40px_rgba(60,25,85,0.35)] text-center space-y-4">
-            <nav class="flex flex-col gap-3 text-xs sm:text-sm font-bold tracking-widest uppercase text-palette-grape">
+            class="hidden pointer-events-auto mt-2 w-64 max-w-[calc(100vw-2rem)] ml-auto lg:hidden bg-palette-lilac/95 backdrop-blur-xl border border-palette-plum/50 rounded-3xl p-4 sm:p-5 shadow-[0_15px_40px_rgba(60,25,85,0.35)] text-center space-y-3">
+            <nav class="flex flex-col gap-2 text-xs sm:text-sm font-bold tracking-widest uppercase text-palette-grape">
                 <a href="#home" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
                     data-id="Beranda" data-en="Home">Beranda</a>
                 <a href="#about" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
@@ -323,7 +317,7 @@
             <!-- Full-width Hire Me button on mobile dropdown -->
             <div class="pt-2 border-t border-palette-plum/30">
                 <a href="#contact" onclick="closeMobileMenu()"
-                    class="block w-full bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black tracking-wider uppercase py-3 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 text-center"
+                    class="block w-full bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black tracking-wider uppercase py-2.5 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 text-center"
                     data-id="Rekrut Saya" data-en="Hire Me">
                     Rekrut Saya
                 </a>
@@ -2013,13 +2007,7 @@
                 <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-palette-plum/15 blur-3xl pointer-events-none -z-10"></div>
                 <div class="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-palette-yellow/10 blur-3xl pointer-events-none -z-10"></div>
 
-                <!-- Status Badge with Pulse Indicator -->
-                <div class="inline-flex items-center gap-2 bg-dark-950/80 border border-palette-plum/30 px-4 py-1.5 rounded-full text-xs font-mono font-semibold text-palette-lilac shadow-inner mb-5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34D399]"></span>
-                    <span data-id="Tersedia untuk Peluang Kerja & Kolaborasi" data-en="Available for Work & Collaboration">
-                        Tersedia untuk Peluang Kerja & Kolaborasi
-                    </span>
-                </div>
+
 
                 <!-- Eyebrow -->
                 <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow mb-2"
