@@ -351,9 +351,9 @@
 
         <!-- 1. HERO SECTION (Cyberpunk Aesthetic with Glowing Portrait) -->
         <section id="home"
-            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-screen pt-4 pb-16 scroll-mt-32">
-            <!-- Left Bio Column -->
-            <div class="lg:col-span-7 space-y-6 text-left">
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-0 lg:min-h-screen pt-0 pb-12 lg:pt-4 lg:pb-16 scroll-mt-32">
+            <!-- Left Bio Column (order-2 on mobile, order-1 on desktop) -->
+            <div class="lg:col-span-7 space-y-6 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
                 <!-- Location Badge (Pill di atas Nama) -->
                 <div
                     class="inline-flex items-center gap-2 bg-dark-900/90 backdrop-blur-md px-4 py-2 rounded-full border border-palette-plum/40 shadow-[0_0_20px_rgba(60,25,85,0.3)] w-fit">
@@ -373,7 +373,7 @@
 
                 <!-- Typewriter Subtitle -->
                 <div
-                    class="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-palette-yellow flex items-center">
+                    class="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-palette-yellow flex items-center justify-center lg:justify-start">
                     <span id="typewriter-text">Web Developer</span>
                     <span class="cursor-blink text-palette-yellow font-normal">|</span>
                 </div>
@@ -386,7 +386,7 @@
                 </p>
 
                 <!-- Actions: Download CV + Social Icons -->
-                <div class="flex flex-wrap items-center gap-4 pt-2">
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                     <a href="./cv/CV-Andini-Karina-Putri.pdf" download
                         class="inline-flex items-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac text-xs font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.3)] border-2 border-palette-yellow transition duration-300 transform hover:scale-[1.02]">
                         <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -427,8 +427,8 @@
                 </div>
             </div>
 
-            <!-- Right Visual: Circular Portrait with Bright Gradient & 3D Spheres -->
-            <div class="lg:col-span-5 flex items-center justify-center relative py-6">
+            <!-- Right Visual: Circular Portrait with Soft Gradient & 3D Spheres (order-1 on mobile, order-2 on desktop) -->
+            <div class="lg:col-span-5 flex items-center justify-center relative order-1 lg:order-2 py-2 lg:py-6">
 
                 <!-- Ambient Purple & Gold Halo Backdrop -->
                 <div
@@ -436,7 +436,7 @@
                 </div>
 
                 <!-- Centerpiece Composition Wrapper -->
-                <div class="relative flex items-center justify-center w-full max-w-[340px] sm:max-w-[400px]">
+                <div class="relative flex items-center justify-center">
 
                     <!-- 3. Ornamen Bola 1: Sudut Kiri Atas (Melayang di luar lingkaran) -->
                     <div class="absolute -top-3 -left-3 sm:-top-5 sm:-left-4 z-20 w-11 sm:w-13 h-11 sm:h-13 rounded-full transition-transform hover:scale-115 duration-300 pointer-events-none"
@@ -454,9 +454,9 @@
                         </div>
                     </div>
 
-                    <!-- 1 & 2. Container Lingkaran dengan Gradasi Terang & Foto Profil Menempel di Bawah -->
-                    <div class="relative w-72 sm:w-80 md:w-[350px] h-72 sm:h-80 md:h-[350px] rounded-full overflow-hidden border-2 border-yellow-300/70 shadow-[0_0_50px_rgba(210,170,240,0.45),0_0_90px_rgba(255,225,105,0.25)] flex items-end justify-center"
-                        style="background: linear-gradient(135deg, #FEF08A 0%, #F3E8FF 55%, #D8B4FE 100%);">
+                    <!-- 1 & 2. Container Lingkaran dengan Gradasi Ungu-Lavender & Foto Profil Menempel di Bawah -->
+                    <div class="relative w-56 h-56 sm:w-72 sm:h-72 md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-2 border-palette-plum/60 shadow-[0_0_50px_rgba(210,170,240,0.45),0_0_90px_rgba(255,225,105,0.25)] flex items-end justify-center"
+                        style="background: radial-gradient(circle at 50% 35%, #E9D5FF 0%, #9353D3 48%, #3C1955 100%);">
                         <img id="photo-primary" src="./images/profil-1.png?v=2" alt="Andini Karina Putri"
                             class="w-full h-full object-cover object-bottom transition-transform duration-500 hover:scale-105" />
                     </div>
@@ -601,144 +601,85 @@
         <section id="about" class="space-y-20 sm:space-y-28 py-16 scroll-mt-12">
             <!-- Sub-section: sub-about -->
             <div id="sub-about" class="space-y-8 scroll-mt-12">
-<div class="text-left space-y-1">
-                <h2 id="about-title"
-                    class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
-                    data-id="Tentang Saya" data-en="About Me">
-                    Tentang Saya
-                </h2>
-            </div>
-
-            <!-- 3 Columns: Bio+Stats (Left), Fan Centerpiece (Center), Philosophy/Mission (Right) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-
-                <!-- Left: Bio & Stats Grid -->
-                <div class="lg:col-span-4 space-y-5">
-                    <p class="text-slate-300 text-sm leading-relaxed"
-                        data-id="Saya mahasiswa S1 Ilmu Komputer di Universitas PGRI Wiranegara yang antusias membangun aplikasi web dari nol mulai dari merancang antarmuka yang bersih hingga mengelola database di balik layar."
-                        data-en="I am an undergraduate Computer Science student at Universitas PGRI Wiranegara who is enthusiastic about building web applications from scratch, from designing clean user interfaces to managing databases behind the scenes.">
-                        Saya mahasiswa <strong class="text-palette-lilac">S1 Ilmu Komputer di Universitas PGRI
-                            Wiranegara</strong> yang antusias membangun aplikasi web dari nol mulai dari merancang
-                        antarmuka yang bersih hingga mengelola database di balik layar.
-                    </p>
-                    <p class="text-slate-300 text-sm leading-relaxed"
-                        data-id="Pengalaman PKL di Badan Pusat Statistik (BPS) melatih cara kerja saya dalam mengolah data secara terstruktur serta memastikan setiap fitur web berjalan rapi, akurat, dan mudah digunakan."
-                        data-en="My internship experience at the Central Bureau of Statistics (BPS) trained my approach to structured data processing and ensuring every web feature runs smoothly, accurately, and intuitively.">
-                        Pengalaman PKL di <strong class="text-palette-lilac">Badan Pusat Statistik (BPS)</strong>
-                        melatih cara kerja saya dalam mengolah data secara terstruktur serta memastikan setiap fitur web
-                        berjalan rapi, akurat, dan mudah digunakan.
-                    </p>
-
-                    <!-- Stats 2x2 Grid -->
-                    <div class="grid grid-cols-2 gap-4 pt-2">
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-palette-yellow">02+</p>
-                            <p class="text-xs text-slate-400 mt-0.5" data-id="Aplikasi Web Rilis"
-                                data-en="Live Web Apps">Aplikasi Web Rilis</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-palette-yellow">12+</p>
-                            <p class="text-xs text-slate-400 mt-0.5" data-id="Teknologi & Tools" data-en="Tech & Tools">
-                                Teknologi & Tools</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-palette-yellow">100%</p>
-                            <p class="text-xs text-slate-400 mt-0.5" data-id="Desain Responsif"
-                                data-en="Responsive Design">Desain Responsif</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card">
-                            <p class="font-display text-3xl font-extrabold text-palette-yellow">BPS</p>
-                            <p class="text-xs text-slate-400 mt-0.5" data-id="Pengalaman Kerja"
-                                data-en="Field Experience">Pengalaman Kerja</p>
-                        </div>
-                    </div>
+                <div class="text-left space-y-1">
+                    <h2 id="about-title"
+                        class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                        data-id="Tentang Saya" data-en="About Me">
+                        Tentang Saya
+                    </h2>
                 </div>
 
-                <!-- Center: Purple & Gold Fan Artwork / Glowing Centerpiece -->
-                <div class="lg:col-span-4 flex flex-col items-center justify-center relative py-4">
-                    <div class="w-64 h-64 sm:w-72 sm:h-72 relative flex items-center justify-center animate-float">
-                        <!-- Glowing backdrop circle -->
-                        <div
-                            class="absolute inset-0 rounded-full bg-gradient-to-tr from-palette-plum/25 via-palette-grape/30 to-transparent blur-2xl">
-                        </div>
+                <!-- 2 Columns: Authentic Story & Stats (Left), Code Editor JSON Profile (Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
-                        <!-- Illustration SVG with Palette Colors -->
-                        <svg class="w-full h-full filter drop-shadow-[0_0_25px_rgba(210,170,240,0.5)]"
-                            viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Fan Blades Gradient -->
-                            <defs>
-                                <linearGradient id="fanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#FFE169" />
-                                    <stop offset="45%" stop-color="#D2AAF0" />
-                                    <stop offset="100%" stop-color="#3C1955" />
-                                </linearGradient>
-                                <linearGradient id="ribGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                                    <stop offset="0%" stop-color="#150820" />
-                                    <stop offset="100%" stop-color="#3C1955" />
-                                </linearGradient>
-                            </defs>
-
-                            <!-- Fan Canopy (Arc) -->
-                            <path d="M 20 160 A 130 130 0 0 1 280 160 L 220 160 A 70 70 0 0 0 80 160 Z"
-                                fill="url(#fanGrad)" opacity="0.95" />
-
-                            <!-- Fan Pleats / Ribs -->
-                            <path
-                                d="M 150 200 L 25 160 M 150 200 L 55 125 M 150 200 L 95 95 M 150 200 L 150 80 M 150 200 L 205 95 M 150 200 L 245 125 M 150 200 L 275 160"
-                                stroke="url(#ribGrad)" stroke-width="2.5" />
-
-                            <!-- Branch Silhouette on Fan -->
-                            <path d="M 80 145 Q 120 120 155 125 T 225 110" stroke="#150820" stroke-width="3"
-                                stroke-linecap="round" fill="none" />
-                            <circle cx="125" cy="120" r="7" fill="#FAF5FA" opacity="0.9" />
-                            <circle cx="155" cy="115" r="8" fill="#FFE169" opacity="0.9" />
-                            <circle cx="185" cy="110" r="7.5" fill="#FAF5FA" opacity="0.9" />
-                            <circle cx="215" cy="112" r="6" fill="#FFE169" opacity="0.85" />
-
-                            <!-- Fan Handle & Tassel -->
-                            <circle cx="150" cy="200" r="8" fill="#150820" stroke="#FFE169" stroke-width="2" />
-                            <path d="M 150 208 L 150 230" stroke="#FFE169" stroke-width="2.5" />
-                            <!-- Tassel Fringe -->
-                            <path d="M 144 230 Q 150 235 156 230 L 158 255 Q 150 260 142 255 Z" fill="#FFE169"
-                                opacity="0.9" />
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Right: Philosophy & Mission Cards -->
-                <div class="lg:col-span-4 space-y-4">
-                    <!-- Card 1: My Philosophy -->
-                    <div
-                        class="p-5 rounded-2xl bg-dark-900/90 border border-palette-plum/25 hover:border-palette-yellow/50 shadow-neon-card transition duration-300">
-                        <h3
-                            class="font-display text-base font-bold text-palette-yellow uppercase tracking-wider mb-2 flex items-center gap-2">
-                            <span data-id="Filosofi Saya" data-en="My Philosophy">Filosofi Saya</span>
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal"
-                            data-id="Memadukan ketelitian pengolahan data dengan arsitektur web modern untuk menciptakan sistem informasi operasional yang andal, cepat, dan bernilai guna."
-                            data-en="Combining data processing precision with modern web architecture to build reliable, fast, and high-value operational information systems.">
-                            Memadukan ketelitian pengolahan data dengan arsitektur web modern untuk menciptakan sistem
-                            informasi operasional yang andal, cepat, dan bernilai guna.
+                    <!-- Left Column: Story & 3 Summary Cards (lg:col-span-6 space-y-5) -->
+                    <div class="lg:col-span-6 space-y-5 text-left">
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"
+                            data-id="Saya mahasiswa Ilmu Komputer di Universitas PGRI Wiranegara dengan ketertarikan utama di bidang Web Development. Sehari-hari saya banyak mengeksplorasi pembuatan aplikasi web, mulai dari merancang antarmuka responsif hingga menyusun struktur database di balik layar."
+                            data-en="I am a Computer Science student at Universitas PGRI Wiranegara with a primary focus on Web Development. I spend my time building web applications—from designing responsive user interfaces to structuring databases behind the scenes.">
+                            Saya mahasiswa Ilmu Komputer di Universitas PGRI Wiranegara dengan ketertarikan utama di bidang Web Development. Sehari-hari saya banyak mengeksplorasi pembuatan aplikasi web, mulai dari merancang antarmuka responsif hingga menyusun struktur database di balik layar.
                         </p>
-                    </div>
-
-                    <!-- Card 2: The Mission -->
-                    <div
-                        class="p-5 rounded-2xl bg-dark-900/90 border border-palette-plum/25 hover:border-palette-yellow/50 shadow-neon-card transition duration-300">
-                        <h3
-                            class="font-display text-base font-bold text-palette-yellow uppercase tracking-wider mb-2 flex items-center gap-2">
-                            <span data-id="Misi Saya" data-en="The Mission">Misi Saya</span>
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal"
-                            data-id="Mengotomatisasi pencatatan manual dan alur transaksi bisnis menjadi aplikasi web yang bersih, terstruktur rapi, serta mudah dioperasikan pengguna."
-                            data-en="Automating manual records and business transaction workflows into clean, neatly structured, and user-friendly web applications.">
-                            Mengotomatisasi pencatatan manual dan alur transaksi bisnis menjadi aplikasi web yang
-                            bersih, terstruktur rapi, serta mudah dioperasikan pengguna.
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"
+                            data-id="Lewat beberapa proyek mandiri dan pengalaman PKL di Badan Pusat Statistik (BPS), saya terbiasa menerjemahkan kebutuhan lapangan menjadi sistem web yang terstruktur, sekaligus menangani dukungan teknis (IT support) serta troubleshooting perangkat dan jaringan."
+                            data-en="Through personal projects and my internship at the Central Bureau of Statistics (BPS), I have grown accustomed to translating real-world needs into structured web systems, as well as handling IT support and hardware/network troubleshooting.">
+                            Lewat beberapa proyek mandiri dan pengalaman PKL di Badan Pusat Statistik (BPS), saya terbiasa menerjemahkan kebutuhan lapangan menjadi sistem web yang terstruktur, sekaligus menangani dukungan teknis (IT support) serta troubleshooting perangkat dan jaringan.
                         </p>
-                    </div>
-                </div>
 
-            </div>
+                        <!-- 3 Summary Cards (grid-cols-3 gap-3) -->
+                        <div class="grid grid-cols-3 gap-3 pt-2">
+                            <!-- Card 1: 2 Proyek Web Live -->
+                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card text-center transition hover:border-palette-yellow/50">
+                                <p class="font-display text-2xl sm:text-3xl font-extrabold text-palette-yellow">2</p>
+                                <p class="text-[11px] sm:text-xs text-slate-400 mt-1 font-medium leading-tight"
+                                    data-id="Proyek Web Live" data-en="Live Web Apps">Proyek Web Live</p>
+                            </div>
+                            <!-- Card 2: BPS Pengalaman PKL -->
+                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card text-center transition hover:border-palette-yellow/50">
+                                <p class="font-display text-2xl sm:text-3xl font-extrabold text-palette-yellow">BPS</p>
+                                <p class="text-[11px] sm:text-xs text-slate-400 mt-1 font-medium leading-tight"
+                                    data-id="Pengalaman PKL" data-en="Internship Exp.">Pengalaman PKL</p>
+                            </div>
+                            <!-- Card 3: 2+ Thn Kerja & Organisasi -->
+                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card text-center transition hover:border-palette-yellow/50">
+                                <p class="font-display text-2xl sm:text-3xl font-extrabold text-palette-yellow">2+ Thn</p>
+                                <p class="text-[11px] sm:text-xs text-slate-400 mt-1 font-medium leading-tight"
+                                    data-id="Kerja & Organisasi" data-en="Work & Org.">Kerja & Organisasi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Code Editor Dark Card (lg:col-span-6) -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-dark-950/90 border border-palette-plum/35 rounded-3xl overflow-hidden shadow-neon-card">
+                            <!-- Top Bar: 3 colored dots + andini-profile.json -->
+                            <div class="flex items-center justify-between px-5 py-3.5 bg-dark-900/80 border-b border-palette-plum/25">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-400/80 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                                </div>
+                                <span class="font-mono text-xs text-slate-400">andini-profile.json</span>
+                                <div class="w-12"></div>
+                            </div>
+
+                            <!-- JSON Body with syntax highlighting -->
+                            <div class="p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto text-slate-300">
+                                <pre class="font-mono leading-relaxed"><code><span class="text-slate-400">{</span>
+  <span class="text-palette-plum">"nama"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"Andini Karina Putri"</span><span class="text-slate-400">,</span>
+  <span class="text-palette-plum">"domisili"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"<span data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</span>"</span><span class="text-slate-400">,</span>
+  <span class="text-palette-plum">"pendidikan"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"<span data-id="S1 Ilmu Komputer — Uniwara" data-en="B.Sc. Computer Science — Uniwara">S1 Ilmu Komputer — Uniwara</span>"</span><span class="text-slate-400">,</span>
+  <span class="text-palette-plum">"fokus"</span><span class="text-slate-400">:</span> <span class="text-slate-400">[</span>
+    <span class="text-palette-lilac">"Web Development"</span><span class="text-slate-400">,</span>
+    <span class="text-palette-lilac">"IT Support & Networking"</span><span class="text-slate-400">,</span>
+    <span class="text-palette-lilac">"<span data-id="Pengolahan Data" data-en="Data Processing">Pengolahan Data</span>"</span>
+  <span class="text-slate-400">],</span>
+  <span class="text-palette-plum">"status"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"<span data-id="Terbuka untuk peluang kerja & kolaborasi" data-en="Open for work & collaboration">Terbuka untuk peluang kerja & kolaborasi</span>"</span>
+<span class="text-slate-400">}</span></code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <!-- Sub-section: education -->
@@ -2246,12 +2187,14 @@
         const typewriterPhrases = {
             id: [
                 "Web Developer",
+                "IT Support & Troubleshooting",
                 "Pengembang Aplikasi Web",
                 "UI/UX & Desain Antarmuka",
                 "Manajemen Data & Sistem"
             ],
             en: [
                 "Web Developer",
+                "IT Support & Troubleshooting",
                 "Web Application Developer",
                 "UI/UX & Interface Designer",
                 "Data & System Management"
