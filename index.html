@@ -254,22 +254,17 @@
                 ANDINI.
             </a>
 
-            <!-- Desktop Nav Items: hidden lg:flex items-center gap-6 -->
+            <!-- Desktop Nav Items: 5 Main Menus -->
             <nav
-                class="hidden lg:flex flex-1 items-center justify-center gap-6 px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
+                class="hidden lg:flex flex-1 items-center justify-center gap-8 lg:gap-10 px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
                 <a href="#home" class="nav-item transition py-1 text-center" data-id="Beranda"
                     data-en="Home">Beranda</a>
                 <a href="#about" class="nav-item transition py-1 text-center" data-id="Tentang"
                     data-en="About">Tentang</a>
                 <a href="#experience" class="nav-item transition py-1 text-center" data-id="Pengalaman"
                     data-en="Experience">Pengalaman</a>
-                <a href="#education" class="nav-item transition py-1 text-center" data-id="Pendidikan"
-                    data-en="Education">Pendidikan</a>
-                <a href="#skill" class="nav-item transition py-1 text-center" data-id="Skill" data-en="Skill">Skill</a>
-                <a href="#certifications" class="nav-item transition py-1 text-center" data-id="Sertifikat"
-                    data-en="Certificates">Sertifikat</a>
                 <a href="#project" class="nav-item transition py-1 text-center" data-id="Proyek"
-                    data-en="Project">Proyek</a>
+                    data-en="Projects">Proyek</a>
                 <a href="#contact" class="nav-item transition py-1 text-center" data-id="Kontak"
                     data-en="Contact">Kontak</a>
             </nav>
@@ -319,14 +314,8 @@
                     data-id="Tentang" data-en="About">Tentang</a>
                 <a href="#experience" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
                     data-id="Pengalaman" data-en="Experience">Pengalaman</a>
-                <a href="#education" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Pendidikan" data-en="Education">Pendidikan</a>
-                <a href="#skill" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Skill" data-en="Skill">Skill</a>
-                <a href="#certifications" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Sertifikat" data-en="Certificates">Sertifikat</a>
                 <a href="#project" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
-                    data-id="Proyek" data-en="Project">Proyek</a>
+                    data-id="Proyek" data-en="Projects">Proyek</a>
                 <a href="#contact" onclick="closeMobileMenu()" class="mobile-nav-item py-2 px-4 rounded-xl"
                     data-id="Kontak" data-en="Contact">Kontak</a>
             </nav>
@@ -590,9 +579,14 @@
             </div>
         </div>
 
-        <!-- 2. ABOUT ME SECTION (3-Column Layout with Fan/Centerpiece matching image) -->
-        <section id="about" class="space-y-8 py-16 scroll-mt-12">
-            <div class="text-left space-y-1">
+        <!-- ==========================================
+             2. TENTANG (ABOUT SECTION)
+             Wraps: Tentang Saya, Pendidikan, Skill
+             ========================================== -->
+        <section id="about" class="space-y-20 sm:space-y-28 py-16 scroll-mt-12">
+            <!-- Sub-section: sub-about -->
+            <div id="sub-about" class="space-y-8 scroll-mt-12">
+<div class="text-left space-y-1">
                 <h2 id="about-title"
                     class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
                     data-id="Tentang Saya" data-en="About Me">
@@ -730,138 +724,11 @@
                 </div>
 
             </div>
-        </section>
-
-        <!-- 2. EXPERIENCE SECTION -->
-        <section id="experience" class="space-y-6 py-16 scroll-mt-12 max-w-5xl mx-auto px-6 w-full">
-            <div class="space-y-1">
-                <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
-                    data-id="REKAM JEJAK KERJA & AKTIVITAS" data-en="WORK & ACTIVITIES TRACK RECORD">
-                    REKAM JEJAK KERJA & AKTIVITAS
-                </p>
-                <h2 id="experience-title"
-                    class="section-heading font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
-                    data-id="Pengalaman" data-en="Experience">
-                    Pengalaman
-                </h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <!-- 1. BPS Magang -->
-                <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat Statistik
-                                </h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2026</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1" data-id="Mahasiswa PKL — Pengolahan Data & Web"
-                                data-en="Internship Student — Data Processing & Web">
-                                Mahasiswa PKL — Pengolahan Data & Web
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Web Internal" data-en="Internal Web">Web Internal</span>
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Validasi Data" data-en="Data Validation">Validasi Data</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Agen Statistik -->
-                <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
-                                    data-id="Agen Statistik" data-en="Statistics Agent">Agen Statistik</h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0" data-id="2024 – Skrg"
-                                    data-en="2024 – Present">2024 – Skrg</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1"
-                                data-id="Pojok Statistik BPS — Literasi & Layanan Data"
-                                data-en="BPS Statistics Corner — Literacy & Data Services">
-                                Pojok Statistik BPS — Literasi & Layanan Data
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Literasi Data" data-en="Data Literacy">Literasi Data</span>
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Edukasi Publik" data-en="Public Education">Edukasi Publik</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. UKM Koperasi Mahasiswa -->
-                <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
-                                    data-id="UKM Koperasi Mahasiswa" data-en="Student Cooperative (UKM)">UKM Koperasi
-                                    Mahasiswa</h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2023 – 2026</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1"
-                                data-id="Pengurus Organisasi — Manajemen & Administrasi"
-                                data-en="Organization Committee — Management & Administration">
-                                Pengurus Organisasi — Manajemen & Administrasi
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Tata Kelola" data-en="Governance">Tata Kelola</span>
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Administrasi" data-en="Administration">Administrasi</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. PT Semi Intan Sejahtera -->
-                <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan Sejahtera
-                                </h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2022 – 2024</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1">Quality Control (QC)</p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Kepatuhan SOP" data-en="SOP Compliance">Kepatuhan SOP</span>
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Inspeksi Harian" data-en="Daily Inspection">Inspeksi Harian</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 3. EDUCATION SECTION -->
-        <section id="education" class="space-y-6 py-16 scroll-mt-12 max-w-5xl mx-auto px-6 w-full">
-            <div class="space-y-1">
+            <!-- Sub-section: education -->
+            <div id="education" class="space-y-6 scroll-mt-12 max-w-5xl mx-auto px-6 w-full">
+<div class="space-y-1">
                 <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                     data-id="LATAR BELAKANG AKADEMIS" data-en="ACADEMIC BACKGROUND">
                     LATAR BELAKANG AKADEMIS
@@ -977,11 +844,11 @@
                 </div>
 
             </div>
-        </section>
+            </div>
 
-        <!-- 3. SKILL SECTION (Sliding Marquee Grid) -->
-        <section id="skill" class="space-y-8 py-16 scroll-mt-12">
-            <div class="text-left space-y-1">
+            <!-- Sub-section: skill -->
+            <div id="skill" class="space-y-8 scroll-mt-12">
+<div class="text-left space-y-1">
                 <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                     data-id="TEKNOLOGI & PERANGKAT" data-en="TECH STACK & TOOLS">TEKNOLOGI & PERANGKAT
                 </p>
@@ -1304,11 +1171,144 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
 
-        <!-- 4. CERTIFICATIONS & CREDENTIALS SECTION -->
-        <section id="certifications" class="space-y-8 py-16 scroll-mt-12">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <!-- ==========================================
+             3. PENGALAMAN (EXPERIENCE SECTION)
+             Wraps: Pengalaman Kerja & Sertifikasi
+             ========================================== -->
+        <section id="experience" class="space-y-20 sm:space-y-28 py-16 scroll-mt-12">
+            <!-- Sub-section: sub-experience -->
+            <div id="sub-experience" class="space-y-6 scroll-mt-12 max-w-5xl mx-auto px-6 w-full">
+<div class="space-y-1">
+                <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
+                    data-id="REKAM JEJAK KERJA & AKTIVITAS" data-en="WORK & ACTIVITIES TRACK RECORD">
+                    REKAM JEJAK KERJA & AKTIVITAS
+                </p>
+                <h2 id="experience-title"
+                    class="section-heading font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight"
+                    data-id="Pengalaman" data-en="Experience">
+                    Pengalaman
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- 1. BPS Magang -->
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">Badan Pusat Statistik
+                                </h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2026</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1" data-id="Mahasiswa PKL — Pengolahan Data & Web"
+                                data-en="Internship Student — Data Processing & Web">
+                                Mahasiswa PKL — Pengolahan Data & Web
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Web Internal" data-en="Internal Web">Web Internal</span>
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Validasi Data" data-en="Data Validation">Validasi Data</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Agen Statistik -->
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
+                                    data-id="Agen Statistik" data-en="Statistics Agent">Agen Statistik</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0" data-id="2024 – Skrg"
+                                    data-en="2024 – Present">2024 – Skrg</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1"
+                                data-id="Pojok Statistik BPS — Literasi & Layanan Data"
+                                data-en="BPS Statistics Corner — Literacy & Data Services">
+                                Pojok Statistik BPS — Literasi & Layanan Data
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Literasi Data" data-en="Data Literacy">Literasi Data</span>
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Edukasi Publik" data-en="Public Education">Edukasi Publik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. UKM Koperasi Mahasiswa -->
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
+                                    data-id="UKM Koperasi Mahasiswa" data-en="Student Cooperative (UKM)">UKM Koperasi
+                                    Mahasiswa</h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2023 – 2026</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1"
+                                data-id="Pengurus Organisasi — Manajemen & Administrasi"
+                                data-en="Organization Committee — Management & Administration">
+                                Pengurus Organisasi — Manajemen & Administrasi
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Tata Kelola" data-en="Governance">Tata Kelola</span>
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Administrasi" data-en="Administration">Administrasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. PT Semi Intan Sejahtera -->
+                <div
+                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
+                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
+                    <div class="min-w-0 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">PT Semi Intan Sejahtera
+                                </h3>
+                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2022 – 2024</span>
+                            </div>
+                            <p class="text-xs text-palette-plum mt-1">Quality Control (QC)</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Kepatuhan SOP" data-en="SOP Compliance">Kepatuhan SOP</span>
+                            <span
+                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                                data-id="Inspeksi Harian" data-en="Daily Inspection">Inspeksi Harian</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+            <!-- Sub-section: certifications -->
+            <div id="certifications" class="space-y-8 scroll-mt-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div class="space-y-1">
                     <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
                         data-id="KREDENSIAL & PENCAPAIAN" data-en="CREDENTIALS & ACHIEVEMENTS">KREDENSIAL & PENCAPAIAN
@@ -1871,9 +1871,10 @@
                 </div>
 
             </div>
+            </div>
         </section>
 
-        <!-- 5. PROJECT SECTION (Karya Web Aplikasi) -->
+                <!-- 5. PROJECT SECTION (Karya Web Aplikasi) -->
         <section id="project" class="space-y-8 py-16 scroll-mt-12">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div class="space-y-1">
@@ -2784,13 +2785,11 @@
         }
 
         // ── ACTIVE NAV & SECTION HEADING HIGHLIGHT ────────────────
+        // 5 Main Navigation Categories: home, about, experience, project, contact
         const sectionMap = [
             { nav: 'home', section: 'home', title: 'home-title' },
             { nav: 'about', section: 'about', title: 'about-title' },
             { nav: 'experience', section: 'experience', title: 'experience-title' },
-            { nav: 'education', section: 'education', title: 'education-title' },
-            { nav: 'skill', section: 'skill', title: 'skill-title' },
-            { nav: 'certifications', section: 'certifications', title: 'certifications-title' },
             { nav: 'project', section: 'project', title: 'project-title' },
             { nav: 'contact', section: 'contact', title: 'contact-title' }
         ];
@@ -2816,7 +2815,7 @@
                     mobileLink.classList.toggle('active', isTarget);
                 }
 
-                // Section Titles (Font turns Yellow Jasmine)
+                // Section Titles
                 const titleEl = document.getElementById(item.title);
                 if (titleEl) {
                     titleEl.classList.toggle('active', isTarget);
@@ -2830,6 +2829,7 @@
                 const href = link.getAttribute('href');
                 if (href) {
                     const targetId = href.replace('#', '');
+                    closeMobileMenu();
                     if (targetId === 'home') {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2858,45 +2858,65 @@
 
         // Bottom scroll check helper
         function isAtPageBottom() {
-            return window.innerHeight + Math.ceil(window.scrollY) >= document.documentElement.scrollHeight - 20;
+            return window.innerHeight + Math.ceil(window.scrollY) >= document.documentElement.scrollHeight - 25;
         }
 
-        // Window scroll listener for instant bottom detection (section #contact)
-        window.addEventListener('scroll', () => {
-            if (isClickLocked) return;
-            if (isAtPageBottom()) {
-                setActiveMenu('contact');
-            }
-        }, { passive: true });
+        // Helper to get element absolute top relative to document
+        function getElDocTop(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top + window.pageYOffset;
+        }
 
-        // Scroll Spy via IntersectionObserver
-        const navObserver = new IntersectionObserver((entries) => {
+        // Scroll Spy handler for the 5 main sections
+        function handleScrollSpy() {
             if (isClickLocked) return;
 
+            // Strict bottom of page detection -> always Kontak
             if (isAtPageBottom()) {
                 setActiveMenu('contact');
                 return;
             }
 
+            const sections = ['contact', 'project', 'experience', 'about', 'home'];
+            const scrollPos = window.scrollY + 200;
+
+            for (const id of sections) {
+                const el = document.getElementById(id);
+                if (el) {
+                    const top = getElDocTop(el);
+                    if (scrollPos >= top) {
+                        setActiveMenu(id);
+                        return;
+                    }
+                }
+            }
+            setActiveMenu('home');
+        }
+
+        // Window scroll listener for smooth real-time spy
+        window.addEventListener('scroll', handleScrollSpy, { passive: true });
+
+        // Heading Observer for all .section-heading elements (glows yellow when in view)
+        const headingObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    setActiveMenu(id);
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
                 }
             });
         }, {
             root: null,
-            rootMargin: '-15% 0px -55% 0px',
+            rootMargin: '-10% 0px -55% 0px',
             threshold: 0
         });
 
         // Apply on load
         document.addEventListener('DOMContentLoaded', () => {
             applyLang(currentLang, true);
-            setActiveMenu('home');
-            sectionMap.forEach(item => {
-                const sectionEl = document.getElementById(item.section);
-                if (sectionEl) navObserver.observe(sectionEl);
+            handleScrollSpy();
+            document.querySelectorAll('.section-heading').forEach(h => {
+                headingObserver.observe(h);
             });
         });
     </script>
