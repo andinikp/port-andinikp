@@ -2006,50 +2006,115 @@
 
         <!-- 5. CONTACT SECTION -->
         <footer id="contact" class="py-16 scroll-mt-12">
+            <!-- Main Centered CTA Card -->
             <div
-                class="rounded-3xl bg-gradient-to-br from-dark-900 via-dark-850 to-dark-900 border border-palette-plum/35 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_0_40px_rgba(60,25,85,0.4)]">
-                <div class="space-y-3">
-                    <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow"
-                        data-id="HUBUNGI SAYA" data-en="GET IN TOUCH">HUBUNGI SAYA</p>
-                    <h2 id="contact-title"
-                        class="section-heading font-display text-3xl sm:text-4xl font-extrabold uppercase text-palette-lilac leading-tight"
-                        data-id="Mari Berkolaborasi" data-en="Let's Create Together">
-                        Mari Berkolaborasi
-                    </h2>
-                    <p class="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed"
-                        data-id="Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun diskusi teknis."
-                        data-en="Open for Web Developer opportunities, collaborative web app development, and technical discussions.">
-                        Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun
-                        diskusi teknis.
-                    </p>
+                class="bg-gradient-to-br from-dark-900 via-dark-850 to-dark-900 border border-palette-plum/35 rounded-3xl p-8 sm:p-14 text-center shadow-[0_0_40px_rgba(60,25,85,0.4)] relative overflow-hidden">
+                <!-- Subtle Ambient Glow -->
+                <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-palette-plum/15 blur-3xl pointer-events-none -z-10"></div>
+                <div class="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-palette-yellow/10 blur-3xl pointer-events-none -z-10"></div>
+
+                <!-- Status Badge with Pulse Indicator -->
+                <div class="inline-flex items-center gap-2 bg-dark-950/80 border border-palette-plum/30 px-4 py-1.5 rounded-full text-xs font-mono font-semibold text-palette-lilac shadow-inner mb-5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34D399]"></span>
+                    <span data-id="Tersedia untuk Peluang Kerja & Kolaborasi" data-en="Available for Work & Collaboration">
+                        Tersedia untuk Peluang Kerja & Kolaborasi
+                    </span>
                 </div>
 
-                <div class="flex flex-col sm:items-end gap-4 w-full md:w-auto">
-                    <!-- Copy Email Button -->
-                    <button onclick="copyEmail()"
-                        class="inline-flex items-center justify-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.25)] border border-palette-yellow/40 transition w-full sm:w-auto cursor-pointer">
+                <!-- Eyebrow -->
+                <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow mb-2"
+                    data-id="HUBUNGI SAYA" data-en="GET IN TOUCH">
+                    HUBUNGI SAYA
+                </p>
+
+                <!-- Heading -->
+                <h2 id="contact-title"
+                    class="section-heading font-display text-4xl sm:text-5xl font-extrabold uppercase text-palette-lilac tracking-tight leading-tight mb-4"
+                    data-id="Mari Berkolaborasi" data-en="Let's Create Together">
+                    Mari Berkolaborasi
+                </h2>
+
+                <!-- Description -->
+                <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed mb-8"
+                    data-id="Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun diskusi teknis."
+                    data-en="Open for Web Developer opportunities, collaborative web app development, and technical discussions.">
+                    Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun diskusi teknis.
+                </p>
+
+                <!-- Two Action Buttons Side-by-Side -->
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <!-- Primary Yellow Button (Copy Email) -->
+                    <button type="button" onclick="copyEmail()"
+                        class="inline-flex items-center justify-center gap-2.5 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-7 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.4)] transition duration-300 cursor-pointer">
                         <span id="copy-text">andinikp2004@gmail.com</span>
-                        <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-palette-grape" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                         </svg>
                     </button>
 
-                    <!-- Links -->
-                    <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-400 pt-1">
-                        <a href="https://github.com/andinikp" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-palette-yellow transition">GitHub</a>
-                        <span>•</span>
-                        <a href="https://instagram.com/andinikarn" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-palette-yellow transition">Instagram</a>
-                        <span>•</span>
-                        <a href="./cv/CV-Andini-Karina-Putri.pdf" download class="hover:text-palette-yellow transition"
-                            data-id="Unduh CV" data-en="Download CV">Unduh CV</a>
+                    <!-- Secondary Button (Download CV) -->
+                    <a href="./cv/CV-Andini-Karina-Putri.pdf" download
+                        class="inline-flex items-center justify-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac border border-palette-yellow/40 text-xs font-bold uppercase tracking-wider px-7 py-3.5 rounded-full transition duration-300 shadow-sm cursor-pointer"
+                        data-id="Unduh CV" data-en="Download CV">
+                        <span data-id="Unduh CV" data-en="Download CV">Unduh CV</span>
+                        <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Grid 3 Kartu Sosial & Lokasi -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 pt-8 border-t border-palette-plum/20">
+                    <!-- Kartu 1 (GitHub) -->
+                    <a href="https://github.com/andinikp" target="_blank" rel="noopener noreferrer"
+                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-4 flex items-center gap-3.5 transition text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
+                            <svg class="w-5 h-5 text-palette-yellow fill-current" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold text-palette-lilac group-hover:text-palette-yellow transition">GitHub</p>
+                            <p class="text-[11px] text-slate-400 font-mono truncate">@andinikp</p>
+                        </div>
+                    </a>
+
+                    <!-- Kartu 2 (Instagram) -->
+                    <a href="https://instagram.com/andinikarn" target="_blank" rel="noopener noreferrer"
+                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-4 flex items-center gap-3.5 transition text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
+                            <svg class="w-5 h-5 text-palette-yellow fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold text-palette-lilac group-hover:text-palette-yellow transition">Instagram</p>
+                            <p class="text-[11px] text-slate-400 font-mono truncate">@andinikarn</p>
+                        </div>
+                    </a>
+
+                    <!-- Kartu 3 (Lokasi) -->
+                    <div class="bg-dark-950/70 border border-palette-plum/20 rounded-2xl p-4 flex items-center gap-3.5 transition text-left">
+                        <div class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold text-palette-lilac" data-id="Lokasi" data-en="Location">Lokasi</p>
+                            <p class="text-[11px] text-slate-400 font-mono truncate" data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Copyright Penutup -->
             <p class="text-center text-xs text-slate-500 mt-8 font-mono"
                 data-id="© 2026 Andini Karina Putri. Pasuruan, Jawa Timur."
                 data-en="© 2026 Andini Karina Putri. Pasuruan, East Java.">
