@@ -177,7 +177,8 @@
 
         /* Active Nav Link & Section Title Highlight (Yellow Jasmine) */
         .nav-item {
-            transition: color 220ms ease, font-weight 180ms ease;
+            position: relative;
+            transition: color 250ms ease, font-weight 200ms ease;
         }
 
         .nav-item:hover {
@@ -187,6 +188,24 @@
         .nav-item.active {
             color: #DBAD23 !important;
             font-weight: 800 !important;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #DBAD23;
+            border-radius: 9999px;
+            transition: width 250ms cubic-bezier(0.16, 1, 0.3, 1), transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-item.active::after,
+        .nav-item:hover::after {
+            width: 80%;
         }
 
         .mobile-nav-item {
@@ -208,18 +227,15 @@
         /* Subbab Transitions & Scroll Reveal Animations */
         .subbab-reveal {
             opacity: 0;
-            transform: translateY(32px);
-            filter: blur(4px);
-            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-                        filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform, filter;
+            transform: translateY(24px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
         }
 
         .subbab-reveal.is-revealed {
             opacity: 1;
             transform: translateY(0);
-            filter: blur(0);
         }
 
         /* Subtle Arrival Highlight pulse when moving/scrolling to a subbab */
@@ -302,7 +318,7 @@
     <!-- 0. FLOATING TOP PILL NAVBAR -->
     <div id="navbar-container" class="fixed top-5 inset-x-0 z-50 flex flex-col items-center px-4 sm:px-6 pointer-events-none">
         <header
-            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-3 py-2 sm:px-4 lg:px-7 lg:py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 w-full max-w-4xl lg:max-w-5xl">
+            class="pointer-events-auto bg-palette-lilac/95 backdrop-blur-md text-palette-grape rounded-full px-3 py-2 sm:px-4 lg:px-7 lg:py-2.5 flex items-center justify-between gap-3 sm:gap-6 shadow-[0_8px_30px_rgba(60,25,85,0.22)] border border-palette-plum/50 w-full max-w-5xl lg:max-w-6xl">
 
             <!-- Mobile Menu Trigger Pill Button (< 1024px) -->
             <button type="button" onclick="toggleMobileMenu()" id="mobile-menu-trigger"
@@ -317,22 +333,26 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
                 <!-- Active Section Label -->
-                <span id="mobile-active-label" class="capitalize">Beranda</span>
+                <span id="mobile-active-label" class="capitalize">Tentang</span>
                 <!-- Chevron Arrow Icon -->
                 <svg id="chevron-icon" class="w-3.5 h-3.5 text-palette-plum transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
 
-            <!-- Desktop Nav Items: 5 Main Menus (>= 1024px) -->
+            <!-- Desktop Nav Items: 7 Menus (>= 1024px) -->
             <nav
-                class="hidden lg:flex flex-1 items-center justify-center gap-8 lg:gap-10 px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85">
-                <a href="#home" class="nav-item transition py-1 text-center" data-id="Beranda"
-                    data-en="Home">Beranda</a>
-                <a href="#about" class="nav-item transition py-1 text-center" data-id="Tentang"
+                class="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-6 px-2 lg:px-4 text-[11px] lg:text-xs font-bold tracking-wider uppercase text-palette-grape/85 whitespace-nowrap">
+                <a href="#sub-about" class="nav-item transition py-1 text-center" data-id="Tentang"
                     data-en="About">Tentang</a>
-                <a href="#experience" class="nav-item transition py-1 text-center" data-id="Pengalaman"
+                <a href="#education" class="nav-item transition py-1 text-center" data-id="Pendidikan"
+                    data-en="Education">Pendidikan</a>
+                <a href="#skill" class="nav-item transition py-1 text-center" data-id="Skill"
+                    data-en="Skills">Skill</a>
+                <a href="#sub-experience" class="nav-item transition py-1 text-center" data-id="Pengalaman"
                     data-en="Experience">Pengalaman</a>
+                <a href="#certifications" class="nav-item transition py-1 text-center" data-id="Sertifikat"
+                    data-en="Certificates">Sertifikat</a>
                 <a href="#project" class="nav-item transition py-1 text-center" data-id="Proyek"
                     data-en="Projects">Proyek</a>
                 <a href="#contact" class="nav-item transition py-1 text-center" data-id="Kontak"
@@ -351,51 +371,69 @@
                         class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono transition-all duration-200 text-palette-grape/70 hover:text-palette-grape">EN</span>
                 </button>
 
-                <!-- Desktop Rekrut Saya Button -->
+                <!-- Desktop 'Hire Me' CTA Button -->
                 <a href="#contact"
-                    class="hidden lg:flex bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black tracking-wider uppercase py-2.5 px-6 rounded-full shadow-[0_2px_15px_rgba(255,225,105,0.45)] transition duration-300 shrink-0 w-[155px] text-center items-center justify-center whitespace-nowrap"
+                    class="hidden lg:inline-flex items-center gap-2 bg-palette-grape hover:bg-palette-grape/90 text-palette-lilac text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full border border-palette-plum/40 shadow-xs transition duration-200"
                     data-id="Rekrut Saya" data-en="Hire Me">
-                    Rekrut Saya
+                    <span data-id="Rekrut Saya" data-en="Hire Me">Rekrut Saya</span>
+                    <svg class="w-3.5 h-3.5 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                 </a>
             </div>
         </header>
 
-        <!-- Mobile Dropdown Menu Panel (Grid 2 Kolom Bernomor, < 1024px) -->
+        <!-- Mobile Dropdown Panel (< 1024px) -->
         <div id="mobile-menu"
             class="hidden pointer-events-auto mt-2 w-full max-w-4xl lg:hidden bg-dark-900/95 backdrop-blur-xl border border-palette-plum/40 rounded-3xl p-4 shadow-[0_15px_40px_rgba(10,2,17,0.75)]">
             <nav class="grid grid-cols-2 gap-2.5">
-                <!-- 01 Beranda -->
-                <a href="#home" onclick="closeMobileMenu()"
-                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
-                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">01</span>
-                    <span data-id="Beranda" data-en="Home">Beranda</span>
-                </a>
-
-                <!-- 02 Tentang -->
-                <a href="#about" onclick="closeMobileMenu()"
-                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
-                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">02</span>
+                <!-- 01 Tentang -->
+                <a href="#sub-about" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="text-[10px] text-palette-yellow/80 font-bold shrink-0">01</span>
                     <span data-id="Tentang" data-en="About">Tentang</span>
                 </a>
 
-                <!-- 03 Pengalaman -->
-                <a href="#experience" onclick="closeMobileMenu()"
-                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
-                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">03</span>
+                <!-- 02 Pendidikan -->
+                <a href="#education" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="text-[10px] text-palette-yellow/80 font-bold shrink-0">02</span>
+                    <span data-id="Pendidikan" data-en="Education">Pendidikan</span>
+                </a>
+
+                <!-- 03 Skill -->
+                <a href="#skill" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="text-[10px] text-palette-yellow/80 font-bold shrink-0">03</span>
+                    <span data-id="Skill" data-en="Skills">Skill</span>
+                </a>
+
+                <!-- 04 Pengalaman -->
+                <a href="#sub-experience" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="text-[10px] text-palette-yellow/80 font-bold shrink-0">04</span>
                     <span data-id="Pengalaman" data-en="Experience">Pengalaman</span>
                 </a>
 
-                <!-- 04 Proyek -->
+                <!-- 05 Sertifikat -->
+                <a href="#certifications" onclick="closeMobileMenu()"
+                    class="mobile-nav-item rounded-2xl px-4 py-3 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="text-[10px] text-palette-yellow/80 font-bold shrink-0">05</span>
+                    <span data-id="Sertifikat" data-en="Certificates">Sertifikat</span>
+                </a>
+
+                <!-- 06 Proyek -->
                 <a href="#project" onclick="closeMobileMenu()"
-                    class="mobile-nav-item rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
-                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">04</span>
+                    class="mobile-nav-item rounded-2xl px-4 py-3 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center gap-2.5 text-left">
+                    <span class="text-[10px] text-palette-yellow/80 font-bold shrink-0">06</span>
                     <span data-id="Proyek" data-en="Projects">Proyek</span>
                 </a>
 
-                <!-- 05 Kontak (col-span-2) -->
+                <!-- 07 Kontak (col-span-2) -->
                 <a href="#contact" onclick="closeMobileMenu()"
-                    class="mobile-nav-item col-span-2 rounded-2xl px-4 py-3.5 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center justify-center gap-2.5 text-center">
-                    <span class="font-mono text-[10px] text-palette-yellow/80 font-bold shrink-0">05</span>
+                    class="mobile-nav-item col-span-2 rounded-2xl px-4 py-3 bg-dark-850/90 hover:bg-palette-grape/40 border border-palette-plum/20 hover:border-palette-yellow/50 text-xs font-bold tracking-wide text-palette-lilac transition flex items-center justify-center gap-2.5 text-center">
+                    <span class="text-[10px] text-palette-yellow/80 font-bold shrink-0">07</span>
                     <span data-id="Kontak" data-en="Contact">Kontak</span>
                 </a>
             </nav>
@@ -409,14 +447,15 @@
         <section id="home"
             class="subbab-reveal is-revealed grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-0 lg:min-h-screen pt-0 pb-12 lg:pt-4 lg:pb-16 scroll-mt-32">
             <!-- Left Bio Column (order-2 on mobile, order-1 on desktop) -->
-            <div class="lg:col-span-7 space-y-6 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-                <!-- Location Badge (Pill di atas Nama) -->
-                <div
-                    class="inline-flex items-center gap-2 bg-dark-900/90 backdrop-blur-md px-4 py-2 rounded-full border border-palette-plum/40 shadow-[0_0_20px_rgba(60,25,85,0.3)] w-fit">
-                    <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
-                    <span class="text-xs font-bold tracking-widest uppercase text-palette-yellow"
-                        data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</span>
-                    <span class="w-2 h-2 rounded-full bg-palette-yellow shadow-[0_0_8px_#FFE169] animate-pulse"></span>
+            <div class="lg:col-span-7 space-y-4 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <!-- Location Indicator (Clean Pin SVG + Text) -->
+                <div class="flex items-center gap-1.5 text-xs text-slate-300">
+                    <svg class="w-4 h-4 text-palette-yellow shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</span>
                 </div>
 
                 <h1 id="home-title"
@@ -444,7 +483,7 @@
                 <!-- Actions: Download CV + Social Icons -->
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                     <a href="./cv/CV-Andini-Karina-Putri.pdf" download
-                        class="inline-flex items-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac text-xs font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.3)] border-2 border-palette-yellow transition duration-300 transform hover:scale-[1.02]">
+                        class="inline-flex items-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac text-xs font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full border border-palette-yellow/40 transition duration-300 shadow-sm hover:shadow-md cursor-pointer">
                         <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2.5"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -453,8 +492,16 @@
                         <span data-id="Unduh CV" data-en="Download CV">Unduh CV</span>
                     </a>
 
-                    <!-- Social Circle Buttons (GitHub, Instagram, Email) -->
+                    <!-- Social Circle Buttons (LinkedIn, GitHub, Instagram, Email) -->
                     <div class="flex items-center gap-2.5">
+                        <a href="https://www.linkedin.com/in/andini-karina-putri-a287b729a" target="_blank" rel="noopener noreferrer" title="LinkedIn"
+                            class="w-10 h-10 rounded-full bg-dark-850 border border-palette-plum/30 hover:border-palette-yellow hover:bg-palette-yellow/10 text-palette-lilac hover:text-palette-yellow flex items-center justify-center transition duration-300 shadow-sm">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+
                         <a href="https://github.com/andinikp" target="_blank" rel="noopener noreferrer" title="GitHub"
                             class="w-10 h-10 rounded-full bg-dark-850 border border-palette-plum/30 hover:border-palette-yellow hover:bg-palette-yellow/10 text-palette-lilac hover:text-palette-yellow flex items-center justify-center transition duration-300 shadow-sm">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -671,32 +718,27 @@
                     <!-- Left Column: Story & 3 Summary Cards (lg:col-span-6 space-y-5) -->
                     <div class="lg:col-span-6 space-y-5 text-left">
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed"
-                            data-id="Saya mahasiswa Ilmu Komputer di Universitas PGRI Wiranegara dengan ketertarikan utama di bidang Web Development. Dengan gaya kerja vibe coding yang memadukan tools modern dan AI, saya terbiasa mengubah ide menjadi antarmuka responsif serta menyusun struktur database secara cepat dan rapi."
-                            data-en="I am a Computer Science student at Universitas PGRI Wiranegara with a primary focus on Web Development. Embracing a vibe coding workflow that blends modern tools and AI, I turn ideas into responsive interfaces and structured databases quickly and cleanly.">
-                            Saya mahasiswa Ilmu Komputer di Universitas PGRI Wiranegara dengan ketertarikan utama di bidang Web Development. Dengan gaya kerja vibe coding yang memadukan tools modern dan AI, saya terbiasa mengubah ide menjadi antarmuka responsif serta menyusun struktur database secara cepat dan rapi.
-                        </p>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"
-                            data-id="Lewat beberapa proyek mandiri dan pengalaman PKL di Badan Pusat Statistik (BPS), saya terbiasa menerjemahkan kebutuhan lapangan menjadi sistem web yang terstruktur, sekaligus menangani dukungan teknis (IT support) serta troubleshooting perangkat dan jaringan."
-                            data-en="Through personal projects and my internship at the Central Bureau of Statistics (BPS), I have grown accustomed to translating real-world needs into structured web systems, as well as handling IT support and hardware/network troubleshooting.">
-                            Lewat beberapa proyek mandiri dan pengalaman PKL di Badan Pusat Statistik (BPS), saya terbiasa menerjemahkan kebutuhan lapangan menjadi sistem web yang terstruktur, sekaligus menangani dukungan teknis (IT support) serta troubleshooting perangkat dan jaringan.
+                            data-id="Mahasiswa Ilmu Komputer dengan fokus pada Web Development dan IT Support. Mengadopsi pendekatan vibe coding berbantuan AI serta pengolahan data untuk membangun aplikasi web yang fungsional, responsif, dan siap pakai secara efisien."
+                            data-en="Computer Science student focusing on Web Development and IT Support. Embracing an AI-assisted vibe coding approach and data processing to build functional, responsive, and production-ready web applications efficiently.">
+                            Mahasiswa Ilmu Komputer dengan fokus pada Web Development dan IT Support. Mengadopsi pendekatan vibe coding berbantuan AI serta pengolahan data untuk membangun aplikasi web yang fungsional, responsif, dan siap pakai secara efisien.
                         </p>
 
                         <!-- 3 Summary Cards (grid-cols-3 gap-3) -->
                         <div class="grid grid-cols-3 gap-3 pt-2">
                             <!-- Card 1: 2 Proyek Web Live -->
-                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card text-center transition hover:border-palette-yellow/50">
+                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 text-center transition duration-300 hover:border-palette-yellow/50 hover:shadow-md">
                                 <p class="font-display text-2xl sm:text-3xl font-extrabold text-palette-yellow">2</p>
                                 <p class="text-[11px] sm:text-xs text-slate-400 mt-1 font-medium leading-tight"
                                     data-id="Proyek Web Live" data-en="Live Web Apps">Proyek Web Live</p>
                             </div>
                             <!-- Card 2: BPS Pengalaman PKL -->
-                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card text-center transition hover:border-palette-yellow/50">
+                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 text-center transition duration-300 hover:border-palette-yellow/50 hover:shadow-md">
                                 <p class="font-display text-2xl sm:text-3xl font-extrabold text-palette-yellow">BPS</p>
                                 <p class="text-[11px] sm:text-xs text-slate-400 mt-1 font-medium leading-tight"
                                     data-id="Pengalaman PKL" data-en="Internship Exp.">Pengalaman PKL</p>
                             </div>
                             <!-- Card 3: 2+ Thn Kerja & Organisasi -->
-                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 shadow-neon-card text-center transition hover:border-palette-yellow/50">
+                            <div class="p-3.5 sm:p-4 rounded-2xl bg-dark-900/90 border border-palette-plum/25 text-center transition duration-300 hover:border-palette-yellow/50 hover:shadow-md">
                                 <p class="font-display text-2xl sm:text-3xl font-extrabold text-palette-yellow">2+ Thn</p>
                                 <p class="text-[11px] sm:text-xs text-slate-400 mt-1 font-medium leading-tight"
                                     data-id="Kerja & Organisasi" data-en="Work & Org.">Kerja & Organisasi</p>
@@ -726,11 +768,10 @@
   <span class="text-palette-plum">"pendidikan"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"<span data-id="S1 Ilmu Komputer — Uniwara" data-en="B.Sc. Computer Science — Uniwara">S1 Ilmu Komputer — Uniwara</span>"</span><span class="text-slate-400">,</span>
   <span class="text-palette-plum">"fokus"</span><span class="text-slate-400">:</span> <span class="text-slate-400">[</span>
     <span class="text-palette-lilac">"Web Development"</span><span class="text-slate-400">,</span>
-    <span class="text-palette-lilac">"IT Support & Networking"</span><span class="text-slate-400">,</span>
+    <span class="text-palette-lilac">"IT Support"</span><span class="text-slate-400">,</span>
     <span class="text-palette-lilac">"<span data-id="Pengolahan Data" data-en="Data Processing">Pengolahan Data</span>"</span>
   <span class="text-slate-400">],</span>
-  <span class="text-palette-plum">"workflow"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"Vibe Coding & AI-Assisted Dev"</span><span class="text-slate-400">,</span>
-  <span class="text-palette-plum">"status"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"<span data-id="Terbuka untuk peluang kerja & kolaborasi" data-en="Open for work & collaboration">Terbuka untuk peluang kerja & kolaborasi</span>"</span>
+  <span class="text-palette-plum">"status"</span><span class="text-slate-400">:</span> <span class="text-palette-yellow">"<span data-id="Open to work" data-en="Open to work">Open to work</span>"</span>
 <span class="text-slate-400">}</span></code></pre>
                             </div>
                         </div>
@@ -756,107 +797,50 @@
 
                 <!-- 1. S1 Universitas PGRI Wiranegara -->
                 <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide"
-                                    data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
-                                    S1 Ilmu Komputer
-                                </h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0" data-id="2023 – Skrg"
-                                    data-en="2023 – Present">2023 – Skrg</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1">Universitas PGRI Wiranegara</p>
+                    class="p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start gap-4">
+                            <h3 class="font-bold text-sm text-white uppercase tracking-wide"
+                                data-id="S1 Ilmu Komputer" data-en="Bachelor of Computer Science">
+                                S1 Ilmu Komputer
+                            </h3>
+                            <span class="text-[11px] font-semibold text-palette-yellow shrink-0" data-id="2023 – Skrg"
+                                data-en="2023 – Present">2023 – Skrg</span>
                         </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa Perangkat
-                                Lunak</span>
-                            <span
-                                class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
-                                data-id="Basis Data Relasional" data-en="Relational Database">Basis Data
-                                Relasional</span>
-                        </div>
+                        <p class="text-xs text-palette-plum mt-1">Universitas PGRI Wiranegara</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-4">
+                        <span
+                            class="text-[10px] font-medium px-2.5 py-1 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            data-id="Rekayasa Perangkat Lunak" data-en="Software Engineering">Rekayasa Perangkat
+                            Lunak</span>
+                        <span
+                            class="text-[10px] font-medium px-2.5 py-1 rounded-md bg-dark-800 text-slate-300 border border-palette-plum/15"
+                            data-id="Basis Data Relasional" data-en="Relational Database">Basis Data
+                            Relasional</span>
                     </div>
                 </div>
 
                 <!-- 2. SMA Negeri 1 Grati -->
                 <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMA Negeri 1 Grati</h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2019 – 2022</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur — Jurusan IPA"
-                                data-en="Pasuruan, East Java — Science Major">
-                                Pasuruan, Jawa Timur — Jurusan IPA
-                            </p>
+                    class="p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start gap-4">
+                            <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMA Negeri 1 Grati</h3>
+                            <span class="text-[11px] font-semibold text-palette-yellow shrink-0">2019 – 2022</span>
                         </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                data-id="IPA" data-en="Science">IPA</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                data-id="Analisis" data-en="Analysis">Analisis</span>
-                        </div>
+                        <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur — Jurusan IPA"
+                            data-en="Pasuruan, East Java — Science Major">
+                            Pasuruan, Jawa Timur — Jurusan IPA
+                        </p>
                     </div>
-                </div>
-
-                <!-- 3. SMP Negeri 1 Rejoso -->
-                <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SMP Negeri 1 Rejoso
-                                </h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2016 – 2019</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur"
-                                data-en="Pasuruan, East Java">
-                                Pasuruan, Jawa Timur
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                data-id="Akademik" data-en="Academics">Akademik</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                data-id="Karakter" data-en="Character">Karakter</span>
-                        </div>
+                    <div class="flex flex-wrap gap-1.5 mt-4">
+                        <span class="text-[10px] font-medium px-2.5 py-1 rounded-md bg-dark-800 text-slate-400"
+                            data-id="IPA" data-en="Science">IPA</span>
+                        <span class="text-[10px] font-medium px-2.5 py-1 rounded-md bg-dark-800 text-slate-400"
+                            data-id="Analisis" data-en="Analysis">Analisis</span>
                     </div>
-                </div>
-
-                <!-- 4. SDN Rejosolor I -->
-                <div
-                    class="flex gap-4 p-5 rounded-2xl bg-dark-900/85 border border-palette-plum/25 hover:border-palette-yellow/50 transition duration-300">
-                    <div class="shrink-0 w-1 rounded-full bg-gradient-to-b from-palette-yellow to-palette-plum"></div>
-                    <div class="min-w-0 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-4">
-                                <h3 class="font-bold text-sm text-white uppercase tracking-wide">SDN Rejosolor I</h3>
-                                <span class="text-[10px] font-mono text-palette-yellow shrink-0">2010 – 2016</span>
-                            </div>
-                            <p class="text-xs text-palette-plum mt-1" data-id="Pasuruan, Jawa Timur"
-                                data-en="Pasuruan, East Java">
-                                Pasuruan, Jawa Timur
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                data-id="Pendidikan Dasar" data-en="Elementary">Pendidikan Dasar</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-dark-800 text-slate-400"
-                                data-id="Fondasi" data-en="Foundation">Fondasi</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                </div></div>
             </div>
 
             <!-- Sub-section: skill -->
@@ -1338,16 +1322,16 @@
                 <div
                     class="inline-flex flex-wrap justify-center gap-2 p-1.5 w-fit mx-auto md:mx-0 bg-dark-900 border border-palette-plum/30 rounded-2xl">
                     <button type="button" onclick="filterCertCards('all', this)"
-                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition font-mono bg-palette-yellow text-palette-grape shadow-xs cursor-pointer whitespace-nowrap"
+                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-palette-yellow text-palette-grape shadow-xs cursor-pointer whitespace-nowrap"
                         data-id="Semua (8)" data-en="All (8)">Semua (8)</button>
                     <button type="button" onclick="filterCertCards('course', this)"
-                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition font-mono text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
+                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
                         data-id="Dicoding (3)" data-en="Dicoding (3)">Dicoding (3)</button>
                     <button type="button" onclick="filterCertCards('academic', this)"
-                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition font-mono text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
+                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
                         data-id="BPS & Akademik (4)" data-en="BPS & Academic (4)">BPS & Akademik (4)</button>
                     <button type="button" onclick="filterCertCards('org', this)"
-                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition font-mono text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
+                        class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-palette-lilac cursor-pointer whitespace-nowrap"
                         data-id="Organisasi (1)" data-en="Organization (1)">Organisasi (1)</button>
                 </div>
             </div>
@@ -1356,8 +1340,8 @@
             <div id="certs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 
                 <!-- 1. Dicoding Dasar AI -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="course">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="course" onclick="openCertModal('dicoding-ai')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('dicoding-ai')">
                         <img src="./images/sertifikat/sertifikat_course_653_3744283_080226205129_1.jpg"
@@ -1368,7 +1352,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Dicoding Academy
                         </span>
                         <div
@@ -1387,7 +1371,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Feb 2026</span>
                                 <span class="text-palette-plum font-semibold">ID: MEPJ2837WP3V</span>
                             </div>
@@ -1402,28 +1386,13 @@
                                 implementasi AI industri.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('dicoding-ai')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Detail & Verifikasi →" data-en="Details & Verify →">
-                                Detail & Verifikasi →
-                            </button>
-                            <a href="./sertifikat/sertifikat_course_653_3744283_080226205129%20(1).pdf" target="_blank"
-                                rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- 2. Dicoding Pemrograman Python -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="course">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="course" onclick="openCertModal('dicoding-python')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('dicoding-python')">
                         <img src="./images/sertifikat/python.jpg" alt="Memulai Pemrograman dengan Python"
@@ -1433,7 +1402,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Dicoding Academy
                         </span>
                         <div
@@ -1452,7 +1421,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Feb 2026</span>
                                 <span class="text-palette-plum font-semibold">ID: JMZVOM313XN9</span>
                             </div>
@@ -1467,27 +1436,13 @@
                                 otomasi data.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('dicoding-python')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Detail & Verifikasi →" data-en="Details & Verify →">
-                                Detail & Verifikasi →
-                            </button>
-                            <a href="./sertifikat/python.pdf" target="_blank" rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- 3. Dicoding Machine Learning -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="course">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="course" onclick="openCertModal('dicoding-ml')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('dicoding-ml')">
                         <img src="./images/sertifikat/sertifikat_course_184_3744283_270226145308_1.jpg"
@@ -1498,7 +1453,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Dicoding Academy
                         </span>
                         <div
@@ -1517,7 +1472,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Feb 2026</span>
                                 <span class="text-palette-plum font-semibold">ID: QLZ99KO3MZ5D</span>
                             </div>
@@ -1533,28 +1488,13 @@
                                 TensorFlow.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('dicoding-ml')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Detail & Verifikasi →" data-en="Details & Verify →">
-                                Detail & Verifikasi →
-                            </button>
-                            <a href="./sertifikat/sertifikat_course_184_3744283_270226145308%20(1).pdf" target="_blank"
-                                rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- 4. Webinar BPS Web Scraping -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="academic">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="academic" onclick="openCertModal('bps-scraping')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('bps-scraping')">
                         <img src="./images/sertifikat/Andini_Karina_Putri_1.jpg" alt="Web Scraping untuk Pemula"
@@ -1564,7 +1504,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             BPS Kota Pasuruan
                         </span>
                         <div
@@ -1583,7 +1523,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Sep 2024</span>
                                 <span class="text-palette-plum font-semibold">Webinar BPS</span>
                             </div>
@@ -1599,28 +1539,13 @@
                                 berkala BPS.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('bps-scraping')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Lihat Detail →" data-en="View Details →">
-                                Lihat Detail →
-                            </button>
-                            <a href="./sertifikat/Andini%20Karina%20Putri-1.pdf" target="_blank"
-                                rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- 5. Webinar BPS R Studio -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="academic">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="academic" onclick="openCertModal('bps-rstudio')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('bps-rstudio')">
                         <img src="./images/sertifikat/Andini_Karina_Putri_4.jpg"
@@ -1631,7 +1556,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             BPS Kab. Pasuruan
                         </span>
                         <div
@@ -1650,7 +1575,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Okt 2024</span>
                                 <span class="text-palette-plum font-semibold">Webinar BPS</span>
                             </div>
@@ -1666,28 +1591,13 @@
                                 berbasis R Studio.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('bps-rstudio')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Lihat Detail →" data-en="View Details →">
-                                Lihat Detail →
-                            </button>
-                            <a href="./sertifikat/Andini%20Karina%20Putri-4.pdf" target="_blank"
-                                rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- 6. Seminar Uniwara Machine Learning -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="academic">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="academic" onclick="openCertModal('seminar-ml')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('seminar-ml')">
                         <img src="./images/sertifikat/Sertifikat___ANDINI_KARINA_PUTRI.jpg"
@@ -1698,7 +1608,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Uniwara
                         </span>
                         <div
@@ -1717,7 +1627,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Mei 2024</span>
                                 <span class="text-palette-plum font-semibold">Seminar</span>
                             </div>
@@ -1733,28 +1643,13 @@
                                 industri terkini.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('seminar-ml')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Lihat Detail →" data-en="View Details →">
-                                Lihat Detail →
-                            </button>
-                            <a href="./sertifikat/Sertifikat%20-%20ANDINI%20KARINA%20PUTRI.pdf" target="_blank"
-                                rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- 7. ON MIPA-PT 2024 Puspresnas -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="academic">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="academic" onclick="openCertModal('onmipa-2024')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('onmipa-2024')">
                         <img src="./images/sertifikat/Andini_Karina_Putri_1_2.jpg"
@@ -1765,7 +1660,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             Puspresnas / BPTI
                         </span>
                         <div
@@ -1784,7 +1679,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Apr 2024</span>
                                 <span class="text-palette-plum font-semibold">Kompetisi Nasional</span>
                             </div>
@@ -1799,28 +1694,13 @@
                                 diselenggarakan Kemendikbudristek.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('onmipa-2024')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Lihat Detail →" data-en="View Details →">
-                                Lihat Detail →
-                            </button>
-                            <a href="./sertifikat/Andini%20Karina%20Putri-1%20(2).pdf" target="_blank"
-                                rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen PDF">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- 8. UKM KOPMA Bendahara -->
-                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(255,225,105,0.18)] hover:-translate-y-1"
-                    data-category="org">
+                <div class="cert-card group bg-dark-900/90 rounded-2xl border border-palette-plum/25 hover:border-palette-yellow/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    data-category="org" onclick="openCertModal('kopma-diesnatalis')">
                     <div class="relative aspect-[16/11] bg-dark-950 overflow-hidden cursor-pointer"
                         onclick="openCertModal('kopma-diesnatalis')">
                         <img src="./images/sertifikat/4_1.jpg" alt="Bendahara 1 Gebyar Koperasi KOPMA"
@@ -1830,7 +1710,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity">
                         </div>
                         <span
-                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
+                            class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-dark-900/90 backdrop-blur-md border border-palette-plum/40 text-palette-yellow">
                             UKM KOPMA Uniwara
                         </span>
                         <div
@@ -1849,7 +1729,7 @@
                     </div>
                     <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div class="space-y-1.5">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
                                 <span>Feb 2025</span>
                                 <span class="text-palette-plum font-semibold">Organisasi</span>
                             </div>
@@ -1865,21 +1745,7 @@
                                 dana.
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-dark-800 flex items-center justify-between gap-2">
-                            <button type="button" onclick="openCertModal('kopma-diesnatalis')"
-                                class="text-[11px] font-bold text-palette-yellow hover:text-white flex items-center gap-1 transition cursor-pointer"
-                                data-id="Lihat Detail →" data-en="View Details →">
-                                Lihat Detail →
-                            </button>
-                            <a href="./sertifikat/4%20(1).png" target="_blank" rel="noopener noreferrer"
-                                class="p-1.5 rounded-lg bg-dark-800 hover:bg-palette-grape text-slate-300 hover:text-palette-yellow border border-palette-plum/20 transition"
-                                title="Buka Dokumen Asli">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -1918,12 +1784,12 @@
                         <div>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-palette-grape text-palette-yellow border border-palette-yellow/30"
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-lg bg-palette-grape text-palette-yellow border border-palette-yellow/30"
                                     data-id="Inventaris & Keuangan" data-en="Inventory & Finance">
                                     Inventaris & Keuangan
                                 </span>
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-palette-lilac/80 border border-dark-700">
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-lg bg-dark-800 text-palette-lilac/80 border border-dark-700">
                                     PHP • Tailwind CSS
                                 </span>
                             </div>
@@ -1948,7 +1814,7 @@
                                 Detail Kasus →
                             </button>
                             <a href="https://rajutin-seven.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(255,225,105,0.45)] transition">
+                                class="inline-flex items-center gap-2 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">
                                 Live Demo
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5"
                                     viewBox="0 0 24 24">
@@ -1974,12 +1840,12 @@
                         <div>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-palette-grape text-palette-yellow border border-palette-yellow/30"
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-lg bg-palette-grape text-palette-yellow border border-palette-yellow/30"
                                     data-id="Otomasi QR Code" data-en="QR Code Automation">
                                     Otomasi QR Code
                                 </span>
                                 <span
-                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-dark-800 text-palette-lilac/80 border border-dark-700"
+                                    class="text-[11px] font-mono font-semibold px-3 py-1 rounded-lg bg-dark-800 text-palette-lilac/80 border border-dark-700"
                                     data-id="Dashboard Admin" data-en="Admin Dashboard">
                                     Dashboard Admin
                                 </span>
@@ -2004,7 +1870,7 @@
                                 Detail Kasus →
                             </button>
                             <a href="https://sistem-absensi-qr.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(255,225,105,0.45)] transition">
+                                class="inline-flex items-center gap-2 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">
                                 Live Demo
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5"
                                     viewBox="0 0 24 24">
@@ -2018,16 +1884,16 @@
         </section>
 
         <!-- 5. CONTACT SECTION -->
-        <footer id="contact" class="subbab-reveal py-16 scroll-mt-12">
+        <footer id="contact" class="subbab-reveal py-16 scroll-mt-24">
             <!-- Main Centered CTA Card -->
             <div
-                class="bg-gradient-to-br from-dark-900 via-dark-850 to-dark-900 border border-palette-plum/35 rounded-3xl p-8 sm:p-14 text-center shadow-[0_0_40px_rgba(60,25,85,0.4)] relative overflow-hidden">
+                class="bg-gradient-to-br from-dark-900 via-dark-850 to-dark-900 border border-palette-plum/35 rounded-3xl p-8 sm:p-12 text-center shadow-[0_0_40px_rgba(60,25,85,0.4)] relative overflow-hidden">
                 <!-- Subtle Ambient Glow -->
                 <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-palette-plum/15 blur-3xl pointer-events-none -z-10"></div>
                 <div class="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-palette-yellow/10 blur-3xl pointer-events-none -z-10"></div>
 
                 <!-- Eyebrow -->
-                <p class="font-mono text-xs font-bold tracking-widest uppercase text-palette-yellow mb-2"
+                <p class="text-xs font-bold tracking-widest uppercase text-palette-yellow mb-2"
                     data-id="HUBUNGI SAYA" data-en="GET IN TOUCH">
                     HUBUNGI SAYA
                 </p>
@@ -2046,66 +1912,72 @@
                     Terbuka untuk peluang kerja Web Developer, kolaborasi pembuatan sistem aplikasi web, maupun diskusi teknis.
                 </p>
 
-                <!-- Two Action Buttons Side-by-Side -->
-                <div class="flex flex-wrap items-center justify-center gap-4">
-                    <!-- Primary Yellow Button (Copy Email) -->
+                <!-- Grid 5 Kanal Kontak Horizontal di Desktop -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-6">
+                    <!-- Kartu 1 (Email Copy) -->
                     <button type="button" onclick="copyEmail()"
-                        class="inline-flex items-center justify-center gap-2.5 bg-palette-yellow hover:bg-yellow-500 text-palette-grape text-xs font-black uppercase tracking-wider px-7 py-3.5 rounded-full shadow-[0_0_20px_rgba(255,225,105,0.4)] transition duration-300 cursor-pointer">
-                        <span id="copy-text">andinikp2004@gmail.com</span>
-                        <svg class="w-4 h-4 text-palette-grape" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
+                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-3.5 flex items-center gap-3 transition text-left group cursor-pointer w-full">
+                        <div class="w-9 h-9 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
+                            <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold text-palette-lilac group-hover:text-palette-yellow transition">Email</p>
+                            <p id="copy-text" class="text-[11px] text-slate-400 truncate">andinikp2004@gmail.com</p>
+                        </div>
                     </button>
 
-                    <!-- Secondary Button (Download CV) -->
-                    <a href="./cv/CV-Andini-Karina-Putri.pdf" download
-                        class="inline-flex items-center justify-center gap-2.5 bg-palette-grape hover:bg-dark-700 text-palette-lilac border border-palette-yellow/40 text-xs font-bold uppercase tracking-wider px-7 py-3.5 rounded-full transition duration-300 shadow-sm cursor-pointer"
-                        data-id="Unduh CV" data-en="Download CV">
-                        <span data-id="Unduh CV" data-en="Download CV">Unduh CV</span>
-                        <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
+                    <!-- Kartu 2 (LinkedIn) -->
+                    <a href="https://www.linkedin.com/in/andini-karina-putri-a287b729a" target="_blank" rel="noopener noreferrer"
+                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-3.5 flex items-center gap-3 transition text-left group">
+                        <div class="w-9 h-9 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
+                            <svg class="w-4 h-4 text-palette-yellow fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold text-palette-lilac group-hover:text-palette-yellow transition">LinkedIn</p>
+                            <p class="text-[11px] text-slate-400 truncate">Andini Karina Putri</p>
+                        </div>
                     </a>
-                </div>
 
-                <!-- Grid 3 Kartu Sosial & Lokasi -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 pt-8 border-t border-palette-plum/20">
-                    <!-- Kartu 1 (GitHub) -->
+                    <!-- Kartu 3 (GitHub) -->
                     <a href="https://github.com/andinikp" target="_blank" rel="noopener noreferrer"
-                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-4 flex items-center gap-3.5 transition text-left group">
-                        <div class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
-                            <svg class="w-5 h-5 text-palette-yellow fill-current" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-3.5 flex items-center gap-3 transition text-left group">
+                        <div class="w-9 h-9 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
+                            <svg class="w-4 h-4 text-palette-yellow fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
                         </div>
                         <div class="min-w-0">
                             <p class="text-xs font-bold text-palette-lilac group-hover:text-palette-yellow transition">GitHub</p>
-                            <p class="text-[11px] text-slate-400 font-mono truncate">@andinikp</p>
+                            <p class="text-[11px] text-slate-400 truncate">@andinikp</p>
                         </div>
                     </a>
 
-                    <!-- Kartu 2 (Instagram) -->
+                    <!-- Kartu 4 (Instagram) -->
                     <a href="https://instagram.com/andinikarn" target="_blank" rel="noopener noreferrer"
-                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-4 flex items-center gap-3.5 transition text-left group">
-                        <div class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
-                            <svg class="w-5 h-5 text-palette-yellow fill-current" viewBox="0 0 24 24">
+                        class="bg-dark-950/70 hover:border-palette-yellow/50 border border-palette-plum/20 rounded-2xl p-3.5 flex items-center gap-3 transition text-left group">
+                        <div class="w-9 h-9 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0 group-hover:border-palette-yellow/50 group-hover:bg-palette-plum/20 transition">
+                            <svg class="w-4 h-4 text-palette-yellow fill-current" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
                         </div>
                         <div class="min-w-0">
                             <p class="text-xs font-bold text-palette-lilac group-hover:text-palette-yellow transition">Instagram</p>
-                            <p class="text-[11px] text-slate-400 font-mono truncate">@andinikarn</p>
+                            <p class="text-[11px] text-slate-400 truncate">@andinikarn</p>
                         </div>
                     </a>
 
-                    <!-- Kartu 3 (Lokasi) -->
-                    <div class="bg-dark-950/70 border border-palette-plum/20 rounded-2xl p-4 flex items-center gap-3.5 transition text-left">
-                        <div class="w-10 h-10 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <!-- Kartu 5 (Lokasi) -->
+                    <div class="bg-dark-950/70 border border-palette-plum/20 rounded-2xl p-3.5 flex items-center gap-3 transition text-left">
+                        <div class="w-9 h-9 rounded-xl bg-dark-900 border border-palette-plum/30 flex items-center justify-center shrink-0">
+                            <svg class="w-4 h-4 text-palette-yellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -2113,14 +1985,14 @@
                         </div>
                         <div class="min-w-0">
                             <p class="text-xs font-bold text-palette-lilac" data-id="Lokasi" data-en="Location">Lokasi</p>
-                            <p class="text-[11px] text-slate-400 font-mono truncate" data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</p>
+                            <p class="text-[11px] text-slate-400 truncate" data-id="Pasuruan, Jawa Timur" data-en="Pasuruan, East Java">Pasuruan, Jawa Timur</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Copyright Penutup -->
-            <p class="text-center text-xs text-slate-500 mt-8 font-mono"
+            <p class="text-center text-xs text-slate-500 mt-8"
                 data-id="© 2026 Andini Karina Putri. Pasuruan, Jawa Timur."
                 data-en="© 2026 Andini Karina Putri. Pasuruan, East Java.">
                 © 2026 Andini Karina Putri. Pasuruan, Jawa Timur.
@@ -2136,9 +2008,7 @@
             class="bg-dark-900 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-[0_0_50px_rgba(60,25,85,0.5)] border border-palette-plum/35 max-h-[90vh] overflow-y-auto">
             <div class="flex items-start justify-between gap-4 pb-4 border-b border-dark-800">
                 <div>
-                    <span id="modal-tag"
-                        class="text-[11px] font-mono font-bold uppercase tracking-wider text-palette-yellow">Studi
-                        Kasus</span>
+                    <span id="modal-tag" class="hidden"></span>
                     <h3 id="modal-title" class="font-display text-2xl font-bold uppercase text-palette-lilac mt-1">Judul
                         Proyek
                     </h3>
@@ -2155,7 +2025,7 @@
                     class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-dark-700 text-slate-300 hover:bg-dark-800 transition cursor-pointer"
                     data-id="Tutup" data-en="Close">Tutup</button>
                 <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer"
-                    class="px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider bg-palette-yellow hover:bg-yellow-500 text-palette-grape shadow-[0_0_15px_rgba(255,225,105,0.45)] transition"
+                    class="px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider bg-palette-yellow hover:bg-yellow-500 text-palette-grape shadow-sm hover:shadow-md transition"
                     data-id="Buka Live Demo →" data-en="Open Live Demo →">Buka Live Demo →</a>
             </div>
         </div>
@@ -2229,7 +2099,7 @@
                     class="hidden px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border border-palette-plum/40 hover:border-palette-yellow text-palette-lilac hover:text-palette-yellow bg-dark-800 transition cursor-pointer"
                     data-id="Verifikasi Kredensial ↗" data-en="Verify Credential ↗">Verifikasi Kredensial ↗</a>
                 <a id="cert-modal-pdf" href="#" target="_blank" rel="noopener noreferrer"
-                    class="px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider bg-palette-yellow hover:bg-yellow-500 text-palette-grape shadow-[0_0_15px_rgba(255,225,105,0.45)] transition cursor-pointer"
+                    class="px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider bg-palette-yellow hover:bg-yellow-500 text-palette-grape shadow-sm hover:shadow-md transition cursor-pointer"
                     data-id="Buka Dokumen Asli →" data-en="Open Original Doc →">Buka Dokumen Asli →</a>
             </div>
         </div>
@@ -2243,18 +2113,12 @@
         // Typewriter Animation with Language Support (Matched with Description Pillars)
         const typewriterPhrases = {
             id: [
-                "Vibe Coder",
                 "Web Developer",
-                "IT Support & Troubleshooting",
-                "UI/UX & Desain Antarmuka",
-                "Manajemen Data & Sistem"
+                "IT Support"
             ],
             en: [
-                "Vibe Coder",
                 "Web Developer",
-                "IT Support & Troubleshooting",
-                "UI/UX & Interface Designer",
-                "Data & System Management"
+                "IT Support"
             ]
         };
         let wordIndex = 0;
@@ -2867,22 +2731,26 @@
         // ── ACTIVE NAV & SECTION HEADING HIGHLIGHT ────────────────
         // 5 Main Navigation Categories: home, about, experience, project, contact
         const sectionMap = [
-            { nav: 'home', section: 'home', title: 'home-title' },
-            { nav: 'about', section: 'about', title: 'about-title' },
-            { nav: 'experience', section: 'experience', title: 'experience-title' },
+            { nav: 'sub-about', section: 'sub-about', title: 'about-title' },
+            { nav: 'education', section: 'education', title: 'education-title' },
+            { nav: 'skill', section: 'skill', title: 'skill-title' },
+            { nav: 'sub-experience', section: 'sub-experience', title: 'experience-title' },
+            { nav: 'certifications', section: 'certifications', title: 'certifications-title' },
             { nav: 'project', section: 'project', title: 'project-title' },
             { nav: 'contact', section: 'contact', title: 'contact-title' }
         ];
 
         const navLabels = {
-            home: { id: 'Beranda', en: 'Home' },
-            about: { id: 'Tentang', en: 'About' },
-            experience: { id: 'Pengalaman', en: 'Experience' },
-            project: { id: 'Proyek', en: 'Projects' },
-            contact: { id: 'Kontak', en: 'Contact' }
+            'sub-about': { id: 'Tentang', en: 'About' },
+            'education': { id: 'Pendidikan', en: 'Education' },
+            'skill': { id: 'Skill', en: 'Skills' },
+            'sub-experience': { id: 'Pengalaman', en: 'Experience' },
+            'certifications': { id: 'Sertifikat', en: 'Certificates' },
+            'project': { id: 'Proyek', en: 'Projects' },
+            'contact': { id: 'Kontak', en: 'Contact' }
         };
 
-        let currentActiveNav = 'home';
+        let currentActiveNav = 'sub-about';
         let clickLockTimeout = null;
         let isClickLocked = false;
 
@@ -2900,7 +2768,7 @@
             sectionMap.forEach(item => {
                 const isTarget = item.nav === targetId;
 
-                // Desktop Nav Links (Font turns Yellow)
+                // Desktop Nav Links
                 const desktopLink = document.querySelector(`nav a[href="#${item.nav}"]`);
                 if (desktopLink) {
                     desktopLink.classList.toggle('active', isTarget);
@@ -2920,39 +2788,34 @@
             });
         }
 
-        // Click Handler: Immediately switch active yellow font on click and lock scroll spy
+        // Click Handler: Smooth scrolling and active state lock
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
                 if (href) {
                     const targetId = href.replace('#', '');
                     closeMobileMenu();
-                    if (targetId === 'home') {
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
                         e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else {
-                        const targetEl = document.getElementById(targetId);
-                        if (targetEl) {
-                            e.preventDefault();
-                            const offsetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - 48;
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                            // Trigger reveal and arrival highlight on target subbab
-                            if (targetEl.classList.contains('subbab-reveal')) {
-                                targetEl.classList.add('is-revealed');
-                            }
-                            targetEl.querySelectorAll('.subbab-reveal').forEach(child => child.classList.add('is-revealed'));
-                            
-                            const pulseTarget = targetEl.classList.contains('subbab-reveal') ? targetEl : (targetEl.querySelector('.subbab-reveal') || targetEl);
-                            pulseTarget.classList.remove('subbab-highlight');
-                            void pulseTarget.offsetWidth;
-                            pulseTarget.classList.add('subbab-highlight');
-                            setTimeout(() => {
-                                pulseTarget.classList.remove('subbab-highlight');
-                            }, 1200);
+                        const offsetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - 80;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        // Trigger reveal and arrival highlight on target subbab
+                        if (targetEl.classList.contains('subbab-reveal')) {
+                            targetEl.classList.add('is-revealed');
                         }
+                        targetEl.querySelectorAll('.subbab-reveal').forEach(child => child.classList.add('is-revealed'));
+                        
+                        const pulseTarget = targetEl.classList.contains('subbab-reveal') ? targetEl : (targetEl.querySelector('.subbab-reveal') || targetEl);
+                        pulseTarget.classList.remove('subbab-highlight');
+                        void pulseTarget.offsetWidth;
+                        pulseTarget.classList.add('subbab-highlight');
+                        setTimeout(() => {
+                            pulseTarget.classList.remove('subbab-highlight');
+                        }, 1200);
                     }
                     if (sectionMap.some(item => item.nav === targetId)) {
                         setActiveMenu(targetId);
@@ -2968,7 +2831,7 @@
 
         // Bottom scroll check helper
         function isAtPageBottom() {
-            return window.innerHeight + Math.ceil(window.scrollY) >= document.documentElement.scrollHeight - 25;
+            return window.innerHeight + Math.ceil(window.scrollY) >= document.documentElement.scrollHeight - 30;
         }
 
         // Helper to get element absolute top relative to document
@@ -2977,7 +2840,7 @@
             return rect.top + window.pageYOffset;
         }
 
-        // Scroll Spy handler for the 5 main sections
+        // Scroll Spy handler for the 7 sections
         function handleScrollSpy() {
             if (isClickLocked) return;
 
@@ -2987,8 +2850,8 @@
                 return;
             }
 
-            const sections = ['contact', 'project', 'experience', 'about', 'home'];
-            const scrollPos = window.scrollY + 200;
+            const sections = ['contact', 'project', 'certifications', 'sub-experience', 'skill', 'education', 'sub-about'];
+            const scrollPos = window.scrollY + 220;
 
             for (const id of sections) {
                 const el = document.getElementById(id);
@@ -3000,7 +2863,7 @@
                     }
                 }
             }
-            setActiveMenu('home');
+            setActiveMenu('sub-about');
         }
 
         // Window scroll listener for smooth real-time spy
