@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/andinikp"><img src="https://img.shields.io/badge/GitHub-andinikp-181717?style=flat-square&logo=github" alt="GitHub" /></a>
-  <a href="mailto:andinikp2004@gmail.com"><img src="https://img.shields.io/badge/Email-andinikp2004%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andinikp2004@gmail.com" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Email-andinikp2004%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
   <a href="https://instagram.com/andinikarn"><img src="https://img.shields.io/badge/Instagram-@andinikarn-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram" /></a>
   <img src="https://img.shields.io/badge/Location-Pasuruan%2C%20Indonesia-blue?style=flat-square" alt="Location" />
   <img src="https://img.shields.io/badge/Status-Open%20for%20Opportunities-success?style=flat-square" alt="Status" />
@@ -149,7 +149,7 @@ porto/
 
 Tertarik untuk berkolaborasi, mendiskusikan peluang kerja, atau membangun sistem aplikasi web?
 
-- 📧 **Email:** [andinikp2004@gmail.com](mailto:andinikp2004@gmail.com)
+- 📧 **Email:** <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andinikp2004@gmail.com" target="_blank" rel="noopener noreferrer">andinikp2004@gmail.com</a>
 - 🐙 **GitHub:** [@andinikp](https://github.com/andinikp)
 - 📷 **Instagram:** [@andinikarn](https://instagram.com/andinikarn)
 - 📄 **Resume:** [Download CV PDF](./cv/CV-Andini-Karina-Putri.pdf)

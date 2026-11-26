@@ -3,7 +3,7 @@
 # **ANDINI KARINA PUTRI**
 **Web Developer & Data Enthusiast**  
 📍 Pasuruan, Jawa Timur, Indonesia  
-📧 [andinikp2004@gmail.com](mailto:andinikp2004@gmail.com) | 🐙 [github.com/andinikp](https://github.com/andinikp) | 📷 [@andinikarn](https://instagram.com/andinikarn)
+📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andinikp2004@gmail.com" target="_blank" rel="noopener noreferrer">andinikp2004@gmail.com</a> | 🐙 [github.com/andinikp](https://github.com/andinikp) | 📷 [@andinikarn](https://instagram.com/andinikarn)
 
 ---
 
