@@ -159,3 +159,5 @@ Tertarik untuk berkolaborasi, mendiskusikan peluang kerja, atau membangun sistem
 <p align="center">
   <sub>Dibuat dengan ❤️ & dedikasi oleh <b>Andini Karina Putri</b> © 2026</sub>
 </p>
+#   p o r t - a n d i n i k p  
+ 
